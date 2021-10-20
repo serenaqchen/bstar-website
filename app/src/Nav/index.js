@@ -19,7 +19,6 @@ const Nav = () => {
     }
   };
 
-  console.log(responsive);
   return (
     <div className={styles.topSection}>
       {!responsive && (

@@ -3,6 +3,7 @@ import * as React from "react";
 import { Routes, Route } from "react-router-dom";
 
 import GiftCards from "../GiftCards/GiftCards";
+import Home from "../Home/Home";
 import Brunch from "../Menus/Brunch";
 import Dinner from "../Menus/Dinner";
 import Nav from "../Nav";
@@ -10,7 +11,6 @@ import Reservations from "../Reservations/Reservations";
 import Catering from "../Services/Catering";
 import GroupDinning from "../Services/GroupDinning";
 import ReuseableContainers from "../Services/ReuseableContainers";
-import Tasks from "../Tasks";
 import useApi from "../auth/useApi";
 import useAuth0 from "../auth/useAuth0";
 
@@ -46,20 +46,6 @@ const App = () => {
           <Route path="/gift-cards" element={<GiftCards />} />
         </Routes>
       </main>
-    </>
-  );
-};
-
-const Home = () => {
-  const { isAuthenticated } = useAuth0();
-
-  return (
-    <>
-      <header className={styles.header}>
-        <h1>{process.env.REACT_APP_TITLE}</h1>
-        <p>{process.env.REACT_APP_SUBTITLE}</p>
-      </header>
-      {isAuthenticated ? <Tasks /> : null}
     </>
   );
 };
