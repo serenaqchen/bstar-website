@@ -1,12 +1,248 @@
 .nav {
-  a[class="active"] {
-    background-color: darkorange;
-    color: white;
+  overflow: hidden;
+  background-color: white;
+  font-family: "Source Serif Pro", serif;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+
+  a {
+    float: left;
+    display: block;
+    font-size: 16px;
+    color: #3c4858;
+    text-align: center;
+    padding: 14px 16px;
     text-decoration: none;
+    margin-left: 50px;
+    margin-right: 50px;
   }
 
-  img {
-    max-height: 50px;
-    max-width: 50px;
+  a:visited {
+    color: #3c4858;
+  }
+
+  a[class="mobileLogo"],
+  a[class="mobileLogo active"] {
+    display: none;
+  }
+
+  a[class="tab"]:hover {
+    background-color: #eff2f7;
+    color: #3c4858;
+  }
+
+  a[class="subTab"]:hover {
+    background-color: #eff2f7;
+    color: #3c4858;
+  }
+
+  a[class="tab active"] {
+    background-color: #eff2f7;
+    color: #3c4858;
+  }
+
+  a[class="subTab active"] {
+    background-color: #eff2f7;
+    color: #3c4858;
+  }
+
+  a[class="activeLogo"]:hover {
+    background-color: transparent;
+  }
+
+  button[class="icon"] {
+    display: none;
+    background-color: transparent;
+    text-decoration: none;
+    // border: 2px solid #3c4858;
+    border: none;
+    color: #3c4858;
+    border-radius: 4px;
+  }
+
+  button[class="icon"]:hover {
+    background-color: #4856a4;
+    // border: 2px solid #4856a4;
+    border: none;
+    color: white;
+  }
+
+  img[class="bstarLogo"] {
+    max-height: 100px;
+    max-width: 100px;
+  }
+
+  img[class="bstarLogoMobile"] {
+    display: none;
+  }
+
+  div[class="dropdown"] {
+    float: left;
+    overflow: hidden;
+  }
+
+  div[class="dropdown"]:hover {
+    background-color: #eff2f7;
+  }
+
+  div[class="dropdown"] p[class="dropbtn"] {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: #3c4858;
+    padding: 14px 16px;
+    cursor: pointer;
+    background-color: inherit;
+    font: inherit; /* Important for vertical align on mobile phones */
+    margin: 0; /* Important for vertical align on mobile phones */
+  }
+
+  div[class="dropdown-content"] {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+
+  div[class="dropdown"]:hover div[class="dropdown-content"] {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  div[class="dropdown-content"] a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    display: block;
+    text-align: left;
+    color: #3c4858;
+    margin: 0;
+  }
+  // ---------------------MEDIA QUERY----------------------------
+  @media screen and (max-width: 600px) {
+    display: flex;
+    justify-content: space-between;
+
+    a:not(:nth-child(1)),
+    div[class="dropdown"] p[class="dropbtn"] {
+      display: none;
+    }
+
+    a[class="mobileLogo"] {
+      display: block;
+      margin: 0;
+      padding: 3px 0;
+    }
+    // a img[class="bstarLogoMobile"] {
+    //   display: block;
+    //   max-height: 40px;
+    //   max-width: 40px;
+    // }
+
+    img[class="profilePic"] {
+      max-height: 25px;
+      max-width: 25px;
+    }
+
+    button[class="icon"] {
+      float: right;
+      display: block;
+      font-size: 20px;
+      margin: 2px;
+      padding: 3px 9px;
+    }
+  }
+}
+//-----------------------------LOGIN---------------------------------
+.login {
+  display: flex;
+  justify-content: flex-end;
+  align-items: baseline;
+
+  img[class="profilePic"] {
+    max-height: 25px;
+    max-width: 25px;
+    border-radius: 50%;
+  }
+
+  button {
+    text-decoration: none;
+    background-color: transparent;
+    border: 2px solid #3c4858;
+    color: #3c4858;
+    border-radius: 4px;
+    width: 80px;
+  }
+
+  button:hover {
+    background-color: #4856a4;
+    border: 2px solid #4856a4;
+    color: white;
+  }
+
+  button[class="profileButton"] {
+    text-decoration: none;
+    border: none;
+    background-color: transparent;
+    padding-left: 100px;
+    padding-right: 50px;
+  }
+
+  button[class="profileButton"]:hover {
+    background-color: transparent;
+  }
+
+  div[class="dropdown"] {
+    float: left;
+    overflow: hidden;
+  }
+
+  div[class="dropdown"]:hover {
+    cursor: pointer;
+  }
+
+  div[class="dropdown"] button[class="profileButton"] {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: #3c4858;
+    background-color: inherit;
+    font: inherit; /* Important for vertical align on mobile phones */
+    margin: 0; /* Important for vertical align on mobile phones */
+  }
+
+  div[class="dropdown-content"] {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+
+  div[class="dropdown"]:hover div[class="dropdown-content"] {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  div[class="dropdown-content"] p {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    display: block;
+    text-align: left;
+    color: #3c4858;
+    margin-right: 20px;
+  }
+  //-------------------LOGIN MEDIA QUERY-------------------------
+  @media screen and (max-width: 600px) {
+    button {
+      display: none;
+    }
   }
 }
