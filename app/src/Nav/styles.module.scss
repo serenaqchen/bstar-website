@@ -122,35 +122,43 @@
     color: #3c4858;
     margin: 0;
   }
-  // ---------------------MEDIA QUERY----------------------------
-  @media screen and (max-width: 600px) {
-    display: flex;
-    justify-content: space-between;
+
+  div[class="auth"] {
+    display: none;
+  }
+
+  // ---------------------MEDIA QUERY FOR NAV BAR----------------------------
+  @media screen and (max-width: 917px) {
+    display: inline-block;
 
     a:not(:nth-child(1)),
     div[class="dropdown"] p[class="dropbtn"] {
       display: none;
     }
 
-    a[class="mobileLogo"] {
+    a[class="mobileLogo"],
+    a[class="mobileLogo active"] {
       display: block;
       margin: 0;
-      padding: 3px 0;
+      padding: 10px;
     }
-    // a img[class="bstarLogoMobile"] {
-    //   display: block;
-    //   max-height: 40px;
-    //   max-width: 40px;
-    // }
 
-    img[class="profilePic"] {
-      max-height: 25px;
-      max-width: 25px;
+    a img[class="bstarLogoMobile"] {
+      display: block;
+      max-height: 40px;
+      max-width: 40px;
     }
+
+    // img[class="profilePic"] {
+    //   max-height: 25px;
+    //   max-width: 25px;
+    // }
 
     button[class="icon"] {
       float: right;
       display: block;
+      position: absolute;
+      right: 8px;
       font-size: 20px;
       margin: 2px;
       padding: 3px 9px;
@@ -239,10 +247,89 @@
     color: #3c4858;
     margin-right: 20px;
   }
-  //-------------------LOGIN MEDIA QUERY-------------------------
-  @media screen and (max-width: 600px) {
+
+  //-------------------LOGIN MEDIA QUERY FOR NAV BAR-------------------------
+  @media screen and (max-width: 917px) {
     button {
       display: none;
     }
+  }
+}
+
+.topSection {
+  nav[class="styles_nav__gT-ht responsive"] a:not(:nth-child(1)),
+  nav[class="styles_nav__gT-ht responsive"]
+    div[class="dropdown"]
+    p[class="dropbtn"] {
+    display: none;
+  }
+
+  nav[class="styles_nav__gT-ht responsive"] a[class="mobileLogo"],
+  nav[class="styles_nav__gT-ht responsive"] a[class="mobileLogo active"] {
+    display: block;
+    margin: 0;
+    padding: 10px;
+  }
+  nav[class="styles_nav__gT-ht responsive"] a img[class="bstarLogoMobile"] {
+    display: block;
+    max-height: 40px;
+    max-width: 40px;
+  }
+
+  // img[class="profilePic"] {
+  //   max-height: 25px;
+  //   max-width: 25px;
+  // }
+
+  nav[class="styles_nav__gT-ht responsive"] button[class="icon"] {
+    // position: absolute;
+    // right: 0;
+    // top: 0;
+    float: right;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 20px;
+    margin: 2px;
+    padding: 3px 9px;
+  }
+
+  nav[class="styles_nav__gT-ht responsive"] a:not(:nth-child(4)) {
+    float: none;
+    display: block;
+    text-align: left;
+    margin: 0;
+  }
+
+  nav[class="styles_nav__gT-ht responsive"]
+    div[class="dropdown"]
+    p[class="dropbtn"] {
+    display: block;
+  }
+
+  // nav[class="styles_nav__gT-ht responsive"] a[class="mobileLogo"],  {
+  //   padding: 10px;
+  // }
+
+  nav[class="styles_nav__gT-ht responsive"] div[class="dropdown"] {
+    float: none;
+  }
+
+  nav[class="styles_nav__gT-ht responsive"] div[class="dropdown-content"] {
+    position: relative;
+  }
+
+  nav[class="styles_nav__gT-ht responsive"] {
+    position: relative;
+    display: block;
+  }
+
+  nav[class="styles_nav__gT-ht responsive"]
+    div[class="dropdown"]
+    p[class="dropbtn"] {
+    display: block;
+    width: 100%;
+    text-align: left;
   }
 }

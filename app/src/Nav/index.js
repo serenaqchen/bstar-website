@@ -13,15 +13,15 @@ const Nav = () => {
 
   const handleMobileNavButton = (e) => {
     if (responsive) {
-      setResponsive(true);
-    } else {
       setResponsive(false);
+    } else {
+      setResponsive(true);
     }
   };
 
   console.log(responsive);
   return (
-    <div>
+    <div className={styles.topSection}>
       {!responsive && (
         <div className={styles.login}>
           <Auth />
@@ -29,14 +29,18 @@ const Nav = () => {
       )}
       <nav className={`${styles.nav}${responsive ? " responsive" : ""}`}>
         <NavLink className="mobileLogo" to="/" end>
-          {/* <img className="bstarLogoMobile" src={blueLogo} alt="Bstar Logo"></img> */}
-          BStar
+          <img
+            className="bstarLogoMobile"
+            src={blueLogo}
+            alt="Bstar Logo"
+          ></img>
+          {/* BStar */}
         </NavLink>
         <NavLink className="tab" to="reservations">
-          Reservations
+          RESERVATIONS
         </NavLink>
         <div className="dropdown">
-          <p className="dropbtn">Menus ▾</p>
+          <p className="dropbtn">MENUS ▾</p>
           <div className="dropdown-content">
             <NavLink className="subTab" to="brunch">
               Brunch Menu
@@ -50,7 +54,7 @@ const Nav = () => {
           <img className="bstarLogo" src={blueLogo} alt="Bstar Logo"></img>
         </NavLink>{" "}
         <div className="dropdown">
-          <p className="dropbtn">Services ▾</p>
+          <p className="dropbtn">SERVICES ▾</p>
           <div className="dropdown-content">
             <NavLink className="subTab" to="catering">
               Catering
@@ -59,14 +63,16 @@ const Nav = () => {
               Group Dinning
             </NavLink>
             <NavLink className="subTab" to="reusable-containers">
-              Reusable Containters
+              Reusable Containers
             </NavLink>
           </div>
         </div>
         <NavLink className="tab" to="gift-cards">
-          Gift Cards
+          GIFT CARDS
         </NavLink>
-        {responsive && <Auth />}
+        <div className="auth">
+          <Auth />
+        </div>
         <button className="icon" onClick={handleMobileNavButton}>
           &#9776;
         </button>
