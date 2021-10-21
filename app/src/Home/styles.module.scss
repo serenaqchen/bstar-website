@@ -1,8 +1,9 @@
 .homepage {
   img[alt="Tea Leaf Salad"] {
     width: 100vw;
-    height: 60vh;
+    height: 65vh;
     object-fit: cover;
+    position: relative;
     object-position: 0 30%;
   }
 
@@ -36,6 +37,15 @@
   img[alt="Bstar food"] {
     width: 70vw;
     object-fit: cover;
-    object-position: 0 30%;
+    position: relative;
+    left: -10px;
+  }
+
+  h2 {
+    font-size: 2vw;
+  }
+
+  p {
+    font-size: 1.25vw;
   }
 }
