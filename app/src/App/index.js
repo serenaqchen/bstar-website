@@ -2,6 +2,7 @@ import * as React from "react";
 
 import { Routes, Route } from "react-router-dom";
 
+import Footer from "../Footer/Footer";
 import GiftCards from "../GiftCards/GiftCards";
 import Home from "../Home/Home";
 import Brunch from "../Menus/Brunch";
@@ -46,6 +47,9 @@ const App = () => {
           <Route path="/gift-cards" element={<GiftCards />} />
         </Routes>
       </main>
+      <footer>
+        <Footer />
+      </footer>
     </>
   );
 };
