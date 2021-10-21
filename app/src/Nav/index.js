@@ -9,24 +9,26 @@ import blueLogo from "../images/bstar-white-logo-blue.png";
 import styles from "./styles.module.scss";
 
 const Nav = () => {
-  const [responsive, setResponsive] = React.useState(false);
+  const [showMobileTabs, setShowMobileTabs] = React.useState(false);
 
-  const handleMobileNavButton = (e) => {
-    if (responsive) {
-      setResponsive(false);
+  const ToggleMobileNavButton = (e) => {
+    if (showMobileTabs) {
+      setShowMobileTabs(false);
     } else {
-      setResponsive(true);
+      setShowMobileTabs(true);
     }
   };
 
   return (
     <div className={styles.topSection}>
-      {!responsive && (
+      {!showMobileTabs && (
         <div className={styles.login}>
           <Auth />
         </div>
       )}
-      <nav className={`${styles.nav}${responsive ? " responsive" : ""}`}>
+      <nav
+        className={`${styles.nav}${showMobileTabs ? " showMobileTabs" : ""}`}
+      >
         <NavLink className="mobileLogo" to="/" end>
           <img
             className="bstarLogoMobile"
@@ -72,7 +74,7 @@ const Nav = () => {
         <div className="auth">
           <Auth />
         </div>
-        <button className="icon" onClick={handleMobileNavButton}>
+        <button className="icon" onClick={ToggleMobileNavButton}>
           &#9776;
         </button>
       </nav>

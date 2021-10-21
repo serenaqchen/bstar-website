@@ -266,20 +266,20 @@
 }
 
 .topSection {
-  nav[class="styles_nav__gT-ht responsive"] a:not(:nth-child(1)),
-  nav[class="styles_nav__gT-ht responsive"]
+  nav[class="styles_nav__gT-ht showMobileTabs"] a:not(:nth-child(1)),
+  nav[class="styles_nav__gT-ht showMobileTabs"]
     div[class="dropdown"]
     p[class="dropbtn"] {
     display: none;
   }
 
-  nav[class="styles_nav__gT-ht responsive"] a[class="mobileLogo"],
-  nav[class="styles_nav__gT-ht responsive"] a[class="mobileLogo active"] {
+  nav[class="styles_nav__gT-ht showMobileTabs"] a[class="mobileLogo"],
+  nav[class="styles_nav__gT-ht showMobileTabs"] a[class="mobileLogo active"] {
     display: block;
     margin: 0;
     padding: 10px;
   }
-  nav[class="styles_nav__gT-ht responsive"] a img[class="bstarLogoMobile"] {
+  nav[class="styles_nav__gT-ht showMobileTabs"] a img[class="bstarLogoMobile"] {
     display: block;
     max-height: 40px;
     max-width: 40px;
@@ -290,7 +290,7 @@
     width: 2vw;
   }
 
-  nav[class="styles_nav__gT-ht responsive"] button[class="icon"] {
+  nav[class="styles_nav__gT-ht showMobileTabs"] button[class="icon"] {
     float: right;
     display: block;
     position: absolute;
@@ -300,33 +300,33 @@
     padding: 3px 9px;
   }
 
-  nav[class="styles_nav__gT-ht responsive"] a:not(:nth-child(4)) {
+  nav[class="styles_nav__gT-ht showMobileTabs"] a:not(:nth-child(4)) {
     float: none;
     display: block;
     text-align: left;
     margin: 0;
   }
 
-  nav[class="styles_nav__gT-ht responsive"]
+  nav[class="styles_nav__gT-ht showMobileTabs"]
     div[class="dropdown"]
     p[class="dropbtn"] {
     display: block;
   }
 
-  nav[class="styles_nav__gT-ht responsive"] div[class="dropdown"] {
+  nav[class="styles_nav__gT-ht showMobileTabs"] div[class="dropdown"] {
     float: none;
   }
 
-  nav[class="styles_nav__gT-ht responsive"] div[class="dropdown-content"] {
+  nav[class="styles_nav__gT-ht showMobileTabs"] div[class="dropdown-content"] {
     position: relative;
   }
 
-  nav[class="styles_nav__gT-ht responsive"] {
+  nav[class="styles_nav__gT-ht showMobileTabs"] {
     position: relative;
     display: block;
   }
 
-  nav[class="styles_nav__gT-ht responsive"]
+  nav[class="styles_nav__gT-ht showMobileTabs"]
     div[class="dropdown"]
     p[class="dropbtn"] {
     display: block;
