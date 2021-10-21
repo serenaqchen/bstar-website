@@ -32,6 +32,8 @@
 
   section[class="info"] {
     display: flex;
+    justify-content: space-between;
+    margin-bottom: 14 vw;
   }
 
   img[alt="Bstar food"] {
@@ -43,9 +45,18 @@
 
   h2 {
     font-size: 2vw;
+    text-align: center;
   }
 
   p {
     font-size: 1.25vw;
+    text-align: center;
+  }
+
+  div[class="storeInfo"] {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 5vw;
   }
 }
