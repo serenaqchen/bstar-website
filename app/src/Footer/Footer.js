@@ -33,7 +33,8 @@ function Footer() {
           <img src={WhiteLogo} alt="white bstar logo"></img>
           <p>
             127 Clement Street <br></br>
-            San Frnacisco CA 94118
+            San Frnacisco CA 94118 <br></br>
+            (415) 933-9900
           </p>
         </div>
         <div className="footerCol">
