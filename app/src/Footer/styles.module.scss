@@ -27,12 +27,22 @@
     padding-top: 5vw;
   }
 
-  div[class="footerCol"] {
+  div[class="footerCol1"] {
     display: flex;
     flex-direction: column;
     padding: 45px 25px 10px;
     width: 18vw;
-    align-items: center;
+    align-items: flex-start;
+    margin-left: 5vw;
+  }
+
+  div[class="footerCol2"] {
+    display: flex;
+    flex-direction: column;
+    padding: 45px 25px 10px;
+    width: 18vw;
+    align-items: flex-start;
+    margin-right: -2vw;
   }
 
   div[class="footerCol3"] {
@@ -43,15 +53,28 @@
     padding: 10px 10px 0px 10px;
   }
 
+  div[class="footerCol4"] {
+    display: flex;
+    flex-direction: column;
+    padding: 45px 25px 10px;
+    width: 18vw;
+    align-items: flex-start;
+    margin-left: 5vw;
+  }
+
+  div[class="footerCol5"] {
+    display: flex;
+    flex-direction: column;
+    padding: 45px 25px 10px;
+    width: 18vw;
+    align-items: flex-start;
+    margin-right: -2vw;
+  }
+
   div[class="subTabs"] {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-  }
-
-  div[class="contactRow"] {
-    display: flex;
-    align-items: center;
   }
 
   img[alt="phone icon"] {
@@ -74,10 +97,7 @@
   }
 
   p:not(:nth-child(2)) {
-    border-bottom: 1px solid white;
-    border-top: 1px solid white;
-    // border-radius: 5px;
     width: 80%;
-    text-align: center;
+    text-align: left;
   }
 }

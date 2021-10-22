@@ -14,7 +14,7 @@ function Footer() {
   return (
     <div className={styles.footer}>
       <div className="columns">
-        <div className="footerCol">
+        <div className="footerCol1">
           <p>RESERVATIONS</p>
           <div className="subtabs">
             <NavLink className="tab" to="reservations">
@@ -22,7 +22,7 @@ function Footer() {
             </NavLink>
           </div>
         </div>
-        <div className="footerCol">
+        <div className="footerCol2">
           <p>MENUS</p>
           <div className="subTabs">
             <NavLink to="brunch">Brunch Menu</NavLink>
@@ -37,7 +37,7 @@ function Footer() {
             (415) 933-9900
           </p>
         </div>
-        <div className="footerCol">
+        <div className="footerCol4">
           <p>SERVICES</p>
           <div className="subTabs">
             <NavLink to="catering">Catering</NavLink>
@@ -45,7 +45,7 @@ function Footer() {
             <NavLink to="reusable-containers">Reusable Containers</NavLink>
           </div>
         </div>
-        <div className="footerCol">
+        <div className="footerCol5">
           <p>CONTACT US</p>
           <div className="subTabs">
             <div className="contactRow">
