@@ -21,44 +21,6 @@ SET default_tablespace = '';
 SET default_table_access_method = heap;
 
 --
--- Name: allergens; Type: TABLE; Schema: public; Owner: -
---
-
-CREATE TABLE public.allergens (
-    id integer NOT NULL,
-    food_id integer,
-    vegetarian boolean,
-    gluten_free boolean,
-    nut_free boolean,
-    dairy_free boolean,
-    vegetarian_option boolean,
-    gluten_free_option boolean,
-    nut_free_option boolean,
-    dairy_free_option boolean
-);
-
-
---
--- Name: allergens_id_seq; Type: SEQUENCE; Schema: public; Owner: -
---
-
-CREATE SEQUENCE public.allergens_id_seq
-    AS integer
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
---
--- Name: allergens_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
---
-
-ALTER SEQUENCE public.allergens_id_seq OWNED BY public.allergens.id;
-
-
---
 -- Name: food; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -70,7 +32,8 @@ CREATE TABLE public.food (
     brunch boolean,
     brunch_course text,
     dinner boolean,
-    dinner_course text
+    dinner_course text,
+    allergens text
 );
 
 
@@ -186,13 +149,6 @@ ALTER TABLE public.users ALTER COLUMN id ADD GENERATED ALWAYS AS IDENTITY (
 
 
 --
--- Name: allergens id; Type: DEFAULT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.allergens ALTER COLUMN id SET DEFAULT nextval('public.allergens_id_seq'::regclass);
-
-
---
 -- Name: food id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -214,46 +170,24 @@ ALTER TABLE ONLY public.tasks ALTER COLUMN id SET DEFAULT nextval('public.tasks_
 
 
 --
--- Data for Name: allergens; Type: TABLE DATA; Schema: public; Owner: -
---
-
-COPY public.allergens (id, food_id, vegetarian, gluten_free, nut_free, dairy_free, vegetarian_option, gluten_free_option, nut_free_option, dairy_free_option) FROM stdin;
-1	1	t	f	t	t	t	f	t	t
-2	2	t	f	t	t	t	t	t	t
-3	3	t	f	t	t	t	f	t	t
-4	4	t	t	t	t	t	t	t	t
-5	5	t	f	t	t	t	f	t	t
-6	6	f	f	t	t	f	f	t	t
-7	7	f	f	t	t	f	f	t	t
-8	8	t	f	t	t	t	t	t	t
-9	9	t	f	t	t	t	f	t	t
-10	10	f	t	f	t	t	t	t	t
-11	11	f	f	t	t	t	t	t	t
-12	12	f	f	t	t	t	t	t	t
-13	13	t	f	t	t	t	f	t	t
-14	14	t	t	t	t	t	t	t	t
-\.
-
-
---
 -- Data for Name: food; Type: TABLE DATA; Schema: public; Owner: -
 --
 
-COPY public.food (id, title, description, price, brunch, brunch_course, dinner, dinner_course) FROM stdin;
-1	Firecracker Cauliflower	Crispy cauliflower in a sweet and tangy caramelized garlic chili sauce.	9.5	t	Appetizers	t	Appetizers
-2	B Sprouts	Fried Brussels sprouts with furikake (veg), popped rice and Parmesan.  Customer favorite!	9.75	t	Appetizers	t	Appetizers
-3	Platha Dipper	Crispy, flaky Burmese layered flatbread with yellow curry dipping sauce.	9.75	t	Appetizers	t	Appetizers
-4	Fresh Spring Rolls	Tofu, basil, mint, cucumber, green papaya, carrot, avocado, and mushroom, wrapped in rice paper.  Served with peanut sauce dip.	9.5	t	Appetizers	t	Appetizers
-5	Vegetarian Samusas	Three hand-wrapped samusas filled with curry spiced potato, deep fried and served with our house special sweet chili sauce.	9.5	t	Appetizers	t	Appetizers
-6	Sticky Fingers Pork Riblettes	Tender ribs in a caramelized spicy garlic sauce.	12.5	t	Appetizers	t	Appetizers
-7	Tuna Ceviche	Seared tuna tataki, pepper crusted, topped with tobiko, jalapeño, avocado, green onion, lemon.	12	t	Appetizers	t	Appetizers
-8	Salt & Pepper Fries	Thin cut fries seasoned with salt and black pepper, served with curry aioli.	6	t	Appetizers	t	Appetizers
-9	Fried Yellow Bean Tofu	Homemade tofu made from yellow beans, crispy outside, creamy in the middle, sweet soy & chili sauce.	9	t	Appetizers	t	Appetizers
-10	Tea Leaf Salad (Reg)	Featured on the Food Network-- Our signature dish!  Lettuce, red cabbage, crispy garlic, peanut, sesame & sunflower seed, fried lentil, tomato, jalapeno, pickled ginger and fermented tea leaf dressing.  With shrimp powder and fish sauce, or vegetarian by request.	13.5	t	Soup & Salad	t	Soup & Salad
-11	Burmese Chicken Salad (Reg)	Cabbage, cucumber, cilantro, carrot, sesame, wonton chips and poached chicken with a sweet chili dressing.	13	t	Soup & Salad	t	Soup & Salad
-12	Rainbow Salad (Reg)	Made with 22 ingredients!  Four types of noodles, green papaya, tofu, tomato, potato, carrot, cabbage, garlic, onion, cilantro, chili, tamarind dressing.  With dried shrimp and fish sauce, or vegetarian by request.	13.75	t	Soup & Salad	t	Soup & Salad
-13	Samusa Soup (Sm)	Burmese soup with samusas, falafel, potato, lentil, cabbage and jalapeño.  Spicy and tangy!	9.25	t	Soup & Salad	t	Soup & Salad
-14	Butternut Squash Soup (Sm)	Pureed squash with basil oil, pepitas (pumpkin seed) and coconut milk.  Vegan.	8	t	Soup & Salad	t	Soup & Salad
+COPY public.food (id, title, description, price, brunch, brunch_course, dinner, dinner_course, allergens) FROM stdin;
+1	Firecracker Cauliflower	Crispy cauliflower in a sweet and tangy caramelized garlic chili sauce.	9.5	t	Appetizers	t	Appetizers	Vegtarian, Popular
+2	B Sprouts	Fried Brussels sprouts with furikake (veg), popped rice and Parmesan.  Customer favorite!	9.75	t	Appetizers	t	Appetizers	Popular, Gluten-Free Option, Vegetarian
+3	Platha Dipper	Crispy, flaky Burmese layered flatbread with yellow curry dipping sauce.	9.75	t	Appetizers	t	Appetizers	Vegtarian, Popular
+4	Fresh Spring Rolls	Tofu, basil, mint, cucumber, green papaya, carrot, avocado, and mushroom, wrapped in rice paper.  Served with peanut sauce dip.	9.5	t	Appetizers	t	Appetizers	Gluten-Free, Vegetarian
+5	Vegetarian Samusas	Three hand-wrapped samusas filled with curry spiced potato, deep fried and served with our house special sweet chili sauce.	9.5	t	Appetizers	t	Appetizers	Vegetarian
+6	Sticky Fingers Pork Riblettes	Tender ribs in a caramelized spicy garlic sauce.	12.5	t	Appetizers	t	Appetizers	\N
+7	Tuna Ceviche	Seared tuna tataki, pepper crusted, topped with tobiko, jalapeño, avocado, green onion, lemon.	12	t	Appetizers	t	Appetizers	\N
+8	Salt & Pepper Fries	Thin cut fries seasoned with salt and black pepper, served with curry aioli.	6	t	Appetizers	t	Appetizers	\N
+9	Fried Yellow Bean Tofu	Homemade tofu made from yellow beans, crispy outside, creamy in the middle, sweet soy & chili sauce.	9	t	Appetizers	t	Appetizers	Vegetarian
+10	Tea Leaf Salad (Reg)	Featured on the Food Network-- Our signature dish!  Lettuce, red cabbage, crispy garlic, peanut, sesame & sunflower seed, fried lentil, tomato, jalapeno, pickled ginger and fermented tea leaf dressing.  With shrimp powder and fish sauce, or vegetarian by request.	13.5	t	Soup & Salad	t	Soup & Salad	Popular, Gluten-Free, Vegetarian Option, Peanut
+11	Burmese Chicken Salad (Reg)	Cabbage, cucumber, cilantro, carrot, sesame, wonton chips and poached chicken with a sweet chili dressing.	13	t	Soup & Salad	t	Soup & Salad	Gluten-Free Option
+12	Rainbow Salad (Reg)	Made with 22 ingredients!  Four types of noodles, green papaya, tofu, tomato, potato, carrot, cabbage, garlic, onion, cilantro, chili, tamarind dressing.  With dried shrimp and fish sauce, or vegetarian by request.	13.75	t	Soup & Salad	t	Soup & Salad	Gluten-Free Option, Vegetarian Option
+13	Samusa Soup (Sm)	Burmese soup with samusas, falafel, potato, lentil, cabbage and jalapeño.  Spicy and tangy!	9.25	t	Soup & Salad	t	Soup & Salad	Popular, Vegetarian
+14	Butternut Squash Soup (Sm)	Pureed squash with basil oil, pepitas (pumpkin seed) and coconut milk.  Vegan.	8	t	Soup & Salad	t	Soup & Salad	Gluten-Free, Vegetarian
 \.
 
 
@@ -298,13 +232,6 @@ COPY public.users (id, given_name, family_name, picture, email, sub) FROM stdin;
 
 
 --
--- Name: allergens_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
---
-
-SELECT pg_catalog.setval('public.allergens_id_seq', 14, true);
-
-
---
 -- Name: food_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
@@ -329,15 +256,7 @@ SELECT pg_catalog.setval('public.tasks_id_seq', 7, true);
 -- Name: users_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public.users_id_seq', 42, true);
-
-
---
--- Name: allergens allergens_pkey; Type: CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.allergens
-    ADD CONSTRAINT allergens_pkey PRIMARY KEY (id);
+SELECT pg_catalog.setval('public.users_id_seq', 53, true);
 
 
 --
@@ -378,14 +297,6 @@ ALTER TABLE ONLY public.users
 
 ALTER TABLE ONLY public.users
     ADD CONSTRAINT users_sub_key UNIQUE (sub);
-
-
---
--- Name: allergens allergens_food_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.allergens
-    ADD CONSTRAINT allergens_food_id_fkey FOREIGN KEY (food_id) REFERENCES public.food(id);
 
 
 --
