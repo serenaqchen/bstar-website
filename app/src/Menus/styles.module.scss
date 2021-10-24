@@ -1,34 +1,41 @@
 // --------------------------Menu Styling----------------------
 .menu {
-  img[alt="Pork Tocino"] {
-    width: 100vw;
-    opacity: 0.85;
-    height: 55vh;
-    object-fit: cover;
-    position: relative;
-    object-position: 0 30%;
-  }
-
   img[alt="white border"] {
     width: 65vw;
   }
 
-  div[class="imageOverlay"] {
-    background: rgba(0, 0, 0, 1);
+  div[class="background"] {
     width: 100vw;
     height: 55vh;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  div[class="background"]:before {
+    content: "";
+    background-image: url("../images/pork-tocino.jpeg");
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+    background-position: center;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.75;
   }
 
   div[class="title"] {
-    position: fixed;
-    margin-top: -36vh;
-    margin-left: 17vw;
+    position: relative; /* makes sure that this div is on top
+    of the background image */
     display: flex;
     flex-direction: column;
     align-items: center;
+    opacity: 1;
+    padding-top: 9vw;
   }
 
-  h1 {
+  div[class="title"] h1 {
     font-size: 5vw;
     color: white;
   }

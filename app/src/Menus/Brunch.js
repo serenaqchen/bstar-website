@@ -1,23 +1,23 @@
 import React from "react";
 
-import Button from "../components/Button";
 import WhiteBorder from "../images/border-style-white.png";
-import PorkTocino from "../images/pork-tocino.jpeg";
 
+import FilterSection from "./FilterSection";
 import styles from "./styles.module.scss";
 
 function Brunch() {
   return (
     <div className={styles.menu}>
       <div className="imageOverlay">
-        <img src={PorkTocino} alt="Pork Tocino"></img>
+        <div className="background">
+          <div className="title">
+            <img src={WhiteBorder} alt="white border"></img>
+            <h1>Brunch Menu</h1>
+            <img src={WhiteBorder} alt="white border"></img>
+          </div>
+        </div>
       </div>
-      <div className="title">
-        <img src={WhiteBorder} alt="white border"></img>
-        <h1>Brunch Menu</h1>
-        <img src={WhiteBorder} alt="white border"></img>
-      </div>
-      <Button text="Hello" />
+      <FilterSection />
     </div>
   );
 }
