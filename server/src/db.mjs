@@ -30,6 +30,8 @@ export const addOrUpdateUser = (user) =>
     user,
   );
 
+export const getFoodItems = () => db.any("SELECT * FROM food");
+
 function initDb() {
   let connection;
 
