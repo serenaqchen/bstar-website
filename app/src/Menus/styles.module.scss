@@ -4,19 +4,40 @@
     width: 65vw;
   }
 
-  div[class="background"] {
+  div[class="Brunch"] {
     width: 100vw;
     height: 30vw;
     position: relative;
     background-color: rgba(0, 0, 0, 0.8);
   }
 
-  div[class="background"]:before {
+  div[class="Brunch"]:before {
     content: "";
     background-image: url("../images/pork-tocino.jpeg");
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover; /* Resize the background image to cover the entire container */
     background-position: center;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.75;
+  }
+
+  div[class="Dinner"] {
+    width: 100vw;
+    height: 30vw;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  div[class="Dinner"]:before {
+    content: "";
+    background-image: url("../images/kau-soi.jpeg");
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+    background-position: top;
     position: absolute;
     top: 0px;
     right: 0px;
