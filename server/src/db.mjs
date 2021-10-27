@@ -30,7 +30,19 @@ export const addOrUpdateUser = (user) =>
     user,
   );
 
-export const getFoodItems = () => db.any("SELECT * FROM food");
+//getting items from either brunch or dinner menu
+export const getFoodItems = (type) => {
+  if (type == "Brunch") {
+    return db.any(`SELECT * FROM food WHERE brunch = true`);
+  } else {
+    return db.any(`SELECT * FROM food WHERE dinner = true`);
+  }
+};
+
+export const getFilteredFood = (query) => {
+  return db.any(`SELECT * FROM food WHERE $<query>`, { query });
+};
+// export const getFoodItems = () => db.any("SELECT * FROM food");
 
 function initDb() {
   let connection;

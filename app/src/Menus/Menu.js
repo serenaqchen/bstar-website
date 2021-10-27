@@ -29,7 +29,7 @@ function Menu({ type }) {
           </div>
         </div>
       </div>
-      <FilterSection courses={courses} />
+      <FilterSection courses={courses} type={type} />
     </div>
   );
 }

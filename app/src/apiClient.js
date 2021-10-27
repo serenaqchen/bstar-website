@@ -1,4 +1,6 @@
-export const getFoodItems = () => _get("/api/foodItems");
+export const getFoodItems = (type) => _get(`/api/foodItems/${type}`);
+export const getFilteredFood = (filters) =>
+  _get(`/api/foodItems/${filters.join("+")}`);
 export const getInfo = () => _get("/api/info");
 
 // export const addTask = (name) => _post("/api/tasks", { name });

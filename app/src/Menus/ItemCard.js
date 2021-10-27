@@ -2,10 +2,10 @@ import React from "react";
 
 import styles from "./styles.module.scss";
 
-function ItemCard({ title, price, description, modifications }) {
+function ItemCard({ foodItem }) {
   return (
     <div className={styles.itemCard}>
-      <h1>Title Card</h1>
+      <h3>{foodItem.title}</h3>
     </div>
   );
 }

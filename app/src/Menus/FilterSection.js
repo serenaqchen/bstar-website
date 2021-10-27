@@ -1,15 +1,32 @@
 import React from "react";
 
+import * as apiClient from "../apiClient";
+
 import ItemCard from "./ItemCard";
 
-function FilterSection({ courses }) {
+function FilterSection({ type, courses }) {
   //store checked boxes
   const [checkedItems, setCheckedItems] = React.useState([]);
+  //store food items
+  const [foodItems, setFoodItems] = React.useState([]);
 
+  const loadFoodItems = async () => {
+    setFoodItems(await apiClient.getFoodItems(type));
+  };
+
+  const loadFilterFood = async () => {
+    setFoodItems(await apiClient.getFilteredFood(checkedItems));
+  };
+
+  React.useEffect(() => {
+    loadFoodItems();
+  }, []);
+
+  //get list of filter items that are checked
   const handleCheckedItem = (e) => {
     const checkedOrNot = e.target.checked;
     const checkedVal = e.target.value;
-    console.log(checkedOrNot);
+
     if (checkedOrNot && !checkedItems.includes(checkedVal)) {
       setCheckedItems([...checkedItems, checkedVal]);
       console.log("added", checkedItems);
@@ -21,9 +38,29 @@ function FilterSection({ courses }) {
       setCheckedItems(checkedItems);
       console.log("deleted", checkedItems);
     }
+    if (checkedItems.length !== 0) {
+      loadFilterFood(checkedItems);
+    }
+  };
+  console.log(checkedItems.join("+"));
+
+  console.log(foodItems);
+  //want to separate each food item by course
+  const separateByCourses = (course, foodItems) => {
+    return (
+      <div id={`${course}-section`} key={course}>
+        <h2>{course}</h2>
+        {foodItems
+          .filter(
+            (foodItem) => foodItem[`${type.toLowerCase()}_course`] === course,
+          )
+          .map((foodItem) => (
+            <ItemCard key={foodItem.id} foodItem={foodItem} />
+          ))}
+      </div>
+    );
   };
 
-  console.log(checkedItems);
   return (
     <div>
       <h3>Dietary Restrictions</h3>
@@ -61,15 +98,16 @@ function FilterSection({ courses }) {
         ></input>
         <label htmlFor="Dairy-Free">Dairy-Free</label>
       </form>
-      <div>
+      <div className="courses-nav">
         {courses &&
           courses.map((course, index) => (
-            <a href="#" key={index}>
+            <a href={`#${course}-section`} key={index}>
               {course}
             </a>
           ))}
       </div>
-      <ItemCard />
+      {/* wait to receive courses from api and then map */}
+      {courses && courses.map((course) => separateByCourses(course, foodItems))}
     </div>
   );
 }
