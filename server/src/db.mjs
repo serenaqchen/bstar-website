@@ -40,7 +40,8 @@ export const getFoodItems = (type) => {
 };
 
 export const getFilteredFood = (query) => {
-  return db.any(`SELECT * FROM food WHERE $<query>`, { query });
+  console.log(query);
+  return db.any(query);
 };
 // export const getFoodItems = () => db.any("SELECT * FROM food");
 

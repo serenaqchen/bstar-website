@@ -6,6 +6,8 @@ function ItemCard({ foodItem }) {
   return (
     <div className={styles.itemCard}>
       <h3>{foodItem.title}</h3>
+      <p>{foodItem.description}</p>
+      <p>{foodItem.allergens}</p>
     </div>
   );
 }

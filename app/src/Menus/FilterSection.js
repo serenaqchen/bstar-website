@@ -2,20 +2,16 @@ import React from "react";
 
 import * as apiClient from "../apiClient";
 
-import ItemCard from "./ItemCard";
+import CourseType from "./CourseType";
 
 function FilterSection({ type, courses }) {
   //store checked boxes
-  const [checkedItems, setCheckedItems] = React.useState([]);
+  const [filters, setFilters] = React.useState([]);
   //store food items
   const [foodItems, setFoodItems] = React.useState([]);
 
   const loadFoodItems = async () => {
     setFoodItems(await apiClient.getFoodItems(type));
-  };
-
-  const loadFilterFood = async () => {
-    setFoodItems(await apiClient.getFilteredFood(checkedItems));
   };
 
   React.useEffect(() => {
@@ -25,40 +21,19 @@ function FilterSection({ type, courses }) {
   //get list of filter items that are checked
   const handleCheckedItem = (e) => {
     const checkedOrNot = e.target.checked;
-    const checkedVal = e.target.value;
+    const checkedFilter = e.target.value;
 
-    if (checkedOrNot && !checkedItems.includes(checkedVal)) {
-      setCheckedItems([...checkedItems, checkedVal]);
-      console.log("added", checkedItems);
-    } else if (!checkedOrNot && checkedItems.includes(checkedVal)) {
-      checkedItems.splice(
-        checkedItems.indexOf(checkedVal),
-        checkedItems.indexOf(checkedVal) + 1,
+    if (checkedOrNot && !filters.includes(checkedFilter)) {
+      setFilters([...filters, checkedFilter]);
+      console.log(foodItems);
+      console.log(filters);
+    } else if (!checkedOrNot && filters.includes(checkedFilter)) {
+      filters.splice(
+        filters.indexOf(checkedFilter),
+        filters.indexOf(checkedFilter) + 1,
       );
-      setCheckedItems(checkedItems);
-      console.log("deleted", checkedItems);
+      setFilters(filters);
     }
-    if (checkedItems.length !== 0) {
-      loadFilterFood(checkedItems);
-    }
-  };
-  console.log(checkedItems.join("+"));
-
-  console.log(foodItems);
-  //want to separate each food item by course
-  const separateByCourses = (course, foodItems) => {
-    return (
-      <div id={`${course}-section`} key={course}>
-        <h2>{course}</h2>
-        {foodItems
-          .filter(
-            (foodItem) => foodItem[`${type.toLowerCase()}_course`] === course,
-          )
-          .map((foodItem) => (
-            <ItemCard key={foodItem.id} foodItem={foodItem} />
-          ))}
-      </div>
-    );
   };
 
   return (
@@ -107,7 +82,17 @@ function FilterSection({ type, courses }) {
           ))}
       </div>
       {/* wait to receive courses from api and then map */}
-      {courses && courses.map((course) => separateByCourses(course, foodItems))}
+      {/* want to separate each food item by course */}
+      {courses &&
+        courses.map((course) => (
+          <CourseType
+            key={course}
+            filters={filters}
+            course={course}
+            foodItems={foodItems}
+            type={type}
+          />
+        ))}
     </div>
   );
 }
