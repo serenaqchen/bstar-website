@@ -11,7 +11,7 @@ router.get("/:type", async (request, response) => {
   response.json(foodItems);
 });
 
-router.get("/:filters", async (request, response) => {
+router.get("/filter/:filters", async (request, response) => {
   const filters = request.params.filters.split("+");
   if (filters[0] === "Peanut-Free" || filters[0] === "Dairy-Free") {
     const query = `NOT allergen LIKE '%${filters[0]}%' `;
