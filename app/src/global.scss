@@ -1,12 +1,4 @@
-// @font-face {
-//   font-family: system;
-//   font-style: normal;
-//   font-weight: 300;
-//   src: local(".SFNSText-Light"), local(".HelveticaNeueDeskInterface-Light"),
-//     local(".LucidaGrandeUI"), local("Ubuntu Light"), local("Segoe UI Light"),
-//     local("Roboto-Light"), local("DroidSans"), local("Tahoma");
-// }
-@import url("https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600;700&display=swap");
+@import "@fontsource/source-serif-pro";
 
 body {
   font-family: "Source Serif Pro", serif;
