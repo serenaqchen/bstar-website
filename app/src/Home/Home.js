@@ -30,10 +30,10 @@ const Home = () => {
         <img src={BstarFood} alt="Bstar food"></img>
         <div className="storeInfo">
           <h2>ADDRESS</h2>
-          <p>
+          <address>
             127 CLEMENT ST. <br></br> SAN FRANCISCO, CA 94118 <br></br> (415)
             933-9900
-          </p>
+          </address>
           <h2>HOURS</h2>
           <p>
             MONDAY <br></br>

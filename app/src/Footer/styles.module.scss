@@ -21,7 +21,7 @@
     padding-left: 1vw;
   }
 
-  .columns {
+  div[class="columns"] {
     display: flex;
     flex-direction: row;
     padding-top: 5vw;
@@ -103,5 +103,14 @@
   ul {
     list-style-type: none;
     padding: 0;
+  }
+
+  address {
+    font-style: normal !important;
+  }
+
+  h2 {
+    font-size: 1.3vw;
+    font-weight: 600;
   }
 }

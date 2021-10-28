@@ -15,7 +15,7 @@ function Footer() {
     <div className={styles.footer}>
       <div className="columns">
         <div className="footerCol1">
-          <p>RESERVATIONS</p>
+          <h2>RESERVATIONS</h2>
           <ul className="subtabs">
             <li>
               <NavLink className="tab" to="reservations">
@@ -25,7 +25,7 @@ function Footer() {
           </ul>
         </div>
         <div className="footerCol2">
-          <p>MENUS</p>
+          <h2>MENUS</h2>
           <ul className="subTabs">
             <li>
               <NavLink to="brunch">Brunch Menu</NavLink>
@@ -37,14 +37,14 @@ function Footer() {
         </div>
         <div className="footerCol3">
           <img src={WhiteLogo} alt="white bstar logo"></img>
-          <p>
+          <address>
             127 Clement Street <br></br>
             San Frnacisco CA 94118 <br></br>
             (415) 933-9900
-          </p>
+          </address>
         </div>
         <div className="footerCol4">
-          <p>SERVICES</p>
+          <h2>SERVICES</h2>
           <ul className="subTabs">
             <li>
               <NavLink to="catering">Catering</NavLink>
@@ -58,18 +58,18 @@ function Footer() {
           </ul>
         </div>
         <div className="footerCol5">
-          <p>CONTACT US</p>
+          <h2>CONTACT US</h2>
           <ul className="subTabs">
             <li className="contactRow">
-              <img src={iphone} alt="phone icon"></img>
+              <img src={iphone} alt="phone logo"></img>
               <span>(415) 933-9900</span>
             </li>
             <li className="contactRow">
-              <img src={email} alt="email"></img>
+              <img src={email} alt="email logo"></img>
               <span>hello@bstarbar.com</span>
             </li>
             <li className="contactRow">
-              <img src={instagram} alt="instagram"></img>
+              <img src={instagram} alt="instagram logo"></img>
               <span>
                 <a href="https://www.instagram.com/bstarbar/">@bstarbar</a>
               </span>
