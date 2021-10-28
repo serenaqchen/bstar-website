@@ -12,11 +12,7 @@ const Nav = () => {
   const [showMobileTabs, setShowMobileTabs] = React.useState(false);
 
   const ToggleMobileNavButton = (e) => {
-    if (showMobileTabs) {
-      setShowMobileTabs(false);
-    } else {
-      setShowMobileTabs(true);
-    }
+    setShowMobileTabs(!showMobileTabs);
   };
 
   return (
