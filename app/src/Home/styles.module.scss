@@ -1,0 +1,66 @@
+.homepage {
+  img[alt="Tea Leaf Salad"] {
+    width: 100vw;
+    height: 35vw;
+    object-fit: cover;
+    position: relative;
+    object-position: 0 30%;
+  }
+
+  section[class="intro"] {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  img[alt="1st Blue Border"] {
+    width: 60vw;
+    padding: 120px 0 60px 0;
+  }
+
+  img[alt="2nd Blue Border"] {
+    width: 60vw;
+    padding: 60px 0 120px 0;
+  }
+
+  p[class="about"] {
+    margin: 0 25%;
+    font-size: 2vw;
+    text-align: center;
+    font-weight: 700;
+  }
+
+  section[class="info"] {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 14vw;
+  }
+
+  img[alt="Bstar food"] {
+    width: 70vw;
+    height: 55vw;
+    object-fit: cover;
+    position: relative;
+    left: -10px;
+  }
+
+  h2 {
+    font-size: 2vw;
+    text-align: center;
+    border-top: 0.2vw solid #243065;
+    border-bottom: 0.2vw solid #243065;
+    width: 20vw;
+  }
+
+  p {
+    font-size: 1.25vw;
+    text-align: center;
+  }
+
+  div[class="storeInfo"] {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 5vw;
+  }
+}
