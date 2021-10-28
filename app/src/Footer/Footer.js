@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 
 import WhiteBorder from "../images/BorderWhite.png";
 import WhiteLogo from "../images/bstar-white-logo.png";
-import instagram from "../images/icons/Instagram.png";
+import instagram from "../images/icons/Instagram.svg";
 import email from "../images/icons/email.svg";
 import iphone from "../images/icons/iphone.svg";
 
@@ -16,18 +16,24 @@ function Footer() {
       <div className="columns">
         <div className="footerCol1">
           <p>RESERVATIONS</p>
-          <div className="subtabs">
-            <NavLink className="tab" to="reservations">
-              Make a Reservation
-            </NavLink>
-          </div>
+          <ul className="subtabs">
+            <li>
+              <NavLink className="tab" to="reservations">
+                Make a Reservation
+              </NavLink>
+            </li>
+          </ul>
         </div>
         <div className="footerCol2">
           <p>MENUS</p>
-          <div className="subTabs">
-            <NavLink to="brunch">Brunch Menu</NavLink>
-            <NavLink to="dinner">Dinner Menu</NavLink>
-          </div>
+          <ul className="subTabs">
+            <li>
+              <NavLink to="brunch">Brunch Menu</NavLink>
+            </li>
+            <li>
+              <NavLink to="dinner">Dinner Menu</NavLink>
+            </li>
+          </ul>
         </div>
         <div className="footerCol3">
           <img src={WhiteLogo} alt="white bstar logo"></img>
@@ -39,30 +45,36 @@ function Footer() {
         </div>
         <div className="footerCol4">
           <p>SERVICES</p>
-          <div className="subTabs">
-            <NavLink to="catering">Catering</NavLink>
-            <NavLink to="group-dinning">Group Dinning</NavLink>
-            <NavLink to="reusable-containers">Reusable Containers</NavLink>
-          </div>
+          <ul className="subTabs">
+            <li>
+              <NavLink to="catering">Catering</NavLink>
+            </li>
+            <li>
+              <NavLink to="group-dinning">Group Dinning</NavLink>
+            </li>
+            <li>
+              <NavLink to="reusable-containers">Reusable Containers</NavLink>
+            </li>
+          </ul>
         </div>
         <div className="footerCol5">
           <p>CONTACT US</p>
-          <div className="subTabs">
-            <div className="contactRow">
+          <ul className="subTabs">
+            <li className="contactRow">
               <img src={iphone} alt="phone icon"></img>
               <span>(415) 933-9900</span>
-            </div>
-            <div className="contactRow">
+            </li>
+            <li className="contactRow">
               <img src={email} alt="email"></img>
               <span>hello@bstarbar.com</span>
-            </div>
-            <div className="contactRow">
+            </li>
+            <li className="contactRow">
               <img src={instagram} alt="instagram"></img>
               <span>
                 <a href="https://www.instagram.com/bstarbar/">@bstarbar</a>
               </span>
-            </div>
-          </div>
+            </li>
+          </ul>
         </div>
       </div>
       <img src={WhiteBorder} alt="white border"></img>
