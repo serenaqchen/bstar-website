@@ -1,32 +1,23 @@
 import React from "react";
 
-import * as apiClient from "../apiClient";
+import Check from "../images/icons/Check-Circle.png";
 
-import CourseType from "./CourseType";
+import styles from "./styles.module.scss";
 
-function FilterSection({ type, courses }) {
-  //store checked boxes
+function FilterSection({ filterMenu, setFoodItems, fullMenu }) {
   const [filters, setFilters] = React.useState([]);
-  //store food items
-  const [foodItems, setFoodItems] = React.useState([]);
-
-  const loadFoodItems = async () => {
-    setFoodItems(await apiClient.getFoodItems(type));
-  };
-
-  React.useEffect(() => {
-    loadFoodItems();
-  }, []);
+  const [showRestrictions, setShowRestrictions] = React.useState(true);
+  const [showOptions, setShowOptions] = React.useState(false);
 
   //get list of filter items that are checked
   const handleCheckedItem = (e) => {
     const checkedOrNot = e.target.checked;
     const checkedFilter = e.target.value;
 
+    //if check and the list does not include filter
     if (checkedOrNot && !filters.includes(checkedFilter)) {
       setFilters([...filters, checkedFilter]);
-      console.log(foodItems);
-      console.log(filters);
+      //if not checked and list includes filter then
     } else if (!checkedOrNot && filters.includes(checkedFilter)) {
       filters.splice(
         filters.indexOf(checkedFilter),
@@ -36,63 +27,100 @@ function FilterSection({ type, courses }) {
     }
   };
 
+  const handleSubmitFilter = (e) => {
+    e.preventDefault();
+    filterMenu(filters);
+    setShowOptions(false);
+    setShowRestrictions(false);
+  };
+
+  const handleClearFilters = (e) => {
+    setFoodItems(fullMenu);
+    setShowRestrictions(true);
+    setFilters([]);
+  };
+
+  // React.useEffect(() => {
+  //   if (filters) {
+  //     filterMenu();
+  //   }
+  // }, []);
+
   return (
-    <div>
+    <div className={styles.filterSection}>
       <h3>Dietary Restrictions</h3>
-      <form>
-        <input
-          type="checkbox"
-          id="Vegetarian"
-          name="Vegetarian"
-          value="Vegetarian"
-          onChange={handleCheckedItem}
-        ></input>
-        <label htmlFor="Vegetarian">Vegeterian</label>
-        <input
-          type="checkbox"
-          id="Gluten-Free"
-          name="Gluten-Free"
-          value="Gluten-Free"
-          onChange={handleCheckedItem}
-        ></input>
-        <label htmlFor="Gluten-Free">Gluten-Free</label>
-        <input
-          type="checkbox"
-          id="Peanut-Free"
-          name="Peanut-Free"
-          value="Peanut-Free"
-          onChange={handleCheckedItem}
-        ></input>
-        <label htmlFor="Peanut-Free">Peanut-Free</label>
-        <input
-          type="checkbox"
-          id="Dairy-Free"
-          name="Dairy-Free"
-          value="Dairy-Free"
-          onChange={handleCheckedItem}
-        ></input>
-        <label htmlFor="Dairy-Free">Dairy-Free</label>
-      </form>
-      <div className="courses-nav">
-        {courses &&
-          courses.map((course, index) => (
-            <a href={`#${course}-section`} key={index}>
-              {course}
-            </a>
-          ))}
+      <div className="filters">
+        {showRestrictions && (
+          <div className="dropdown">
+            <button className="dropbtn" onClick={(e) => setShowOptions(true)}>
+              Select All That Applies ▾
+            </button>
+            <form
+              className={`dropdown-content ${showOptions && "showOptions"}`}
+            >
+              <div className="options">
+                <input
+                  type="checkbox"
+                  id="Vegetarian"
+                  name="Vegetarian"
+                  value="Vegetarian"
+                  onChange={handleCheckedItem}
+                ></input>
+                <label htmlFor="Vegetarian">Vegeterian</label>
+              </div>
+              <div className="options">
+                <input
+                  type="checkbox"
+                  id="Gluten-Free"
+                  name="Gluten-Free"
+                  value="Gluten-Free"
+                  onChange={handleCheckedItem}
+                ></input>
+                <label htmlFor="Gluten-Free">Gluten-Free</label>
+              </div>
+              <div className="options">
+                <input
+                  type="checkbox"
+                  id="Peanut-Free"
+                  name="Peanut-Free"
+                  value="Peanut-Free"
+                  onChange={handleCheckedItem}
+                ></input>
+                <label htmlFor="Peanut-Free">Peanut-Free</label>
+              </div>
+              <div className="options">
+                <input
+                  type="checkbox"
+                  id="Dairy-Free"
+                  name="Dairy-Free"
+                  value="Dairy-Free"
+                  onChange={handleCheckedItem}
+                ></input>
+                <label htmlFor="Dairy-Free">Dairy-Free</label>
+              </div>
+
+              <button className="submitButton" onClick={handleSubmitFilter}>
+                Submit
+              </button>
+            </form>
+          </div>
+        )}
       </div>
-      {/* wait to receive courses from api and then map */}
-      {/* want to separate each food item by course */}
-      {courses &&
-        courses.map((course) => (
-          <CourseType
-            key={course}
-            filters={filters}
-            course={course}
-            foodItems={foodItems}
-            type={type}
-          />
-        ))}
+      <div className="selectedFilters">
+        {!showOptions &&
+          !showRestrictions &&
+          filters.map((filter) => (
+            <button className="checkedFilters" key={filter}>
+              <img src={Check} alt="check mark"></img>
+              <span>{filter}</span>
+            </button>
+          ))}
+        {!showRestrictions && (
+          <button className="clear" onClick={handleClearFilters}>
+            Clear
+          </button>
+        )}
+      </div>
     </div>
   );
 }

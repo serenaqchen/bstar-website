@@ -15,12 +15,12 @@ router.get("/:type", async (request, response) => {
 //   let query = `SELECT * FROM food WHERE brunch = true`;
 //   if (filters[0] === "Peanut-Free" || filters[0] === "Dairy-Free") {
 //     query = query.concat(
-//       ` AND NOT allergens LIKE '%${filters[0]}%' OR allergens is null `,
+//       ` AND NOT allergens LIKE '%${filters[0]}%' `,
 //     );
 //     for (let i = 1; i < filters.length; i++) {
 //       if (filters[i] === "Peanut-Free" || filters[i] === "Dairy-Free") {
 //         query = query.concat(
-//           `AND NOT allergens LIKE '%${filters[i]}%' OR allergens is null `,
+//           `AND NOT allergens LIKE '%${filters[i]}%' `,
 //         );
 //       } else {
 //         query = query.concat(`AND allergens LIKE '%${filters[i]}%' `);
@@ -33,7 +33,7 @@ router.get("/:type", async (request, response) => {
 //         query = query.concat(`AND NOT allergens 'LIKE %${filters[i]}%' `);
 //       } else {
 //         query = query.concat(
-//           `AND allergens LIKE '%${filters[i]}%' OR allergens is null `,
+//           `AND allergens LIKE '%${filters[i]}%' `,
 //         );
 //       }
 //     }
@@ -50,12 +50,12 @@ router.get("/:type", async (request, response) => {
 //   let query = `SELECT * FROM food WHERE ${type.toLowerCase()}_course = '${course}'`;
 //   if (filters[0] === "Peanut-Free" || filters[0] === "Dairy-Free") {
 //     query = query.concat(
-//       ` AND NOT allergens LIKE '%${filters[0]}%' OR allergens is null `,
+//       ` AND NOT allergens LIKE '%${filters[0]}%' `,
 //     );
 //     for (let i = 1; i < filters.length; i++) {
 //       if (filters[i] === "Peanut-Free" || filters[i] === "Dairy-Free") {
 //         query = query.concat(
-//           `AND NOT allergens LIKE '%${filters[i]}%' OR allergens is null `,
+//           `AND NOT allergens LIKE '%${filters[i]}%' `,
 //         );
 //       } else {
 //         query = query.concat(`AND allergens LIKE '%${filters[i]}%' `);
@@ -66,7 +66,7 @@ router.get("/:type", async (request, response) => {
 //     for (let i = 1; i < filters.length; i++) {
 //       if (filters[i] === "Peanut-Free" || filters[i] === "Dairy-Free") {
 //         query = query.concat(
-//           `AND NOT allergens 'LIKE %${filters[i]}%' OR allergens is null `,
+//           `AND NOT allergens 'LIKE %${filters[i]}%' `,
 //         );
 //       } else {
 //         query = query.concat(`AND allergens LIKE '%${filters[i]}%' `);

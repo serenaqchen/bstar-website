@@ -71,6 +71,12 @@
     margin-right: -2vw;
   }
 
+  div[class="subTabs"] {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
   img[alt="phone logo"] {
     width: 1vw;
   }
