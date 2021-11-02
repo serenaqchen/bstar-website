@@ -1,0 +1,26 @@
+// ---------------Button Styling---------------------------------
+.button {
+  button {
+    text-decoration: none;
+    background-color: transparent;
+    border: 0.17vw solid #3c4858;
+    color: #3c4858;
+    border-radius: 2vw;
+    width: 5vw;
+    font-size: 1.15vw;
+  }
+
+  button:hover {
+    background-color: #4856a4;
+    border: 0.17vw solid #3c4858;
+    color: white;
+  }
+}
+
+// // ---------------------Item Card Styling------------------------
+// .itemCard {
+// }
+
+// // ------------------Course Styling-------------------------
+// .courseType {
+// }

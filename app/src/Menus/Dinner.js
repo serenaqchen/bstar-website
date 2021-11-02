@@ -1,9 +1,11 @@
 import React from "react";
 
+import Menu from "./Menu";
+
 function Dinner() {
   return (
     <div>
-      <h1>Dinner Menu</h1>
+      <Menu type="Dinner" />
     </div>
   );
 }
