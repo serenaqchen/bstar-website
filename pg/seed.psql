@@ -179,15 +179,15 @@ COPY public.food (id, title, description, price, brunch, brunch_course, dinner, 
 3	Platha Dipper	Crispy, flaky Burmese layered flatbread with yellow curry dipping sauce.	9.75	t	Appetizers	t	Appetizers	Vegtarian, Popular
 4	Fresh Spring Rolls	Tofu, basil, mint, cucumber, green papaya, carrot, avocado, and mushroom, wrapped in rice paper.  Served with peanut sauce dip.	9.5	t	Appetizers	t	Appetizers	Gluten-Free, Vegetarian
 5	Vegetarian Samusas	Three hand-wrapped samusas filled with curry spiced potato, deep fried and served with our house special sweet chili sauce.	9.5	t	Appetizers	t	Appetizers	Vegetarian
-6	Sticky Fingers Pork Riblettes	Tender ribs in a caramelized spicy garlic sauce.	12.5	t	Appetizers	t	Appetizers	\N
-7	Tuna Ceviche	Seared tuna tataki, pepper crusted, topped with tobiko, jalapeño, avocado, green onion, lemon.	12	t	Appetizers	t	Appetizers	\N
-8	Salt & Pepper Fries	Thin cut fries seasoned with salt and black pepper, served with curry aioli.	6	t	Appetizers	t	Appetizers	\N
 9	Fried Yellow Bean Tofu	Homemade tofu made from yellow beans, crispy outside, creamy in the middle, sweet soy & chili sauce.	9	t	Appetizers	t	Appetizers	Vegetarian
-10	Tea Leaf Salad (Reg)	Featured on the Food Network-- Our signature dish!  Lettuce, red cabbage, crispy garlic, peanut, sesame & sunflower seed, fried lentil, tomato, jalapeno, pickled ginger and fermented tea leaf dressing.  With shrimp powder and fish sauce, or vegetarian by request.	13.5	t	Soup & Salad	t	Soup & Salad	Popular, Gluten-Free, Vegetarian Option, Peanut
-11	Burmese Chicken Salad (Reg)	Cabbage, cucumber, cilantro, carrot, sesame, wonton chips and poached chicken with a sweet chili dressing.	13	t	Soup & Salad	t	Soup & Salad	Gluten-Free Option
-12	Rainbow Salad (Reg)	Made with 22 ingredients!  Four types of noodles, green papaya, tofu, tomato, potato, carrot, cabbage, garlic, onion, cilantro, chili, tamarind dressing.  With dried shrimp and fish sauce, or vegetarian by request.	13.75	t	Soup & Salad	t	Soup & Salad	Gluten-Free Option, Vegetarian Option
-13	Samusa Soup (Sm)	Burmese soup with samusas, falafel, potato, lentil, cabbage and jalapeño.  Spicy and tangy!	9.25	t	Soup & Salad	t	Soup & Salad	Popular, Vegetarian
-14	Butternut Squash Soup (Sm)	Pureed squash with basil oil, pepitas (pumpkin seed) and coconut milk.  Vegan.	8	t	Soup & Salad	t	Soup & Salad	Gluten-Free, Vegetarian
+10	Tea Leaf Salad (Reg)	Featured on the Food Network-- Our signature dish!  Lettuce, red cabbage, crispy garlic, peanut, sesame & sunflower seed, fried lentil, tomato, jalapeno, pickled ginger and fermented tea leaf dressing.  With shrimp powder and fish sauce, or vegetarian by request.	13.5	t	Soup&Salad	t	Soup&Salad	Popular, Gluten-Free, Vegetarian Option, Peanut
+11	Burmese Chicken Salad (Reg)	Cabbage, cucumber, cilantro, carrot, sesame, wonton chips and poached chicken with a sweet chili dressing.	13	t	Soup&Salad	t	Soup&Salad	Gluten-Free Option
+12	Rainbow Salad (Reg)	Made with 22 ingredients!  Four types of noodles, green papaya, tofu, tomato, potato, carrot, cabbage, garlic, onion, cilantro, chili, tamarind dressing.  With dried shrimp and fish sauce, or vegetarian by request.	13.75	t	Soup&Salad	t	Soup&Salad	Gluten-Free Option, Vegetarian Option
+13	Samusa Soup (Sm)	Burmese soup with samusas, falafel, potato, lentil, cabbage and jalapeño.  Spicy and tangy!	9.25	t	Soup&Salad	t	Soup&Salad	Popular, Vegetarian
+14	Butternut Squash Soup (Sm)	Pureed squash with basil oil, pepitas (pumpkin seed) and coconut milk.  Vegan.	8	t	Soup&Salad	t	Soup&Salad	Gluten-Free, Vegetarian
+6	Sticky Fingers Pork Riblettes	Tender ribs in a caramelized spicy garlic sauce.	12.5	t	Appetizers	t	Appetizers	None
+8	Salt & Pepper Fries	Thin cut fries seasoned with salt and black pepper, served with curry aioli.	6	t	Appetizers	t	Appetizers	None
+7	Tuna Ceviche	Seared tuna tataki, pepper crusted, topped with tobiko, jalapeño, avocado, green onion, lemon.	12	t	Appetizers	t	Appetizers	None
 \.
 
 
@@ -256,7 +256,7 @@ SELECT pg_catalog.setval('public.tasks_id_seq', 7, true);
 -- Name: users_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public.users_id_seq', 53, true);
+SELECT pg_catalog.setval('public.users_id_seq', 168, true);
 
 
 --
