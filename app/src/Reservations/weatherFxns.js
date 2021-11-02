@@ -6,11 +6,18 @@ import Snow from "../images/icons/Snow.svg";
 import Thunder from "../images/icons/Thunder.svg";
 import atmosphere from "../images/icons/atmosphere.svg";
 
-export const dateConversion = (date) => {
+export const dayConversion = (date) => {
   const options = {
     weekday: "long",
+  };
+  let dt = new Date(date * 1000);
+  return dt.toLocaleDateString("en-US", options);
+};
+
+export const dateConversion = (date) => {
+  const options = {
     year: "numeric",
-    month: "long",
+    month: "numeric",
     day: "numeric",
   };
   let dt = new Date(date * 1000);
@@ -30,8 +37,6 @@ export const currentWeatherIcon = (weatherCondition) => {
     "Squall",
     "Tornado",
   ];
-
-  let allCoditions = ["Clear", "Clouds", "Drizzle", "Rain", "Snow", "Thunder"];
 
   if (atmosphereConditions.includes(weatherCondition)) {
     return (

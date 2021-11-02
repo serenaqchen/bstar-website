@@ -1,0 +1,14 @@
+// -------------------------------CURRENT WEATHER---------------------------------------------
+.currentWeather {
+  div[class="currentWeatherCard"] {
+    width: 25rem;
+    border: 0.5rem solid #eff2f7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  img[class="conditionIcon"] {
+    height: 8rem;
+  }
+}

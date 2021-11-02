@@ -14,7 +14,7 @@ function Reservations() {
 
   const [currentWeather, setCurrentWeather] = React.useState({});
   const [forecastWeather, setForecastWeather] = React.useState({});
-  const [units, setUnits] = React.useState("fahrenheit");
+  const [units, setUnits] = React.useState("F");
 
   const loadCurrentWeather = async () =>
     setCurrentWeather(await getCurrentWeather());
@@ -42,7 +42,13 @@ function Reservations() {
         </p>
       </div>
       <section className="currentWeather">
-        <CurrentWeather currentWeather={currentWeather} />
+        <CurrentWeather
+          currentWeather={currentWeather}
+          units={units}
+          dt={forecastWeather[0].dt}
+          high={forecastWeather[0].temp.max}
+          low={forecastWeather[0].temp.min}
+        />
       </section>
       <section className="forecastWeather"></section>
     </div>
