@@ -3,6 +3,8 @@ import React from "react";
 import Border from "../images/Border.png";
 
 import CurrentWeather from "./CurrentWeather";
+import ForecastWeather from "./ForecastWeather";
+import styles from "./styles.module.scss";
 
 function Reservations() {
   //This will go into apiClient file when brunch menu is merged to main---------------
@@ -31,7 +33,7 @@ function Reservations() {
   console.log("forecast", forecastWeather);
 
   return (
-    <div className="reservations">
+    <div className={styles.reservations}>
       <div className="title">
         <h1>RESERVATIONS & WAITLIST</h1>
         <img src={Border} alt="Blue Border"></img>
@@ -45,12 +47,12 @@ function Reservations() {
         <CurrentWeather
           currentWeather={currentWeather}
           units={units}
-          dt={forecastWeather[0].dt}
-          high={forecastWeather[0].temp.max}
-          low={forecastWeather[0].temp.min}
+          forecastWeather={forecastWeather}
         />
       </section>
-      <section className="forecastWeather"></section>
+      <section className="forecastWeather">
+        <ForecastWeather forecastWeather={forecastWeather} units={units} />
+      </section>
     </div>
   );
 }

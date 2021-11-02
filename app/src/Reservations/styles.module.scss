@@ -1,14 +1,70 @@
+// -------------------------------RESERVATIONS PAGE------------------------------------------
+.reservations {
+  div[class="title"] {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5rem 5rem 25rem;
+    background-color: #eff2f7;
+  }
+
+  div[class="title"] h1 {
+    font-size: 3.5rem;
+  }
+  div[class="title"] p {
+    font-size: 1.5rem;
+    width: 50rem;
+    text-align: center;
+  }
+
+  div[class="title"] img {
+    padding: 2rem;
+  }
+  section[class="currentWeather"] {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: -20rem;
+  }
+}
+
 // -------------------------------CURRENT WEATHER---------------------------------------------
 .currentWeather {
   div[class="currentWeatherCard"] {
-    width: 25rem;
+    width: 30rem;
     border: 0.5rem solid #eff2f7;
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: white;
+    padding: 1rem 0;
+  }
+  h2 {
+    margin-bottom: 0;
+    text-align: center;
+    font-size: 2rem;
+  }
+
+  p[class="date"] {
+    text-align: center;
+    margin-top: 0;
+  }
+
+  p[class="currentTemp"] {
+    font-size: 2rem;
+    margin: 1rem 0;
   }
 
   img[class="conditionIcon"] {
+    height: 8rem;
+  }
+}
+//-------------------------------FORECAST WEATHER--------------------------------------------
+.forecastWeather {
+  display: flex;
+  justify-content: space-evenly;
+
+  div[class="forecastWeatherCard"] img {
     height: 8rem;
   }
 }
