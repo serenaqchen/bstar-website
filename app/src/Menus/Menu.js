@@ -1,5 +1,7 @@
 import React from "react";
 
+import { NavHashLink as NavLink } from "react-router-hash-link";
+
 import * as apiClient from "../apiClient";
 import WhiteBorder from "../images/border-style-white.png";
 
@@ -33,7 +35,7 @@ function Menu({ type }) {
       for (let filter of filters) {
         if (filter === "Peanut-Free" || filter === "Dairy-Free") {
           filterFoodItems = filterFoodItems.filter(
-            (item) => !item.allergens.includes(filter),
+            (item) => !item.allergens.includes(filter.split("-")[0]),
           );
         } else {
           filterFoodItems = filterFoodItems.filter((item) =>
@@ -69,7 +71,16 @@ function Menu({ type }) {
       <div className="courses-nav">
         {courses &&
           courses.map((course, index) => (
-            <a href={`#${course}-section`} key={index}>
+            // <NavLink
+            //   // className="courses"
+            //   // href={`#${course}-section`}
+            //   to={`/${type.toLowerCase()}/#${course}-section`}
+            //   activeClassName="selected"
+            //   key={index}
+            // >
+            //   {course.toUpperCase()}
+            // </NavLink>
+            <a className="courses" href={`#${course}-section`} key={index}>
               {course.toUpperCase()}
             </a>
           ))}
