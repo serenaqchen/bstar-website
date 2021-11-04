@@ -69,6 +69,8 @@
     position: sticky;
     top: 0px;
     color: black;
+    height: 5rem;
+    align-items: center;
   }
 
   div[class="courses-nav"] a {
@@ -88,6 +90,10 @@
   a[class="courses"]:active {
     background-color: #a3b3d0;
     color: #3c4858;
+  }
+
+  a[class="courses"]:hover {
+    background-color: #a3b3d0;
   }
 }
 // --------------------------Filter Section----------------------

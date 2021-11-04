@@ -1,6 +1,7 @@
 import React from "react";
 
-import { NavHashLink as NavLink } from "react-router-hash-link";
+import { Link, NavLink } from "react-router-dom";
+import { NavHashLink } from "react-router-hash-link";
 
 import * as apiClient from "../apiClient";
 import WhiteBorder from "../images/border-style-white.png";
@@ -71,15 +72,6 @@ function Menu({ type }) {
       <div className="courses-nav">
         {courses &&
           courses.map((course, index) => (
-            // <NavLink
-            //   // className="courses"
-            //   // href={`#${course}-section`}
-            //   to={`/${type.toLowerCase()}/#${course}-section`}
-            //   activeClassName="selected"
-            //   key={index}
-            // >
-            //   {course.toUpperCase()}
-            // </NavLink>
             <a className="courses" href={`#${course}-section`} key={index}>
               {course.toUpperCase()}
             </a>
