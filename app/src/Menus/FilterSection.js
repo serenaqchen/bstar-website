@@ -18,12 +18,8 @@ function FilterSection({ filterMenu, setFoodItems, fullMenu }) {
     if (checkedOrNot && !filters.includes(checkedFilter)) {
       setFilters([...filters, checkedFilter]);
       //if not checked and list includes filter then
-    } else if (!checkedOrNot && filters.includes(checkedFilter)) {
-      filters.splice(
-        filters.indexOf(checkedFilter),
-        filters.indexOf(checkedFilter) + 1,
-      );
-      setFilters(filters);
+    } else if (!checkedOrNot) {
+      setFilters(filters.filter(filter => filter !== checkedFilter);
     }
   };
 
