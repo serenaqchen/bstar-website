@@ -1,4 +1,4 @@
-// -------------------------------RESERVATIONS PAGE------------------------------------------
+// ------------------------RESERVATIONS PAGE------------------------------
 .reservations {
   div[class="title"] {
     display: flex;
@@ -26,9 +26,16 @@
     position: relative;
     top: -20rem;
   }
+
+  div[class="buttonFunctions"] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -10rem;
+  }
 }
 
-// -------------------------------CURRENT WEATHER---------------------------------------------
+// --------------------------CURRENT WEATHER----------------------------
 .currentWeather {
   div[class="currentWeatherCard"] {
     width: 30rem;
@@ -59,12 +66,30 @@
     height: 8rem;
   }
 }
-//-------------------------------FORECAST WEATHER--------------------------------------------
+//--------------------FORECAST WEATHER--------------------------------
 .forecastWeather {
   display: flex;
   justify-content: space-evenly;
+  align-items: center;
+  padding-bottom: 10rem;
+  flex-wrap: wrap;
 
-  div[class="forecastWeatherCard"] img {
-    height: 8rem;
+  div[class="forecastWeatherCard1"] img {
+    height: 5rem;
+    padding: 1rem;
+  }
+
+  div[class="forecastWeatherCard1"] {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  div[class="forecastWeatherCard2"] {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #eff2f7;
+    padding: 2rem;
   }
 }

@@ -1,5 +1,6 @@
 import React from "react";
 
+import * as apiClient from "../apiClient";
 import Border from "../images/Border.png";
 
 import CurrentWeather from "./CurrentWeather";
@@ -7,22 +8,22 @@ import ForecastWeather from "./ForecastWeather";
 import styles from "./styles.module.scss";
 
 function Reservations() {
-  //This will go into apiClient file when brunch menu is merged to main---------------
-  const getCurrentWeather = () => _get("/api/weather/current");
-  const getForecastWeather = () => _get("/api/weather/forecast");
-
-  const _get = async (url) => (await fetch(url)).json();
-  //------------------------------------------------------------------------------------
-
   const [currentWeather, setCurrentWeather] = React.useState({});
   const [forecastWeather, setForecastWeather] = React.useState({});
   const [units, setUnits] = React.useState("F");
+  const [fiveDayForecast, setFiveDayForecast] = React.useState(false);
+
+  const handleForecastButton = (e) => {
+    return fiveDayForecast
+      ? setFiveDayForecast(true)
+      : setFiveDayForecast(false);
+  };
 
   const loadCurrentWeather = async () =>
-    setCurrentWeather(await getCurrentWeather());
+    setCurrentWeather(await apiClient.getCurrentWeather());
 
   const loadForecastWeather = async () =>
-    setForecastWeather(await getForecastWeather());
+    setForecastWeather(await apiClient.getForecastWeather());
 
   React.useEffect(() => {
     loadCurrentWeather();
@@ -31,6 +32,7 @@ function Reservations() {
 
   console.log("current", currentWeather);
   console.log("forecast", forecastWeather);
+  console.log(fiveDayForecast);
 
   return (
     <div className={styles.reservations}>
@@ -50,7 +52,13 @@ function Reservations() {
           forecastWeather={forecastWeather}
         />
       </section>
-      <section className="forecastWeather">
+      <div className="buttonFunctions">
+        {/* <button>Convert to {units === "F" ? "C" : "F"}</button> */}
+        {!fiveDayForecast && (
+          <button onClick={handleForecastButton}>Show 5-Day Forecast</button>
+        )}
+      </div>
+      <section className="forecastWeather display">
         <ForecastWeather forecastWeather={forecastWeather} units={units} />
       </section>
     </div>

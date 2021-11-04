@@ -1,13 +1,10 @@
 export const getFoodItems = (type) => _get(`/api/foodItems/${type}`);
 export const getFilteredFood = (type, course, filters) => {
-  // console.log("filters api", type, course, filters);
-  // console.log(
-  //   `/api/foodItems/filters/${type}/${course.replace(/\s/g, "")}/${filters.join(
-  //     "+",
-  //   )}`,
-  // );
   _get(`/api/foodItems/filters/${type}/${filters.join("+")}`);
 };
+export const getCurrentWeather = () => _get("/api/weather/current");
+export const getForecastWeather = () => _get("/api/weather/forecast");
+
 export const getInfo = () => _get("/api/info");
 
 // export const addTask = (name) => _post("/api/tasks", { name });
