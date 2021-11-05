@@ -14,21 +14,24 @@ function Reservations() {
   const [fiveDayForecast, setFiveDayForecast] = React.useState(false);
 
   const handleForecastButton = (e) => {
-    return fiveDayForecast
-      ? setFiveDayForecast(true)
-      : setFiveDayForecast(false);
+    fiveDayForecast ? setFiveDayForecast(false) : setFiveDayForecast(true);
+    console.log("fxn", fiveDayForecast);
+  };
+
+  const handleTempConversion = (e) => {
+    units === "F" ? setUnits("C") : setUnits("F");
   };
 
   const loadCurrentWeather = async () =>
-    setCurrentWeather(await apiClient.getCurrentWeather());
+    setCurrentWeather(await apiClient.getCurrentWeather(units));
 
   const loadForecastWeather = async () =>
-    setForecastWeather(await apiClient.getForecastWeather());
+    setForecastWeather(await apiClient.getForecastWeather(units));
 
   React.useEffect(() => {
     loadCurrentWeather();
     loadForecastWeather();
-  }, []);
+  }, [units]);
 
   console.log("current", currentWeather);
   console.log("forecast", forecastWeather);
@@ -50,16 +53,31 @@ function Reservations() {
           currentWeather={currentWeather}
           units={units}
           forecastWeather={forecastWeather}
+          handleTempConversion={handleTempConversion}
         />
       </section>
       <div className="buttonFunctions">
-        {/* <button>Convert to {units === "F" ? "C" : "F"}</button> */}
-        {!fiveDayForecast && (
-          <button onClick={handleForecastButton}>Show 5-Day Forecast</button>
-        )}
+        <button className="forecastButton" onClick={handleForecastButton}>
+          {fiveDayForecast ? "Close" : "Show 5-Day Forecast"}
+        </button>
       </div>
-      <section className="forecastWeather display">
+      <section
+        className={`forecastWeather ${
+          !fiveDayForecast && "forecastWeather--displayNone"
+        }`}
+      >
         <ForecastWeather forecastWeather={forecastWeather} units={units} />
+      </section>
+      <section className="description">
+        <p>
+          We accept reservations online or by phone. If you are unable to find
+          your desired reservation time, please try adding your name to our
+          waitlist. You can do this in person at the restaurant or you can check
+          wait times and add your name before you even step out your front door!
+        </p>
+        <a href="https://www.bstarbar.com/" target="_blank">
+          <button className="reservations">MAKE A RESERVATION</button>
+        </a>
       </section>
     </div>
   );

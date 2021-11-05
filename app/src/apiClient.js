@@ -2,8 +2,10 @@ export const getFoodItems = (type) => _get(`/api/foodItems/${type}`);
 export const getFilteredFood = (type, course, filters) => {
   _get(`/api/foodItems/filters/${type}/${filters.join("+")}`);
 };
-export const getCurrentWeather = () => _get("/api/weather/current");
-export const getForecastWeather = () => _get("/api/weather/forecast");
+export const getCurrentWeather = (units) =>
+  _get("/api/weather/current/" + units);
+export const getForecastWeather = (units) =>
+  _get("/api/weather/forecast/" + units);
 
 export const getInfo = () => _get("/api/info");
 

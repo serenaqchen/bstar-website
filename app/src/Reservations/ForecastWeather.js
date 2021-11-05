@@ -19,8 +19,10 @@ function ForecastWeather({ forecastWeather, units }) {
               <p>{dateConversion(forecastWeather[index].dt)}</p>
               {currentWeatherIcon(forecastWeather[index].weather[0].main)}
               <p>
-                High: {forecastWeather[index].temp.max} &#176;{units} || Low:{" "}
-                {forecastWeather[index].temp.min} &#176;{units}
+                High: {forecastWeather[index].temp.max} &#176;{units}
+              </p>
+              <p>
+                Low: {forecastWeather[index].temp.min} &#176;{units}
               </p>
             </div>
           </div>

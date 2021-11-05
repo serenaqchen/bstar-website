@@ -7,20 +7,24 @@ import {
   currentWeatherIcon,
 } from "./weatherFxns";
 
-function CurrentWeather({ currentWeather, units, forecastWeather }) {
+function CurrentWeather({
+  currentWeather,
+  units,
+  forecastWeather,
+  handleTempConversion,
+}) {
   return (
     <div className={styles.currentWeather}>
-      <h2>{dayConversion(currentWeather.dt)}</h2>
+      {/* <h2>{dayConversion(currentWeather.dt)}</h2> */}
 
       <div className="currentWeatherCard">
-        <h3>SAN FRANCISCO</h3>
-        <p className="date">{dateConversion(currentWeather.dt)}</p>
+        <h3>CURRENT WEATHER</h3>
+        <p>Inner Richmond</p>
         {currentWeather.weather &&
           currentWeatherIcon(currentWeather.weather[0].main)}
-        <p>{currentWeather.weather && currentWeather.weather[0].main}</p>
-        <p className="currentTemp">
-          {currentWeather.temp && currentWeather.temp} &#176;{units}
-        </p>
+        <button className="currentTemp" onClick={handleTempConversion}>
+          {currentWeather.temp ? currentWeather.temp : "Loading"} &#176;{units}
+        </button>
         {forecastWeather[0] && (
           <p>
             High: {forecastWeather[0].temp.max} &#176;{units} || Low:{" "}
