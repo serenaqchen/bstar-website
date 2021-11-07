@@ -22,7 +22,11 @@ function CurrentWeather({
         <p>Inner Richmond</p>
         {currentWeather.weather &&
           currentWeatherIcon(currentWeather.weather[0].main)}
-        <button className="currentTemp" onClick={handleTempConversion}>
+        <button
+          data-testid="currentWeatherButton"
+          className="currentTemp"
+          onClick={handleTempConversion}
+        >
           {currentWeather.temp ? currentWeather.temp : "Loading"} &#176;{units}
         </button>
         {forecastWeather[0] && (
