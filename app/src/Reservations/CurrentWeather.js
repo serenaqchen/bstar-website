@@ -1,11 +1,7 @@
 import React from "react";
 
 import styles from "./styles.module.scss";
-import {
-  dayConversion,
-  dateConversion,
-  currentWeatherIcon,
-} from "./weatherFxns";
+import { currentWeatherIcon } from "./weatherFxns";
 
 function CurrentWeather({
   currentWeather,

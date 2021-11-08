@@ -1,5 +1,6 @@
 import React from "react";
 
+import BstarTitle from "../Components/BstarTitle";
 import * as apiClient from "../apiClient";
 import WhiteBorder from "../images/border-style-white.png";
 
@@ -8,6 +9,10 @@ import FilterSection from "./FilterSection";
 import styles from "./styles.module.scss";
 
 function Menu({ type }) {
+  const loadModifications = async () => {
+    setModifications(await apiClient.getModifications(type));
+  };
+
   const loadInfo = async () => {
     setInfo(await apiClient.getInfo());
   };
@@ -24,6 +29,7 @@ function Menu({ type }) {
   const courses = info[`${type.toLowerCase()}_courses`];
   //store food items
   const [foodItems, setFoodItems] = React.useState([]);
+  const [modifications, setModifications] = React.useState([]);
 
   const filterMenu = (filters) => {
     let filterFoodItems = [...fullMenu];
@@ -43,22 +49,18 @@ function Menu({ type }) {
     return setFoodItems(filterFoodItems);
   };
 
+  console.log(modifications);
+
   React.useEffect(() => {
     loadInfo();
     loadFoodItems();
+    loadModifications();
   }, []);
 
   return (
     <div className={styles.menu}>
-      <div className="imageOverlay">
-        <div className={type}>
-          <div className="title">
-            <img src={WhiteBorder} alt="white border"></img>
-            <h1>{type} Menu</h1>
-            <img src={WhiteBorder} alt="white border"></img>
-          </div>
-        </div>
-      </div>
+      <BstarTitle title={`${type} Menu`} />
+
       <FilterSection
         filterMenu={filterMenu}
         setFoodItems={setFoodItems}
@@ -81,7 +83,7 @@ function Menu({ type }) {
               key={course}
               course={course}
               foodItems={foodItems}
-              type={type}
+              modifications={modifications}
             />
           ))}
       </div>

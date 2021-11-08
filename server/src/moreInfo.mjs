@@ -6,9 +6,9 @@ export const moreInfo = {
     "Soup & Salad",
     "Brunch Bowls",
     "Jook",
-    "Nooodles",
+    "Noodles",
     "Lunch",
-    "Drinks",
+    // "Drinks",
   ],
   dinner_courses: [
     "Appetizers",
@@ -18,6 +18,6 @@ export const moreInfo = {
     "Seafood",
     "Chicken",
     "Veg & Tofu",
-    "Dirnks",
+    // "Dirnks",
   ],
 };
