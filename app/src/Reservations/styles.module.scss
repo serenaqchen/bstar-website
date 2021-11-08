@@ -1,0 +1,144 @@
+// ------------------------RESERVATIONS PAGE------------------------------
+.reservations {
+  div[class="title"] {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5rem 5rem 25rem;
+    background-color: #eff2f7;
+  }
+
+  div[class="title"] h1 {
+    font-size: 3.5rem;
+  }
+  div[class="title"] p {
+    font-size: 1.5rem;
+    width: 50rem;
+    text-align: center;
+  }
+
+  div[class="title"] img {
+    padding: 2rem;
+  }
+  section[class="currentWeather"] {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: -20rem;
+  }
+
+  div[class="buttonFunctions"] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -18rem;
+    margin-bottom: 5rem;
+  }
+
+  section[class="forecastWeather forecastWeather--displayNone"] {
+    display: none;
+  }
+
+  section[class="description"] {
+    text-align: center;
+    padding: 0 16rem;
+    font-size: 1.5rem;
+  }
+
+  button[class="reservations"] {
+    font-family: "Source Serif Pro", serif;
+    font-size: 1.8rem;
+    background-color: #4856a4;
+    color: white;
+    border: 2px solid #4856a4;
+    padding: 0.8rem;
+    border-radius: 0.5rem;
+    margin: 6rem 0 9rem;
+  }
+  button[class="reservations"]:hover {
+    border: 2px solid #4856a4;
+    background-color: transparent;
+    color: #4856a4;
+  }
+
+  button[class="forecastButton"] {
+    font-family: "Source Serif Pro", serif;
+    font-size: 0.8rem;
+    background-color: #eff2f7;
+    color: #4856a4;
+    border: 2px solid #eff2f7;
+    padding: 0.6rem;
+    border-radius: 0.4rem;
+  }
+  button[class="forecastButton"]:hover {
+    border: 2px solid #fafbfe;
+    background-color: #fafbfe;
+    color: #4856a4;
+  }
+}
+
+// --------------------------CURRENT WEATHER----------------------------
+.currentWeather {
+  div[class="currentWeatherCard"] {
+    width: 30rem;
+    border: 0.5rem solid #eff2f7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    padding: 1rem 0;
+  }
+  h2 {
+    margin-bottom: 0;
+    text-align: center;
+    font-size: 2rem;
+  }
+
+  p[class="date"] {
+    text-align: center;
+    margin-top: 0;
+  }
+
+  button[class="currentTemp"] {
+    font-size: 2rem;
+    margin-top: 1rem;
+    border: none;
+    font-family: "Source Serif Pro", serif;
+    background-color: transparent;
+  }
+
+  button[class="currentTemp"]:hover {
+    background-color: #eff2f7;
+  }
+
+  img[class="conditionIcon"] {
+    height: 8rem;
+  }
+}
+//--------------------FORECAST WEATHER--------------------------------
+.forecastWeather {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-bottom: 10rem;
+  flex-wrap: wrap;
+
+  div[class="forecastWeatherCard1"] img {
+    height: 5rem;
+    padding: 1rem;
+  }
+
+  div[class="forecastWeatherCard1"] {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  div[class="forecastWeatherCard2"] {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #eff2f7;
+    padding: 2rem 3.5rem;
+  }
+}

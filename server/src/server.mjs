@@ -4,6 +4,7 @@ import mime from "mime-types";
 import jwtCheck from "./jwtCheck.mjs";
 import taskRouter from "./taskRouter.mjs";
 import userRouter from "./userRouter.mjs";
+import weatherRouter from "./weatherRouter.mjs";
 import foodRouter from "./foodRouter.mjs";
 import infoRouter from "./infoRouter.mjs";
 
@@ -11,6 +12,7 @@ const app = express();
 
 app.use("/api/tasks", jwtCheck, taskRouter);
 app.use("/api/users", jwtCheck, userRouter);
+app.use("/api/weather", weatherRouter);
 app.use("/api/foodItems", foodRouter);
 app.use("/api/info", infoRouter);
 
