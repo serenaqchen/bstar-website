@@ -1,8 +1,5 @@
 import React from "react";
 
-import { Link, NavLink } from "react-router-dom";
-import { NavHashLink } from "react-router-hash-link";
-
 import * as apiClient from "../apiClient";
 import WhiteBorder from "../images/border-style-white.png";
 
@@ -11,41 +8,39 @@ import FilterSection from "./FilterSection";
 import styles from "./styles.module.scss";
 
 function Menu({ type }) {
-  const [info, setInfo] = React.useState([]);
-  const [fullMenu, setFullMenu] = React.useState({});
-  const courses = info[`${type.toLowerCase()}_courses`];
-
-  //store food items
-  const [foodItems, setFoodItems] = React.useState([]);
-  //store checked filter boxes
-
   const loadInfo = async () => {
     setInfo(await apiClient.getInfo());
   };
 
   const loadFoodItems = async () => {
-    setFoodItems(await apiClient.getFoodItems(type));
-    setFullMenu(await apiClient.getFoodItems(type));
+    const foodItems = await apiClient.getFoodItems(type);
+
+    setFoodItems(foodItems);
+    setFullMenu(foodItems);
   };
 
+  const [info, setInfo] = React.useState([]);
+  const [fullMenu, setFullMenu] = React.useState({});
+  const courses = info[`${type.toLowerCase()}_courses`];
+  //store food items
+  const [foodItems, setFoodItems] = React.useState([]);
+
   const filterMenu = (filters) => {
-    let filterFoodItems = [...foodItems];
-    if (filters.length === 0) {
-      setFoodItems(fullMenu);
-    } else {
-      for (let filter of filters) {
-        if (filter === "Peanut-Free" || filter === "Dairy-Free") {
-          filterFoodItems = filterFoodItems.filter(
-            (item) => !item.allergens.includes(filter.split("-")[0]),
-          );
-        } else {
-          filterFoodItems = filterFoodItems.filter((item) =>
-            item.allergens.includes(filter),
-          );
-        }
+    let filterFoodItems = [...fullMenu];
+
+    for (let filter of filters) {
+      if (filter === "Peanut-Free" || filter === "Dairy-Free") {
+        filterFoodItems = filterFoodItems.filter(
+          (item) =>
+            !item.allergens.includes("Contains " + filter.split("-")[0]),
+        );
+      } else {
+        filterFoodItems = filterFoodItems.filter((item) =>
+          item.allergens.includes(filter),
+        );
       }
-      return setFoodItems(filterFoodItems);
     }
+    return setFoodItems(filterFoodItems);
   };
 
   React.useEffect(() => {
