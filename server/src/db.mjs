@@ -1,4 +1,5 @@
 import dotenv from "dotenv";
+import { query } from "express";
 import pgp from "pg-promise";
 
 import { DOTENV_FILE } from "./constants.mjs";
@@ -32,15 +33,13 @@ export const addOrUpdateUser = (user) =>
 
 //getting items from either brunch or dinner menu
 export const getFoodItems = (type) => {
-  return db.any(
-    `SELECT ${type}.id , menu.title, ${type}.course, ${type}.price, ${type}.allergens, menu.description FROM ${type} LEFT JOIN menu ON ${type}.menu_id=menu.id`,
-  );
+  let query = `SELECT ${type}.id , menu.title, ${type}.course, ${type}.price, ${type}.allergens, menu.description FROM ${type} LEFT JOIN menu ON ${type}.menu_id=menu.id`;
+  return db.any(query);
 };
 
 export const getModifications = (type) => {
-  return db.any(
-    `SELECT ${type}.id , menu.title, ${type}_modifications.description, ${type}_modifications.price FROM ${type} LEFT JOIN menu ON ${type}.menu_id=menu.id RIGHT JOIN ${type}_modifications ON ${type}_modifications.${type}_id=${type}.id ORDER BY ${type}_modifications.price ASC;`,
-  );
+  let query = `SELECT ${type}.id , menu.title, ${type}_modifications.description, ${type}_modifications.price FROM ${type} LEFT JOIN menu ON ${type}.menu_id=menu.id RIGHT JOIN ${type}_modifications ON ${type}_modifications.${type}_id=${type}.id ORDER BY ${type}_modifications.price ASC;`;
+  return db.any(query);
 };
 
 function initDb() {
