@@ -83,14 +83,10 @@ const Auth = () => {
 
   return isAuthenticated ? (
     <div className={styles.login}>
-      <div class="dropdown">
-        <img
-          className="profilePic"
-          src={user.picture}
-          alt="User profile picture"
-        />
+      <div className="dropdown">
+        <img className="profilePic" src={user.picture} alt="Profile Picture" />
         <button className="profileButton">{user.given_name}</button>
-        <div class="dropdown-content">
+        <div className="dropdown-content">
           {/* <p>
             {user.given_name} {user.family_name}
           </p> */}

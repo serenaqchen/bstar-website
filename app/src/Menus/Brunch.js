@@ -1,10 +1,12 @@
 import React from "react";
 
+import Menu from "./Menu";
+
 function Brunch() {
   return (
-    <div>
-      <h1>Brunch Menu</h1>
-    </div>
+    <>
+      <Menu type="Brunch" />
+    </>
   );
 }
 
