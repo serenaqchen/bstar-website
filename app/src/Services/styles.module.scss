@@ -1,0 +1,39 @@
+.StaticPages {
+  margin-bottom: 15rem;
+  div[class="serviceTitle"] {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: -8rem;
+  }
+
+  section[class="pageInfo"] {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  p[class="pageInfo--text"] {
+    padding: 1rem 10rem;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 5rem 2rem;
+  }
+
+  button[class="pageInfo--button"] {
+    font-family: "Source Serif Pro", serif;
+    background-color: #4856a4;
+    color: white;
+    border: 2px solid transparent;
+    font-size: 1.2rem;
+    padding: 0.8rem;
+    border-radius: 0.5rem;
+    margin: 2rem;
+  }
+  button[class="pageInfo--button"]:hover {
+    background-color: #6778d5;
+    color: white;
+  }
+}

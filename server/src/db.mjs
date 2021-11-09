@@ -37,7 +37,7 @@ export const getFoodItems = (type) => {
     return db.any(
       `SELECT brunch.id , menu.title, brunch.course, brunch.price, brunch.allergens, menu.description FROM brunch LEFT JOIN menu ON brunch.menu_id=menu.id`,
     );
-  } else if (type === "Dinner") {
+  } else if (type === "dinner") {
     return db.any(
       `SELECT dinner.id , menu.title, dinner.course, dinner.price, dinner.allergens, menu.description FROM dinner LEFT JOIN menu ON dinner.menu_id=menu.id`,
       [type],
@@ -50,7 +50,7 @@ export const getModifications = (type) => {
     return db.any(
       `SELECT brunch.id , menu.title, brunch_modifications.description, brunch_modifications.price FROM brunch LEFT JOIN menu ON brunch.menu_id=menu.id RIGHT JOIN brunch_modifications ON brunch_modifications.brunch_id=brunch.id ORDER BY brunch_modifications.price ASC;`,
     );
-  } else if (type === "Dinner") {
+  } else if (type === "dinner") {
     return db.any(
       `SELECT dinner.id , menu.title, dinner_modifications.description, dinner_modifications.price FROM dinner LEFT JOIN menu ON dinner.menu_id=menu.id RIGHT JOIN dinner_modifications ON dinner_modifications.dinner_id=dinner.id ORDER BY dinner_modifications.price ASC;`,
       [type],

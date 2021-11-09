@@ -59,7 +59,7 @@ function Menu({ type }) {
 
   return (
     <div className={styles.menu}>
-      <BstarTitle title={`${type} Menu`} />
+      <BstarTitle title={`${type} Menu`} showTitle="true" />
 
       <FilterSection
         filterMenu={filterMenu}
