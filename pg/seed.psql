@@ -570,11 +570,6 @@ COPY public.dinner (id, menu_id, price, allergens, course) FROM stdin;
 30	31	18.75	none	Seafood
 31	32	0.00	none	Seafood
 32	33	0.00	Gluten-Free Option	Seafood
-33	34	17.00	Popular	Chichekn
-34	35	17.00	none	Chichekn
-35	36	17.75	Popular	Chichekn
-36	37	14.75	none	Chichekn
-37	38	17.00	none	Chichekn
 38	2	16.50	Popular, Vegetarian	Veg & Tofu
 39	40	16.50	Gluten-Free, Vegetarian	Veg & Tofu
 40	41	13.00	Vegetarian	Veg & Tofu
@@ -584,6 +579,11 @@ COPY public.dinner (id, menu_id, price, allergens, course) FROM stdin;
 44	45	17.00	Popularm Vegetarian	Veg & Tofu
 45	47	16.50	Vegetarian	Veg & Tofu
 46	67	13.75	Gluten-Free Option, Vegetarian	Veg & Tofu
+33	34	17.00	Popular	Chicken
+34	35	17.00	none	Chicken
+35	36	17.75	Popular	Chicken
+36	37	14.75	none	Chicken
+37	38	17.00	none	Chicken
 \.
 
 
