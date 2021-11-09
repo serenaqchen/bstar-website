@@ -538,6 +538,52 @@ COPY public.brunch_modifications (id, brunch_id, description, price) FROM stdin;
 --
 
 COPY public.dinner (id, menu_id, price, allergens, course) FROM stdin;
+1	2	9.50	Popular, Vegtarian	Appetizers
+2	1	9.75	Popular, Gluten-Free Option, Vegetarian	Appetizers
+3	3	9.75	Popular, Vegtarian	Appetizers
+4	4	9.50	Gluten-Free Vegtarian	Appetizers
+5	6	9.50	Vegetarian	Appetizers
+6	5	12.50	none	Appetizers
+7	7	12.00	none	Appetizers
+8	9	9.00	Vegetarian	Appetizers
+9	10	13.50	Popular, Gluten-Free, Vegetarian Option, Peanut-Free Option	Soup & Salad
+10	12	13.00	Gluten-Free Option	Soup & Salad
+11	11	13.75	Gluten-Free Option, Vegetarian Option	Soup & Salad
+12	13	9.25	Popular, Vegetarian	Soup & Salad
+13	14	8.00	Gluten-Free, Vegetarian	Soup & Salad
+14	15	15.75	Popular, Gluten-Free Option	B Star Specialties
+15	16	18.00	Popular, Gluten-Free	B Star Specialties
+16	17	17.00	Popular	B Star Specialties
+17	18	15.75	Popular, Gluten-Free Option, Vegetarian	B Star Specialties
+18	19	17.00	Popular, Gluten-Free	B Star Specialties
+19	20	15.75	Popular, Gluten-Free Option	B Star Specialties
+20	21	17.75	Popular	B Star Specialties
+21	22	15.00	Popular, Gluten-Free, Vegetarian	B Star Specialties
+22	23	0.00	Popular	B Star Specialties
+23	24	17.00	Popular	B Star Specialties
+24	25	15.75	Popular, Gluten-Free, Vegetarian	B Star Specialties
+25	26	15.50	none	Jook
+26	27	16.00	Gluten-Free Option	Jook
+27	28	14.50	Gluten-Free Option, Vegetarian	Jook
+28	29	15.00	Gluten-Free Option	Jook
+29	30	18.75	Popular, Gluten-Free	Seafood
+30	31	18.75	none	Seafood
+31	32	0.00	none	Seafood
+32	33	0.00	Gluten-Free Option	Seafood
+33	34	17.00	Popular	Chichekn
+34	35	17.00	none	Chichekn
+35	36	17.75	Popular	Chichekn
+36	37	14.75	none	Chichekn
+37	38	17.00	none	Chichekn
+38	2	16.50	Popular, Vegetarian	Veg & Tofu
+39	40	16.50	Gluten-Free, Vegetarian	Veg & Tofu
+40	41	13.00	Vegetarian	Veg & Tofu
+41	42	16.50	Popular, Vegetarian	Veg & Tofu
+42	43	16.50	Gluten-Free, Vegetarian	Veg & Tofu
+43	44	7.50	Vegetarian	Veg & Tofu
+44	45	17.00	Popularm Vegetarian	Veg & Tofu
+45	47	16.50	Vegetarian	Veg & Tofu
+46	67	13.75	Gluten-Free Option, Vegetarian	Veg & Tofu
 \.
 
 
@@ -546,6 +592,46 @@ COPY public.dinner (id, menu_id, price, allergens, course) FROM stdin;
 --
 
 COPY public.dinner_modifications (id, dinner_id, description, price) FROM stdin;
+1	5	Add an extra samusa	12.50
+2	9	Lg	19.25
+3	11	Lg	19.75
+4	10	Lg	18.50
+5	12	Med	14.00
+6	12	Lg	21.00
+7	13	Med	12.00
+8	13	Lg	18.00
+9	14	Lg	23.00
+10	15	Lg	27.00
+11	18	Lg	24.50
+12	17	Lg	23.00
+13	21	Lg	22.00
+14	21	Add 2 sunny up egg for	3.00
+15	20	Lg	26.00
+16	24	Lg	22.75
+17	22	Chicken	15.50
+18	22	Salmon	17.25
+19	23	Lg	25.00
+20	29	Lg	27.75
+21	30	Lg	27.75
+22	31	Pan Roasted Salmon	17.00
+23	31	Seared Rare Tuna	17.75
+24	32	Pan Roasted Salmon	17.00
+25	32	Seared Rare Tuna	17.75
+26	33	Lg	25.00
+27	34	Lg	25.00
+28	35	Lg	25.25
+29	36	Lg	22.00
+30	37	Lg	25.00
+31	38	Lg	24.00
+32	39	Lg	24.00
+33	40	Lg	18.00
+34	40	Add fried tofu for	2.00
+35	41	Lg	24.00
+36	42	Lg	24.00
+37	43	Small Side	7.50
+38	43	Medium Shareable	11.50
+39	44	Lg	25.00
+40	45	Lg	24.00
 \.
 
 
@@ -659,6 +745,7 @@ COPY public.menu (id, title, description) FROM stdin;
 64	Chicken Croquette	Panko crusted lemon zest mash potato croquette topped with over-easy egg, spicy aioli, scallions.
 65	Sesame Glazed	Lightly fried and tossed in a caramelized sweet sesame sauce, served with rice and broccoli.
 66	Mango & Basil	Fresh mango and basil, red onion, scallion and chili.  Served with choice of rice.
+67	Mushroom Donburi	Ginger rice, scallions, furikake, pickled ginger, hijiki, daikon sprouts, avocado, sunny-side up egg.
 \.
 
 
@@ -720,14 +807,14 @@ SELECT pg_catalog.setval('public.brunch_modifications_id_seq', 32, true);
 -- Name: dinner_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public.dinner_id_seq', 1, false);
+SELECT pg_catalog.setval('public.dinner_id_seq', 46, true);
 
 
 --
 -- Name: dinner_modifications_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public.dinner_modifications_id_seq', 1, false);
+SELECT pg_catalog.setval('public.dinner_modifications_id_seq', 40, true);
 
 
 --
@@ -755,7 +842,7 @@ SELECT pg_catalog.setval('public.food_id_seq', 24, true);
 -- Name: menu_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public.menu_id_seq', 66, true);
+SELECT pg_catalog.setval('public.menu_id_seq', 67, true);
 
 
 --
