@@ -13,7 +13,7 @@ export const moreInfo = {
   dinner_courses: [
     "Appetizers",
     "Soup & Salad",
-    "BStar Specialties",
+    "B Star Specialties",
     "Jook",
     "Seafood",
     "Chicken",
