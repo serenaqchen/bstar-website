@@ -4,7 +4,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 5rem 5rem 25rem;
+    padding: 5rem 5rem 015rem;
     background-color: #eff2f7;
   }
 
@@ -24,14 +24,14 @@
     display: flex;
     justify-content: center;
     position: relative;
-    top: -20rem;
+    top: -14rem;
   }
 
   div[class="buttonFunctions"] {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: -18rem;
+    margin-top: -13rem;
     margin-bottom: 5rem;
   }
 
@@ -39,10 +39,35 @@
     display: none;
   }
 
+  section[class="forecastWeather false"] {
+    margin-top: -3rem;
+  }
+
   section[class="description"] {
     text-align: center;
-    padding: 0 16rem;
     font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10rem;
+    // background-color: #eff2f7;
+  }
+  div[class="description--elem"] {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  p[class="description__margin"] {
+    width: 60rem;
+    margin: 5rem 1rem 1rem;
+  }
+
+  iframe {
+    border: 0.3rem solid #d5dce8;
+    border-radius: 2rem;
   }
 
   button[class="reservations"] {
@@ -115,6 +140,7 @@
     height: 8rem;
   }
 }
+
 //--------------------FORECAST WEATHER--------------------------------
 .forecastWeather {
   display: flex;

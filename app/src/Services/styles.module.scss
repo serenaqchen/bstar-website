@@ -22,7 +22,8 @@
     margin: 5rem 2rem;
   }
 
-  button[class="pageInfo--button"] {
+  a[class="pageInfo--button"] {
+    text-decoration: none;
     font-family: "Source Serif Pro", serif;
     background-color: #4856a4;
     color: white;
@@ -32,8 +33,18 @@
     border-radius: 0.5rem;
     margin: 2rem;
   }
-  button[class="pageInfo--button"]:hover {
-    background-color: #6778d5;
+  a[class="pageInfo--button"]:hover {
+    background-color: #5f6dbd;
     color: white;
+  }
+
+  img[class="titleImage"] {
+    height: auto;
+    width: 100%;
+  }
+
+  img[class="blueBorder"] {
+    height: auto;
+    width: 100%;
   }
 }

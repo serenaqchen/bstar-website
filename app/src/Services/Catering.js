@@ -22,13 +22,21 @@ function Catering() {
         </p>
         <img src={Border} alt="Border"></img>
         <p className="pageInfo--text">Know what you’d like?</p>
-        <button className="pageInfo--button">
-          P L A C E&nbsp;&nbsp;&nbsp; O R D E R&nbsp;&nbsp;&nbsp; N O W
-        </button>
+        <a
+          className="pageInfo--button"
+          href="https://www.ezcater.com/catering/pvt/b-star-san-francisco?fcv=1"
+          target="_blank"
+        >
+          PLACE&nbsp;&nbsp;ORDER&nbsp;&nbsp; NOW
+        </a>
         <p className="pageInfo--text"> Need help ordering?</p>
-        <button className="pageInfo--button">
-          R E Q U E S T &nbsp;&nbsp;&nbsp;M O R E &nbsp;&nbsp;&nbsp;I N F O
-        </button>
+        <a
+          className="pageInfo--button"
+          href="https://partners.gatherhere.com/lead-form/t2dwj26p"
+          target="_blank"
+        >
+          REQUEST&nbsp;&nbsp;MORE&nbsp;&nbsp;INFO
+        </a>
         <p className="pageInfo--text">
           You can also reach our Catering Department at (415) 592-8907 or by
           email at eventsatbstar@gmail.com.
