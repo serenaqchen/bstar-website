@@ -6,13 +6,13 @@ const router = express.Router();
 
 router.get("/:type", async (request, response) => {
   const type = request.params.type;
-  const foodItems = await db.getFoodItems(type);
+  const foodItems = await db.getFoodItems(type.toLowerCase);
   response.json(foodItems);
 });
 
 router.get("/modifications/:type", async (request, response) => {
   const type = request.params.type;
-  const foodItems = await db.getModifications(type);
+  const foodItems = await db.getModifications(type.toLowerCase());
   response.json(foodItems);
 });
 

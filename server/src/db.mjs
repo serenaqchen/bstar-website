@@ -33,13 +33,29 @@ export const addOrUpdateUser = (user) =>
 
 //getting items from either brunch or dinner menu
 export const getFoodItems = (type) => {
-  let query = `SELECT ${type}.id , menu.title, ${type}.course, ${type}.price, ${type}.allergens, menu.description FROM ${type} LEFT JOIN menu ON ${type}.menu_id=menu.id`;
-  return db.any(query);
+  if (type === "brunch") {
+    return db.any(
+      `SELECT brunch.id , menu.title, brunch.course, brunch.price, brunch.allergens, menu.description FROM brunch LEFT JOIN menu ON brunch.menu_id=menu.id`,
+    );
+  } else if (type === "Dinner") {
+    return db.any(
+      `SELECT dinner.id , menu.title, dinner.course, dinner.price, dinner.allergens, menu.description FROM dinner LEFT JOIN menu ON dinner.menu_id=menu.id`,
+      [type],
+    );
+  }
 };
 
 export const getModifications = (type) => {
-  let query = `SELECT ${type}.id , menu.title, ${type}_modifications.description, ${type}_modifications.price FROM ${type} LEFT JOIN menu ON ${type}.menu_id=menu.id RIGHT JOIN ${type}_modifications ON ${type}_modifications.${type}_id=${type}.id ORDER BY ${type}_modifications.price ASC;`;
-  return db.any(query);
+  if (type === "brunch") {
+    return db.any(
+      `SELECT brunch.id , menu.title, brunch_modifications.description, brunch_modifications.price FROM brunch LEFT JOIN menu ON brunch.menu_id=menu.id RIGHT JOIN brunch_modifications ON brunch_modifications.brunch_id=brunch.id ORDER BY brunch_modifications.price ASC;`,
+    );
+  } else if (type === "Dinner") {
+    return db.any(
+      `SELECT dinner.id , menu.title, dinner_modifications.description, dinner_modifications.price FROM dinner LEFT JOIN menu ON dinner.menu_id=menu.id RIGHT JOIN dinner_modifications ON dinner_modifications.dinner_id=dinner.id ORDER BY dinner_modifications.price ASC;`,
+      [type],
+    );
+  }
 };
 
 function initDb() {
