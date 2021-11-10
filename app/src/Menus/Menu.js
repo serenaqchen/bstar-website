@@ -65,14 +65,17 @@ function Menu({ type }) {
         setFoodItems={setFoodItems}
         fullMenu={fullMenu}
       />
-      <div className="courses-nav">
-        {courses &&
-          courses.map((course, index) => (
-            <a className="courses" href={`#${course}-section`} key={index}>
-              {course.toUpperCase()}
-            </a>
-          ))}
+      <div className="coursesNav">
+        <div className="coursesNav--scroll">
+          {courses &&
+            courses.map((course, index) => (
+              <a className="courses" href={`#${course}-section`} key={index}>
+                {course.toUpperCase()}
+              </a>
+            ))}
+        </div>
       </div>
+
       {/* wait to receive courses from api and then map */}
       {/* want to separate each food item by course */}
       <div className="courses">
