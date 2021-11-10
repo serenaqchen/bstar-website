@@ -1,4 +1,5 @@
 .homepage {
+  overflow: hidden;
   img[alt="Tea Leaf Salad"] {
     width: 100%;
     height: 350px;
@@ -15,12 +16,12 @@
 
   img[class="intro--img intro--img__topMargin"] {
     width: 760px;
-    padding: 120px 0 60px 0;
+    padding: 150px 0 60px 0;
   }
 
   img[class="intro--img intro--img__bottomMargin"] {
     width: 760px;
-    padding: 60px 0 120px 0;
+    padding: 60px 0 150px 0;
   }
 
   p[class="about"] {
@@ -28,32 +29,35 @@
     font-size: 25px;
     text-align: center;
     font-weight: 700;
+    margin: 30px 200px;
   }
 
   section[class="info"] {
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 14vw;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 300px;
   }
 
   img[alt="Bstar food"] {
-    width: 70vw;
-    height: 55vw;
+    width: 1500px;
+    height: 550px;
     object-fit: cover;
+    margin-right: 20px;
     position: relative;
-    left: -10px;
+    left: -35px;
   }
 
   h2 {
-    font-size: 2vw;
+    font-size: 20px;
     text-align: center;
-    border-top: 0.2vw solid #243065;
-    border-bottom: 0.2vw solid #243065;
-    width: 20vw;
+    border-top: 2px solid #243065;
+    border-bottom: 2px solid #243065;
+    width: 200px;
   }
 
   p {
-    font-size: 1.25vw;
+    font-size: 14px;
     text-align: center;
   }
 
@@ -61,10 +65,313 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-right: 5vw;
+    margin-right: 120px;
   }
 
   address {
-    font-style: normal !important;
+    font-style: normal;
+    font-size: 14px;
+    text-align: center;
+  }
+
+  //-------------------------PHONE (S) ------------------------------
+  @media screen and (min-width: 320px) {
+    img[alt="Tea Leaf Salad"] {
+      position: relative;
+      width: 100%;
+      height: 150px;
+    }
+    img[class="intro--img intro--img__topMargin"] {
+      width: 230px;
+      padding: 80px 0 40px 0;
+    }
+
+    img[class="intro--img intro--img__bottomMargin"] {
+      width: 230px;
+      padding: 40px 0 80px 0;
+    }
+
+    p[class="about"] {
+      font-size: 12px;
+      margin: 0px 50px;
+    }
+
+    section[class="info"] {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      margin-bottom: 100px;
+    }
+
+    img[alt="Bstar food"] {
+      width: 425px;
+      height: 150px;
+      margin-right: 0px;
+      position: relative;
+      left: 0px;
+    }
+    div[class="storeInfo"] {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 50px 0 0;
+    }
+
+    h2 {
+      font-size: 15px;
+      width: 150px;
+    }
+
+    p {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    address {
+      font-size: 11px;
+    }
+  }
+
+  //-------------------------PHONE (L) ------------------------------
+  @media screen and (min-width: 425px) {
+    img[alt="Tea Leaf Salad"] {
+      width: 100%;
+      position: relative;
+      height: 220px;
+    }
+    img[class="intro--img intro--img__topMargin"] {
+      width: 390px;
+      padding: 80px 0 40px 0;
+    }
+
+    img[class="intro--img intro--img__bottomMargin"] {
+      width: 380px;
+      padding: 40px 0 80px 0;
+    }
+
+    p[class="about"] {
+      font-size: 18px;
+      margin: 0px 100px;
+    }
+
+    img[alt="Bstar food"] {
+      width: 768px;
+      height: 250px;
+      object-fit: cover;
+      position: relative;
+      margin-right: 0px;
+      left: 0px;
+    }
+    div[class="storeInfo"] {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 50px 0 0;
+    }
+
+    h2 {
+      font-size: 18px;
+      width: 250px;
+    }
+
+    p {
+      font-size: 15px;
+      text-align: center;
+    }
+
+    address {
+      font-size: 15px;
+    }
+  }
+
+  //-------------------------TABLET------------------------------
+  @media screen and (min-width: 768px) {
+    img[alt="Tea Leaf Salad"] {
+      width: 100%;
+      height: 320px;
+    }
+    img[class="intro--img intro--img__topMargin"] {
+      width: 490px;
+      padding: 150px 0 60px 0;
+    }
+
+    img[class="intro--img intro--img__bottomMargin"] {
+      width: 480px;
+      padding: 60px 0 150px 0;
+    }
+
+    p[class="about"] {
+      font-size: 18px;
+      margin: 0px 200px;
+    }
+    section[class="info"] {
+      flex-direction: row;
+      margin-bottom: 200px;
+    }
+
+    img[alt="Bstar food"] {
+      width: 700px;
+      height: 550px;
+      object-fit: cover;
+      margin-right: 80px;
+      position: relative;
+      left: -30px;
+    }
+
+    div[class="storeInfo"] {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0px 250px 0 0;
+    }
+
+    h2 {
+      font-size: 15px;
+      width: 150px;
+    }
+
+    p {
+      font-size: 12px;
+      text-align: center;
+    }
+
+    address {
+      font-size: 12px;
+    }
+  }
+  //-------------------------LAPTOP------------------------------
+  @media screen and (min-width: 1024px) {
+    img[alt="Tea Leaf Salad"] {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+      position: relative;
+      object-position: 0 30%;
+    }
+
+    section[class="intro"] {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    img[class="intro--img intro--img__topMargin"] {
+      width: 760px;
+      padding: 150px 0 60px 0;
+    }
+
+    img[class="intro--img intro--img__bottomMargin"] {
+      width: 760px;
+      padding: 60px 0 150px 0;
+    }
+
+    p[class="about"] {
+      margin: 0 25%;
+      font-size: 25px;
+      text-align: center;
+      font-weight: 700;
+      margin: 30px 200px;
+    }
+
+    section[class="info"] {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      margin-bottom: 300px;
+    }
+
+    img[alt="Bstar food"] {
+      width: 1500px;
+      height: 550px;
+      object-fit: cover;
+      margin-right: 20px;
+      position: relative;
+      left: -35px;
+    }
+
+    h2 {
+      font-size: 20px;
+      text-align: center;
+      border-top: 2px solid #243065;
+      border-bottom: 2px solid #243065;
+      width: 200px;
+    }
+
+    p {
+      font-size: 14px;
+      text-align: center;
+    }
+
+    div[class="storeInfo"] {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-right: 120px;
+    }
+
+    address {
+      font-style: normal;
+      font-size: 14px;
+      text-align: center;
+    }
+  }
+  //-------------------------LARGE LAPTOP------------------------------
+  @media screen and (min-width: 1440px) {
+    img[alt="Tea Leaf Salad"] {
+      width: 100%;
+      height: 550px;
+    }
+
+    img[class="intro--img intro--img__topMargin"] {
+      width: 760px;
+      padding: 180px 0 80px 0;
+    }
+
+    img[class="intro--img intro--img__bottomMargin"] {
+      width: 760px;
+      padding: 80px 0 180px 0;
+    }
+
+    p[class="about"] {
+      font-size: 30px;
+      margin: 0 300px;
+    }
+
+    img[alt="Bstar food"] {
+      width: 1500px;
+      height: 750px;
+      object-fit: cover;
+      margin-right: 20px;
+      position: relative;
+      left: -35px;
+    }
+
+    h2 {
+      font-size: 25px;
+      text-align: center;
+      border-top: 2px solid #243065;
+      border-bottom: 2px solid #243065;
+      width: 200px;
+    }
+
+    p {
+      font-size: 19px;
+      text-align: center;
+    }
+
+    div[class="storeInfo"] {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-left: 50px;
+      margin-right: 120px;
+    }
+
+    address {
+      font-style: normal;
+      font-size: 14px;
+      text-align: center;
+    }
   }
 }
