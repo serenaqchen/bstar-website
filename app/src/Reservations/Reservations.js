@@ -33,8 +33,6 @@ function Reservations() {
     loadForecastWeather();
   }, [units]);
 
-  console.log(process.env.MAPS_API_KEY);
-
   return (
     <div className={styles.reservations}>
       <div className="title">
@@ -83,7 +81,7 @@ function Reservations() {
           height="450"
           loading="lazy"
           allowFullScreen
-          src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyB8-o6DF9Bp9qm3Na5IAttS0hWM5_t-Odg&q=place_id:ChIJe477gDmHhYARrtTtY3v18ZQ`}
+          src={`https://www.google.com/maps/embed/v1/place?key=${process.env.REACT_APP_MAPS_API_KEY}&q=place_id:ChIJe477gDmHhYARrtTtY3v18ZQ`}
         ></iframe>
       </section>
     </div>

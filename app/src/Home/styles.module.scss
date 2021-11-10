@@ -1,7 +1,7 @@
 .homepage {
   img[alt="Tea Leaf Salad"] {
-    width: 100vw;
-    height: 35vw;
+    width: 100%;
+    height: 350px;
     object-fit: cover;
     position: relative;
     object-position: 0 30%;
@@ -13,19 +13,19 @@
     align-items: center;
   }
 
-  img[alt="1st Blue Border"] {
-    width: 60vw;
+  img[class="intro--img intro--img__topMargin"] {
+    width: 760px;
     padding: 120px 0 60px 0;
   }
 
-  img[alt="2nd Blue Border"] {
-    width: 60vw;
+  img[class="intro--img intro--img__bottomMargin"] {
+    width: 760px;
     padding: 60px 0 120px 0;
   }
 
   p[class="about"] {
     margin: 0 25%;
-    font-size: 2vw;
+    font-size: 25px;
     text-align: center;
     font-weight: 700;
   }
