@@ -2,7 +2,6 @@ import React from "react";
 
 import BstarTitle from "../Components/BstarTitle";
 import * as apiClient from "../apiClient";
-import WhiteBorder from "../images/border-style-white.png";
 
 import CourseType from "./CourseType";
 import FilterSection from "./FilterSection";

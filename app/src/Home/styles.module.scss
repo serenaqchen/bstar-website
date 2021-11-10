@@ -75,7 +75,8 @@
   }
 
   //-------------------------PHONE (S) ------------------------------
-  @media screen and (min-width: 320px) {
+  @media screen and (max-width: 320px) and (min-width: 10px),
+    (min-width: 320px) {
     img[alt="Tea Leaf Salad"] {
       position: relative;
       width: 100%;
