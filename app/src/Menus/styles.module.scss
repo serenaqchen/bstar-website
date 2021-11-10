@@ -1,6 +1,6 @@
-// --------------------------Menu Styling----------------------
+// ==============================Menu Styling==============================
 .menu {
-  //-------------------------PHONE (S) ------------------------------
+  //-------------------------Menu Styling PHONE (S) ------------------------------
   @media screen and (max-width: 320px) and (min-width: 10px),
     (min-width: 320px) {
     div[class="coursesNav"] {
@@ -47,17 +47,15 @@
     }
   }
 
-  //-------------------------TABLET-----------------------------------
+  //-------------------------Menu Styling TABLET-----------------------------------
   @media screen and (min-width: 768px) {
-    background-color: lightblue;
     div[class="coursesNav--scroll"] {
       justify-content: space-between;
       height: 55px;
     }
   }
-  //-------------------------LAPTOP-----------------------------------
+  //-------------------------Menu Styling LAPTOP-----------------------------------
   @media screen and (min-width: 1024px) {
-    background-color: white;
     div[class="coursesNav--scroll"] {
       justify-content: center;
       height: 62px;
@@ -66,14 +64,10 @@
       font-size: 18px;
     }
   }
-  //-------------------------LARGE LAPTOP------------------------------
-  @media screen and (min-width: 1440px) {
-    background-color: lightseagreen;
-  }
 }
-// --------------------------Filter Section----------------------
+// ==============================Filter Section==============================
 .filterSection {
-  //-------------------------PHONE (S) ------------------------------
+  //-------------------------Filter Section PHONE (S) ------------------------------
   @media screen and (max-width: 320px) and (min-width: 10px),
     (min-width: 320px) {
     margin-bottom: 2rem;
@@ -122,9 +116,8 @@
         brightness(115%) contrast(113%);
     }
   }
-  //-------------------------LAPTOP-----------------------------------
+  //------------------------- Filter Section LAPTOP-----------------------------------
   @media screen and (min-width: 1024px) {
-    background-color: white;
     margin-bottom: 2rem;
     overflow-x: scroll;
 
@@ -164,15 +157,11 @@
         brightness(115%) contrast(113%);
     }
   }
-  //-------------------------LARGE LAPTOP------------------------------
-  @media screen and (min-width: 1440px) {
-    background-color: lightseagreen;
-  }
 }
 
-// // ------------------Course Styling-------------------------
+// ==============================Course Styling=============================
 .courseType {
-  //-------------------------PHONE (S) ------------------------------
+  //-------------------------Course Styling PHONE (S) ------------------------------
   @media screen and (max-width: 320px) and (min-width: 10px),
     (min-width: 320px) {
     h2 {
@@ -186,9 +175,8 @@
       justify-content: space-evenly;
     }
   }
-  //-------------------------TABLET-----------------------------------
+  //-------------------------Course Styling TABLET-----------------------------------
   @media screen and (min-width: 768px) {
-    background-color: lightblue;
     padding: 0 80px;
     h2 {
       padding-top: 5rem;
@@ -205,21 +193,19 @@
       justify-content: space-between;
     }
   }
-  //-------------------------LAPTOP-----------------------------------
+  //-------------------------Course Styling LAPTOP-----------------------------------
   @media screen and (min-width: 1024px) {
-    background-color: white;
     padding: 0 160px;
   }
-  //-------------------------LARGE LAPTOP------------------------------
+  //-------------------------Course Styling LARGE LAPTOP------------------------------
   @media screen and (min-width: 1440px) {
-    background-color: lightseagreen;
     padding: 0 200px;
   }
 }
 
-// // ---------------------Item Card Styling------------------------
+// // ===============================Item Card Styling===============================
 .itemCard {
-  //-------------------------PHONE (S) ------------------------------
+  //-------------------------Item Card Styling PHONE (S) ------------------------------
   @media screen and (max-width: 320px) and (min-width: 10px),
     (min-width: 320px) {
     width: 200px;
@@ -266,9 +252,8 @@
       flex-direction: row;
     }
   }
-  //-------------------------PHONE (L) ------------------------------
+  //-------------------------Item Card Styling PHONE (L) ------------------------------
   @media screen and (min-width: 425px) {
-    background-color: lightsalmon;
     width: 280px;
 
     h3[class="itemCardTitle__title"] {
@@ -301,9 +286,8 @@
       margin-top: 5px;
     }
   }
-  //-------------------------TABLET-----------------------------------
+  //-------------------------Item Card Styling TABLET-----------------------------------
   @media screen and (min-width: 768px) {
-    background-color: lightblue;
     width: 255px;
     margin: 0 20px;
 
@@ -337,9 +321,8 @@
       margin-top: 4px;
     }
   }
-  //-------------------------LAPTOP-----------------------------------
+  //-------------------------Item Card Styling LAPTOP-----------------------------------
   @media screen and (min-width: 1024px) {
-    background-color: white;
     width: 290px;
     h3[class="itemCardTitle__title"] {
       font-size: 15px;
@@ -371,8 +354,4 @@
       margin-top: 4px;
     }
   }
-  //-------------------------LARGE LAPTOP------------------------------
-  // @media screen and (min-width: 1440px) {
-  //   background-color: lightseagreen;
-  // }
 }
