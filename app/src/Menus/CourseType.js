@@ -11,7 +11,7 @@ function CourseType({ course, foodItems, modifications }) {
   return (
     <div className={styles.courseType}>
       <div id={`${course}-section`}>
-        {<h2>{course}</h2>}
+        {courseFoodItems.length !== 0 && <h2>{course}</h2>}
         <div className="food-section">
           {courseFoodItems.map((foodItem) => {
             return (
