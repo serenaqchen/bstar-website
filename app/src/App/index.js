@@ -3,7 +3,7 @@ import * as React from "react";
 import { Routes, Route } from "react-router-dom";
 
 import Footer from "../Footer/Footer";
-import GiftCards from "../GiftCards/GiftCards";
+import MobileFooter from "../Footer/MobileFooter";
 import Home from "../Home/Home";
 import Brunch from "../Menus/Brunch";
 import Dinner from "../Menus/Dinner";
@@ -44,11 +44,11 @@ const App = () => {
             path="/reusable-containers"
             element={<ReuseableContainers />}
           />
-          <Route path="/gift-cards" element={<GiftCards />} />
         </Routes>
       </main>
       <footer>
         <Footer />
+        <MobileFooter />
       </footer>
     </>
   );
