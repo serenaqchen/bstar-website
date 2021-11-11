@@ -1,14 +1,14 @@
-# BStar Website
+# B Star Website
 
 ![bstar-white-logo-blue](https://user-images.githubusercontent.com/77710705/137644643-904b10e3-4bb7-45de-ae57-a38676e94d73.png)
 
 ## Overview
 
-Bstar Website is a :sparkles:revamped:sparkles: version of the [old Bstar Website](https://www.bstarbar.com/) with improved UI and a new weather forecast feature. By improving the UI and adding new features, this will allow for easy to read menus and a smoother outdoor dining experience. This project will be using OpenWeather API to access weather forecasts and menu items will be stored in a database.
+B Star Website is a :sparkles:revamped:sparkles: version of the [old B Star Website](https://www.bstarbar.com/) with improved UI and a new weather forecast feature. By improving the UI and adding new features, this will allow for easy to read menus and a smoother outdoor dining experience. This project will be using OpenWeather API to access weather forecasts and menu items will be stored in a database.
 
 This application is currently live on [Heroku](https://bstar-website-revamped.herokuapp.com/).
 
-## Techstack (PERN)
+## Tech Stack (PERN)
 
 ### Languages
 
