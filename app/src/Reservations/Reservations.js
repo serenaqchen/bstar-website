@@ -81,8 +81,9 @@ function Reservations() {
         <iframe
           loading="lazy"
           allowFullScreen
-          src={`https://www.google.com/maps/embed/v1/place?key=${process.env.REACT_APP_MAPS_API_KEY}&q=place_id:ChIJe477gDmHhYARrtTtY3v18ZQ`}
+          src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyCzsUpEcfFH8p7ihH7w5msfuM9YJfkCZYU&q=place_id:ChIJe477gDmHhYARrtTtY3v18ZQ`}
         ></iframe>
+        <div></div>
       </section>
     </div>
   );
