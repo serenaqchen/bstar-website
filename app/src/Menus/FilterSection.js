@@ -91,7 +91,11 @@ function FilterSection({ filterMenu }) {
           value="Popular"
           onClick={handleCheckedItem}
         >
-          {state["Popular"] ? <img src={Check}></img> : <span> + </span>}{" "}
+          {state["Popular"] ? (
+            <img alt="Check Icon" src={Check}></img>
+          ) : (
+            <span> + </span>
+          )}{" "}
           Popular
         </button>
         <button
@@ -105,7 +109,11 @@ function FilterSection({ filterMenu }) {
           onClick={handleCheckedItem}
         >
           {" "}
-          {state["Vegetarian"] ? <img src={Check}></img> : <span>+</span>}{" "}
+          {state["Vegetarian"] ? (
+            <img alt="Check Icon" src={Check}></img>
+          ) : (
+            <span>+</span>
+          )}{" "}
           Vegeterian
         </button>
 
@@ -120,7 +128,11 @@ function FilterSection({ filterMenu }) {
           onClick={handleCheckedItem}
         >
           {" "}
-          {state["Gluten-Free"] ? <img src={Check}></img> : <span>+</span>}{" "}
+          {state["Gluten-Free"] ? (
+            <img alt="Check Icon" src={Check}></img>
+          ) : (
+            <span>+</span>
+          )}{" "}
           Gluten-Free
         </button>
 
@@ -134,7 +146,11 @@ function FilterSection({ filterMenu }) {
           value="Peanut-Free"
           onClick={handleCheckedItem}
         >
-          {state["Peanut-Free"] ? <img src={Check}></img> : <span>+</span>}{" "}
+          {state["Peanut-Free"] ? (
+            <img alt="Check Icon" src={Check}></img>
+          ) : (
+            <span>+</span>
+          )}{" "}
           Peanut-Free
         </button>
 
@@ -148,7 +164,11 @@ function FilterSection({ filterMenu }) {
           value="Dairy-Free"
           onClick={handleCheckedItem}
         >
-          {state["Dairy-Free"] ? <img src={Check}></img> : <span>+</span>}{" "}
+          {state["Dairy-Free"] ? (
+            <img alt="Check Icon" src={Check}></img>
+          ) : (
+            <span>+</span>
+          )}{" "}
           Dairy-Free
         </button>
 

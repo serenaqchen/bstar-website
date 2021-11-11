@@ -9,7 +9,7 @@ function ItemCard({ foodItem, modifications }) {
       <div className="itemCardTitle">
         <h3 className="itemCardTitle__title">{foodItem.title}</h3>
         <p className="itemCardTitle__price">
-          {foodItem.price != 0.0 && `$${foodItem.price}`}
+          {foodItem.price !== 0.0 && `$${foodItem.price}`}
         </p>
       </div>
       <div className="modifications">

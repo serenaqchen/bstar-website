@@ -23,7 +23,11 @@ function ReusableContainers() {
           Order online, in person or over the phone. Just ask for your order to
           be packed in Dispatch Goods Reusable Containers.
         </p>
-        <img className="container__image" src={reuseableContainers}></img>
+        <img
+          alt="reuseable containers"
+          className="container__image"
+          src={reuseableContainers}
+        ></img>
       </section>
     </div>
   );

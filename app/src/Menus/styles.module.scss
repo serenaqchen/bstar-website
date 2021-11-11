@@ -72,6 +72,7 @@
     (min-width: 320px) {
     margin-bottom: 2rem;
     overflow-x: scroll;
+    padding-left: 20px;
 
     h3 {
       padding: 10px 25px 5px;
@@ -87,8 +88,8 @@
 
     div[class="options"] button {
       background-color: transparent;
-      border: 0.15rem solid #243065;
-      color: #243065;
+      border: 0.15rem solid rgb(148, 148, 148);
+      color: rgb(148, 148, 148);
       border-radius: 5px;
       margin: 5px 0 5px 25px;
       border-radius: 60rem;
@@ -120,6 +121,7 @@
   @media screen and (min-width: 1024px) {
     margin-bottom: 2rem;
     overflow-x: scroll;
+    padding-left: 45px;
 
     h3 {
       padding: 20px 25px 5px;
@@ -127,9 +129,6 @@
     }
 
     div[class="options"] button {
-      background-color: transparent;
-      border: 2px solid #243065;
-      color: #243065;
       border-radius: 5px;
       margin: 5px 0 5px 25px;
       border-radius: 25px;

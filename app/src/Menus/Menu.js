@@ -48,8 +48,6 @@ function Menu({ type }) {
     return setFoodItems(filterFoodItems);
   };
 
-  console.log(modifications);
-
   React.useEffect(() => {
     loadInfo();
     loadFoodItems();

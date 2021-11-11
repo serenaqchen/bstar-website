@@ -11,7 +11,11 @@ function GroupDinning() {
     <div className={styles.StaticPages}>
       <BstarTitle title="Group Dinning" showTitle="false" />
       <div className="serviceTitle">
-        <img className="serviceTitle__Text" src={catering}></img>
+        <img
+          alt="Catering Title"
+          className="serviceTitle__Text"
+          src={catering}
+        ></img>
       </div>
       <section className="pageInfo">
         <p className="pageInfo--text">

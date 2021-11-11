@@ -32,6 +32,7 @@ function Catering() {
               className="pageInfo--button"
               href="https://www.ezcater.com/catering/pvt/b-star-san-francisco?fcv=1"
               target="_blank"
+              rel="noreferrer"
             >
               PLACE&nbsp;&nbsp;ORDER&nbsp;&nbsp; NOW
             </a>
@@ -42,6 +43,7 @@ function Catering() {
               className="pageInfo--button"
               href="https://partners.gatherhere.com/lead-form/t2dwj26p"
               target="_blank"
+              rel="noreferrer"
             >
               REQUEST&nbsp;&nbsp;MORE&nbsp;&nbsp;INFO
             </a>

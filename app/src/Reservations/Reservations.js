@@ -15,7 +15,6 @@ function Reservations() {
 
   const handleForecastButton = (e) => {
     fiveDayForecast ? setFiveDayForecast(false) : setFiveDayForecast(true);
-    console.log("fxn", fiveDayForecast);
   };
 
   const handleTempConversion = (e) => {
