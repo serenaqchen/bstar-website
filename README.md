@@ -102,7 +102,11 @@ Chekout my wireframe for this project on [Figma](https://www.figma.com/proto/6IL
 
 <img width="1035" alt="Screen Shot 2021-10-17 at 2 39 14 PM" src="https://user-images.githubusercontent.com/77710705/141376198-572e13de-e68c-4cb5-86ec-ce6eca7ddd2b.png">
 
-## Difficulties/Unresolved Problem
+## Difficulties/Unresolved Problems
+
+- Creating a relational database that allows for quick and easy queries to get what I want (I originally started out with two tables, and mornalizing it to 5)
+- Coding the UI for the filter function was difficult for me. I started out making it over complicated and changed the set up of my database. I had to take a step back and rethink my approach and logic.
+- Currently, my google maps API is exposed in the frontend. I've restricted it to only give access to my heroku app, so I think is should be fine.
 
 ## Future Development
 
