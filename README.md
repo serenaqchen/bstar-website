@@ -6,9 +6,13 @@
 
 B Star Website is a :sparkles:revamped:sparkles: version of the [old B Star Website](https://www.bstarbar.com/) with improved UI and a new weather forecast feature. By improving the UI and adding new features, this will allow for easy to read menus and a smoother outdoor dining experience. This project will be using OpenWeather API to access weather forecasts and menu items will be stored in a database.
 
-This application is currently live on [Heroku](https://bstar-website-revamped.herokuapp.com/).
 
-![Homepage](https://user-images.githubusercontent.com/77710705/141378531-780527d0-8998-4cb9-8aca-1814a144bf39.gif)
+## Desktop/Mobile Demo
+
+This application is currently live on [Heroku](https://bstar-website-revamped.herokuapp.com/).
+    
+![Homepage](https://user-images.githubusercontent.com/77710705/141378531-780527d0-8998-4cb9-8aca-1814a144bf39.gif) ![mobileHomepage](https://user-images.githubusercontent.com/77710705/141380499-c2d41566-12dd-41fe-ac3f-38ffc620126f.gif)
+
 
 ## Inspiration
 
@@ -21,6 +25,7 @@ B Star is a well loved and family owned restaurant located in the Richmond Distr
 - Can check current weather and 5 day forecast before making outdoor seating reservations 
 - Can check when restaurant is located on map and links to google maps for directions 
 - Static pages/important tabs are not accessible and easy to find
+- Responsive on all screen sizes
 
 
 ## Tech Stack (PERN)
