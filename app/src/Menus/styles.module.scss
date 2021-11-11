@@ -1,66 +1,5 @@
 // --------------------------Menu Styling----------------------
 .menu {
-  img[alt="white border"] {
-    width: 65vw;
-  }
-
-  div[class="Brunch"] {
-    width: 100vw;
-    height: 30vw;
-    position: relative;
-    background-color: rgba(0, 0, 0, 0.8);
-  }
-
-  div[class="Brunch"]:before {
-    content: "";
-    background-image: url("../images/pork-tocino.jpeg");
-    background-repeat: no-repeat; /* Do not repeat the image */
-    background-size: cover; /* Resize the background image to cover the entire container */
-    background-position: center;
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    left: 0px;
-    opacity: 0.75;
-  }
-
-  div[class="Dinner"] {
-    width: 100vw;
-    height: 30vw;
-    position: relative;
-    background-color: rgba(0, 0, 0, 0.8);
-  }
-
-  div[class="Dinner"]:before {
-    content: "";
-    background-image: url("../images/kau-soi.jpeg");
-    background-repeat: no-repeat; /* Do not repeat the image */
-    background-size: cover; /* Resize the background image to cover the entire container */
-    background-position: top;
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    left: 0px;
-    opacity: 0.75;
-  }
-
-  div[class="title"] {
-    position: relative; /* makes sure that this div is on top
-    of the background image */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    opacity: 1;
-    padding-top: 9vw;
-  }
-
-  div[class="title"] h1 {
-    font-size: 5vw;
-    color: white;
-  }
-
   div[class="courses-nav"] {
     display: flex;
     justify-content: center;
@@ -76,6 +15,7 @@
   div[class="courses-nav"] a {
     padding: 1rem;
     text-decoration: none;
+    color: black;
   }
   div[class="courses-nav"] a:visited {
     color: black;
@@ -85,6 +25,7 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+    margin-bottom: 10rem;
   }
 
   a[class="courses"]:active {
@@ -210,5 +151,31 @@
 // // ---------------------Item Card Styling------------------------
 .itemCard {
   width: 25rem;
-  margin: 0.5rem 3rem;
+  margin: 0rem 2.5rem;
+  img[class="allergyIcon"] {
+    height: 1.6rem;
+    padding: 0 0.5rem;
+  }
+  img[class="allergyIcon allergyIcon--small"] {
+    height: 1.2rem;
+    padding: 0 0.5rem;
+  }
+  div[class="itemCardTitle"] {
+    padding-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+  }
+  div[class="modifications"] {
+    display: flex;
+    flex-direction: row;
+    color: brown;
+  }
+  p[class="modifications__elem"] {
+    padding-right: 1rem;
+    margin: 0;
+  }
+  div[class="icons"] {
+    display: flex;
+    flex-direction: row;
+  }
 }

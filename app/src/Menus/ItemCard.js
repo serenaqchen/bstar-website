@@ -1,13 +1,33 @@
 import React from "react";
 
+import { convertToIcon } from "./menuFxns.js";
 import styles from "./styles.module.scss";
 
-function ItemCard({ foodItem }) {
+function ItemCard({ foodItem, modifications }) {
   return (
     <div className={styles.itemCard}>
-      <h3>{foodItem.title}</h3>
+      <div className="itemCardTitle">
+        <h3>{foodItem.title}</h3>
+        <p>{foodItem.price != 0.0 && `$${foodItem.price}`}</p>
+      </div>
+      <div className="modifications">
+        {modifications &&
+          modifications.map((mod, index) => {
+            if (mod.title === foodItem.title) {
+              return (
+                <p key={index} className="modifications__elem">
+                  {mod.description} ${mod.price}
+                </p>
+              );
+            }
+          })}
+      </div>
       <p>{foodItem.description}</p>
-      <p>{foodItem.allergens}</p>
+      <div className="icons">
+        {foodItem.allergens
+          .split(", ")
+          .map((allergen) => convertToIcon(allergen))}
+      </div>
     </div>
   );
 }

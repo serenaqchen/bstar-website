@@ -1,0 +1,121 @@
+.BstarTitle {
+  // ----------------------------BRUNCH TITLE-------------------------------------
+  div[class="Brunch Menu"] {
+    width: 100vw;
+    height: 30vw;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  div[class="Brunch Menu"]:before {
+    content: "";
+    background-image: url("../images/pork-tocino.jpeg");
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+    background-position: center;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.75;
+  }
+  // ----------------------------DINNER TITLE-------------------------------------
+  div[class="Dinner Menu"] {
+    width: 100vw;
+    height: 30vw;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  div[class="Dinner Menu"]:before {
+    content: "";
+    background-image: url("../images/kau-soi.jpeg");
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+    background-position: top;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.75;
+  }
+
+  // ----------------------------CATERING TITLE-------------------------------------
+  div[class="Catering"] {
+    width: 100vw;
+    height: 30vw;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  div[class="Catering"]:before {
+    content: "";
+    background-image: url("../images/bstar-food.jpeg");
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+    background-position: bottom;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.75;
+  }
+
+  // ----------------------------GROUP DINNING TITLE-------------------------------------
+  div[class="Group Dinning"] {
+    width: 100vw;
+    height: 30vw;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  div[class="Group Dinning"]:before {
+    content: "";
+    background-image: url("../images/Patio.jpeg");
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+    background-position: center;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.75;
+  }
+
+  div[class="title"] {
+    position: relative; /* makes sure that this div is on top
+    of the background image */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 1;
+    padding-top: 9vw;
+  }
+
+  div[class="title"] h1 {
+    font-size: 5vw;
+    color: white;
+  }
+
+  div[class="title"] {
+    position: relative; /* makes sure that this div is on top
+    of the background image */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 1;
+    padding-top: 9vw;
+  }
+
+  div[class="title"] h1 {
+    font-size: 5vw;
+    color: white;
+  }
+  img[alt="white border"] {
+    width: 65vw;
+  }
+}

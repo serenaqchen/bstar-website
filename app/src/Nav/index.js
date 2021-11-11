@@ -2,8 +2,6 @@ import * as React from "react";
 
 import { NavLink } from "react-router-dom";
 
-import useAuth0 from "../auth/useAuth0";
-import { Login, Logout } from "../auth/widgets";
 import blueLogo from "../images/bstar-white-logo-blue.png";
 
 import styles from "./styles.module.scss";
@@ -17,22 +15,21 @@ const Nav = () => {
 
   return (
     <div className={styles.topSection}>
-      {!showMobileTabs && (
-        <div className={styles.login}>
-          <Auth />
-        </div>
-      )}
-      <nav
-        className={`${styles.nav}${showMobileTabs ? " showMobileTabs" : ""}`}
-      >
+      <div className="mobileNav">
         <NavLink className="mobileLogo" to="/" end>
           <img
             className="bstarLogoMobile"
             src={blueLogo}
             alt="Bstar Logo"
           ></img>
-          {/* BStar */}
         </NavLink>
+        <button className="icon" onClick={ToggleMobileNavButton}>
+          {showMobileTabs ? "X" : <span>&#9776;</span>}
+        </button>
+      </div>
+      <nav
+        className={`${styles.nav}${showMobileTabs ? " showMobileTabs" : ""}`}
+      >
         <NavLink className="tab" to="reservations">
           RESERVATIONS
         </NavLink>
@@ -67,37 +64,8 @@ const Nav = () => {
         <NavLink className="tab" to="gift-cards">
           GIFT CARDS
         </NavLink>
-        <div className="auth">
-          <Auth />
-        </div>
-        <button className="icon" onClick={ToggleMobileNavButton}>
-          &#9776;
-        </button>
       </nav>
     </div>
-  );
-};
-
-const Auth = () => {
-  const { isAuthenticated, user } = useAuth0();
-
-  return isAuthenticated ? (
-    <div className={styles.login}>
-      <div className="dropdown">
-        <img className="profilePic" src={user.picture} alt="Profile Picture" />
-        <button className="profileButton">{user.given_name}</button>
-        <div className="dropdown-content">
-          {/* <p>
-            {user.given_name} {user.family_name}
-          </p> */}
-          <div className="logoutButton">
-            <Logout />
-          </div>
-        </div>
-      </div>
-    </div>
-  ) : (
-    <Login />
   );
 };
 

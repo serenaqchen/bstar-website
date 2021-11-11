@@ -21,6 +21,201 @@ SET default_tablespace = '';
 SET default_table_access_method = heap;
 
 --
+-- Name: brunch; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.brunch (
+    id integer NOT NULL,
+    menu_id integer,
+    price numeric(18,2),
+    allergens text,
+    course text
+);
+
+
+--
+-- Name: brunch_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.brunch_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: brunch_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.brunch_id_seq OWNED BY public.brunch.id;
+
+
+--
+-- Name: brunch_modifications; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.brunch_modifications (
+    id integer NOT NULL,
+    brunch_id integer,
+    description text,
+    price numeric(18,2)
+);
+
+
+--
+-- Name: brunch_modifications_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.brunch_modifications_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: brunch_modifications_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.brunch_modifications_id_seq OWNED BY public.brunch_modifications.id;
+
+
+--
+-- Name: dinner; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.dinner (
+    id integer NOT NULL,
+    menu_id integer,
+    price numeric(18,2),
+    allergens text,
+    course text
+);
+
+
+--
+-- Name: dinner_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.dinner_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: dinner_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.dinner_id_seq OWNED BY public.dinner.id;
+
+
+--
+-- Name: dinner_modifications; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.dinner_modifications (
+    id integer NOT NULL,
+    dinner_id integer,
+    description text,
+    price numeric(18,2)
+);
+
+
+--
+-- Name: dinner_modifications_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.dinner_modifications_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: dinner_modifications_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.dinner_modifications_id_seq OWNED BY public.dinner_modifications.id;
+
+
+--
+-- Name: drink_modifications; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.drink_modifications (
+    id integer NOT NULL,
+    drink_id integer,
+    description text,
+    price double precision
+);
+
+
+--
+-- Name: drink_modifications_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.drink_modifications_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: drink_modifications_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.drink_modifications_id_seq OWNED BY public.drink_modifications.id;
+
+
+--
+-- Name: drinks; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.drinks (
+    id integer NOT NULL,
+    menu_id integer,
+    price double precision,
+    allergens text,
+    alcholic boolean
+);
+
+
+--
+-- Name: drinks_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.drinks_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: drinks_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.drinks_id_seq OWNED BY public.drinks.id;
+
+
+--
 -- Name: food; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -55,6 +250,37 @@ CREATE SEQUENCE public.food_id_seq
 --
 
 ALTER SEQUENCE public.food_id_seq OWNED BY public.food.id;
+
+
+--
+-- Name: menu; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.menu (
+    id integer NOT NULL,
+    title character varying(255),
+    description text
+);
+
+
+--
+-- Name: menu_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.menu_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: menu_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.menu_id_seq OWNED BY public.menu.id;
 
 
 --
@@ -149,10 +375,59 @@ ALTER TABLE public.users ALTER COLUMN id ADD GENERATED ALWAYS AS IDENTITY (
 
 
 --
+-- Name: brunch id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.brunch ALTER COLUMN id SET DEFAULT nextval('public.brunch_id_seq'::regclass);
+
+
+--
+-- Name: brunch_modifications id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.brunch_modifications ALTER COLUMN id SET DEFAULT nextval('public.brunch_modifications_id_seq'::regclass);
+
+
+--
+-- Name: dinner id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.dinner ALTER COLUMN id SET DEFAULT nextval('public.dinner_id_seq'::regclass);
+
+
+--
+-- Name: dinner_modifications id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.dinner_modifications ALTER COLUMN id SET DEFAULT nextval('public.dinner_modifications_id_seq'::regclass);
+
+
+--
+-- Name: drink_modifications id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.drink_modifications ALTER COLUMN id SET DEFAULT nextval('public.drink_modifications_id_seq'::regclass);
+
+
+--
+-- Name: drinks id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.drinks ALTER COLUMN id SET DEFAULT nextval('public.drinks_id_seq'::regclass);
+
+
+--
 -- Name: food id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.food ALTER COLUMN id SET DEFAULT nextval('public.food_id_seq'::regclass);
+
+
+--
+-- Name: menu id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.menu ALTER COLUMN id SET DEFAULT nextval('public.menu_id_seq'::regclass);
 
 
 --
@@ -170,6 +445,213 @@ ALTER TABLE ONLY public.tasks ALTER COLUMN id SET DEFAULT nextval('public.tasks_
 
 
 --
+-- Data for Name: brunch; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+COPY public.brunch (id, menu_id, price, allergens, course) FROM stdin;
+1	2	9.50	Popular, Vegtarian	Appetizers
+2	1	9.75	Popular, Gluten-Free Option, Vegetarian	Appetizers
+3	3	9.75	Popular, Vegtarian	Appetizers
+4	4	9.50	Gluten-Free Vegtarian	Appetizers
+5	6	9.50	Vegetarian	Appetizers
+6	5	12.50	none	Appetizers
+7	7	12.00	none	Appetizers
+8	9	9.00	Vegetarian	Appetizers
+9	10	13.50	Popular, Gluten-Free, Vegetarian Option, Peanut-Free Option	Soup & Salad
+10	12	13.00	Gluten-Free Option	Soup & Salad
+11	11	13.75	Gluten-Free Option, Vegetarian Option	Soup & Salad
+12	13	9.25	Popular, Vegetarian	Soup & Salad
+13	14	8.00	Gluten-Free, Vegetarian	Soup & Salad
+14	59	15.25	Popular, Gluten-Free	Brunch Bowls
+15	60	15.25	Popular, Gluten-Free	Brunch Bowls
+16	61	14.50	Vegetarian, Gluten-Free	Brunch Bowls
+17	33	0.00	Popular, Gluten-Free Option	Brunch Bowls
+18	30	17.50	Popular, Gluteen-Free	Brunch Bowls
+19	62	14.75	Vegetarian	Brunch Bowls
+20	63	0.00	Gluteen-Free, Vegetarian Option	Brunch Bowls
+21	24	17.00	none	Brunch Bowls
+22	64	15.25	none	Brunch Bowls
+23	26	15.50	none	Jook
+24	27	16.00	Gluten-Free Option	Jook
+25	28	14.50	Gluten-Free Option, Vegetarian	Jook
+26	29	15.00	Gluten-Free Option	Jook
+27	21	17.75	Popular	Noodles
+28	37	14.75	none	Noodles
+29	41	13.00	Vegetarian	Noodles
+30	15	15.75	Popular, Gluten-Free Option	Noodles
+31	18	15.75	Popular, Gluten-Free Option, Vegetarian	Noodles
+32	32	0.00	none	Noodles
+33	20	15.75	Popular, Gluten-Free Option	Lunch
+34	17	17.00	Popular	Lunch
+35	19	0.00	Gluten-Free, Vegetarian Option	Lunch
+36	23	0.00	Popular	Lunch
+37	34	16.00	none	Lunch
+38	44	0.00	Vegetarian	Lunch
+39	16	17.00	Popular, Gluten-Free	Lunch
+40	65	0.00	Vegetarian Option	Lunch
+41	66	0.00	Vegetarian Option	Lunch
+\.
+
+
+--
+-- Data for Name: brunch_modifications; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+COPY public.brunch_modifications (id, brunch_id, description, price) FROM stdin;
+1	5	Add an extra samusa	12.50
+2	9	Lg	19.25
+3	10	Lg	18.50
+4	11	Lg	19.75
+5	12	Med	14.00
+6	12	Lg	21.00
+7	13	Med	12.00
+8	13	Lg	18.00
+9	17	Pan-Seared Salmon	17.00
+10	17	Seared Rare Tuna	17.75
+11	17	Mushroom	13.75
+12	18	Add 2 over-easy eggs	20.50
+13	20	Grilled Salmon	16.50
+14	20	Grilled Mushroom	14.50
+15	27	Lg	26.00
+16	28	Lg	22.00
+17	30	Lg	23.00
+18	29	Lg	18.00
+19	31	Lg	23.00
+20	32	Pan-Seared Salmon	17.00
+21	32	Seared Rare Tuna	17.75
+22	35	Pork	16.00
+23	35	Tofu	13.75
+24	40	Chicken	16.00
+25	40	Tofu	13.75
+26	36	Chicken	15.50
+27	36	Salmon	17.25
+28	38	Small Side	7.50
+29	38	Medium Shareable	11.50
+30	41	Shrimp	17.75
+31	41	Chicken	16.75
+32	41	Fried Tofu	15.00
+\.
+
+
+--
+-- Data for Name: dinner; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+COPY public.dinner (id, menu_id, price, allergens, course) FROM stdin;
+1	2	9.50	Popular, Vegtarian	Appetizers
+2	1	9.75	Popular, Gluten-Free Option, Vegetarian	Appetizers
+3	3	9.75	Popular, Vegtarian	Appetizers
+4	4	9.50	Gluten-Free Vegtarian	Appetizers
+5	6	9.50	Vegetarian	Appetizers
+6	5	12.50	none	Appetizers
+7	7	12.00	none	Appetizers
+8	9	9.00	Vegetarian	Appetizers
+9	10	13.50	Popular, Gluten-Free, Vegetarian Option, Peanut-Free Option	Soup & Salad
+10	12	13.00	Gluten-Free Option	Soup & Salad
+11	11	13.75	Gluten-Free Option, Vegetarian Option	Soup & Salad
+12	13	9.25	Popular, Vegetarian	Soup & Salad
+13	14	8.00	Gluten-Free, Vegetarian	Soup & Salad
+14	15	15.75	Popular, Gluten-Free Option	B Star Specialties
+15	16	18.00	Popular, Gluten-Free	B Star Specialties
+16	17	17.00	Popular	B Star Specialties
+17	18	15.75	Popular, Gluten-Free Option, Vegetarian	B Star Specialties
+18	19	17.00	Popular, Gluten-Free	B Star Specialties
+19	20	15.75	Popular, Gluten-Free Option	B Star Specialties
+20	21	17.75	Popular	B Star Specialties
+21	22	15.00	Popular, Gluten-Free, Vegetarian	B Star Specialties
+22	23	0.00	Popular	B Star Specialties
+23	24	17.00	Popular	B Star Specialties
+24	25	15.75	Popular, Gluten-Free, Vegetarian	B Star Specialties
+25	26	15.50	none	Jook
+26	27	16.00	Gluten-Free Option	Jook
+27	28	14.50	Gluten-Free Option, Vegetarian	Jook
+28	29	15.00	Gluten-Free Option	Jook
+29	30	18.75	Popular, Gluten-Free	Seafood
+30	31	18.75	none	Seafood
+31	32	0.00	none	Seafood
+32	33	0.00	Gluten-Free Option	Seafood
+38	2	16.50	Popular, Vegetarian	Veg & Tofu
+39	40	16.50	Gluten-Free, Vegetarian	Veg & Tofu
+40	41	13.00	Vegetarian	Veg & Tofu
+41	42	16.50	Popular, Vegetarian	Veg & Tofu
+42	43	16.50	Gluten-Free, Vegetarian	Veg & Tofu
+43	44	7.50	Vegetarian	Veg & Tofu
+44	45	17.00	Popularm Vegetarian	Veg & Tofu
+45	47	16.50	Vegetarian	Veg & Tofu
+46	67	13.75	Gluten-Free Option, Vegetarian	Veg & Tofu
+33	34	17.00	Popular	Chicken
+34	35	17.00	none	Chicken
+35	36	17.75	Popular	Chicken
+36	37	14.75	none	Chicken
+37	38	17.00	none	Chicken
+\.
+
+
+--
+-- Data for Name: dinner_modifications; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+COPY public.dinner_modifications (id, dinner_id, description, price) FROM stdin;
+1	5	Add an extra samusa	12.50
+2	9	Lg	19.25
+3	11	Lg	19.75
+4	10	Lg	18.50
+5	12	Med	14.00
+6	12	Lg	21.00
+7	13	Med	12.00
+8	13	Lg	18.00
+9	14	Lg	23.00
+10	15	Lg	27.00
+11	18	Lg	24.50
+12	17	Lg	23.00
+13	21	Lg	22.00
+14	21	Add 2 sunny up egg for	3.00
+15	20	Lg	26.00
+16	24	Lg	22.75
+17	22	Chicken	15.50
+18	22	Salmon	17.25
+19	23	Lg	25.00
+20	29	Lg	27.75
+21	30	Lg	27.75
+22	31	Pan Roasted Salmon	17.00
+23	31	Seared Rare Tuna	17.75
+24	32	Pan Roasted Salmon	17.00
+25	32	Seared Rare Tuna	17.75
+26	33	Lg	25.00
+27	34	Lg	25.00
+28	35	Lg	25.25
+29	36	Lg	22.00
+30	37	Lg	25.00
+31	38	Lg	24.00
+32	39	Lg	24.00
+33	40	Lg	18.00
+34	40	Add fried tofu for	2.00
+35	41	Lg	24.00
+36	42	Lg	24.00
+37	43	Small Side	7.50
+38	43	Medium Shareable	11.50
+39	44	Lg	25.00
+40	45	Lg	24.00
+\.
+
+
+--
+-- Data for Name: drink_modifications; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+COPY public.drink_modifications (id, drink_id, description, price) FROM stdin;
+\.
+
+
+--
+-- Data for Name: drinks; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+COPY public.drinks (id, menu_id, price, allergens, alcholic) FROM stdin;
+\.
+
+
+--
 -- Data for Name: food; Type: TABLE DATA; Schema: public; Owner: -
 --
 
@@ -180,7 +662,6 @@ COPY public.food (id, title, description, price, brunch, brunch_course, dinner, 
 4	Fresh Spring Rolls	Tofu, basil, mint, cucumber, green papaya, carrot, avocado, and mushroom, wrapped in rice paper.  Served with peanut sauce dip.	9.5	t	Appetizers	t	Appetizers	Gluten-Free, Vegetarian
 5	Vegetarian Samusas	Three hand-wrapped samusas filled with curry spiced potato, deep fried and served with our house special sweet chili sauce.	9.5	t	Appetizers	t	Appetizers	Vegetarian
 9	Fried Yellow Bean Tofu	Homemade tofu made from yellow beans, crispy outside, creamy in the middle, sweet soy & chili sauce.	9	t	Appetizers	t	Appetizers	Vegetarian
-10	Tea Leaf Salad (Reg)	Featured on the Food Network-- Our signature dish!  Lettuce, red cabbage, crispy garlic, peanut, sesame & sunflower seed, fried lentil, tomato, jalapeno, pickled ginger and fermented tea leaf dressing.  With shrimp powder and fish sauce, or vegetarian by request.	13.5	t	Soup&Salad	t	Soup&Salad	Popular, Gluten-Free, Vegetarian Option, Peanut
 11	Burmese Chicken Salad (Reg)	Cabbage, cucumber, cilantro, carrot, sesame, wonton chips and poached chicken with a sweet chili dressing.	13	t	Soup&Salad	t	Soup&Salad	Gluten-Free Option
 12	Rainbow Salad (Reg)	Made with 22 ingredients!  Four types of noodles, green papaya, tofu, tomato, potato, carrot, cabbage, garlic, onion, cilantro, chili, tamarind dressing.  With dried shrimp and fish sauce, or vegetarian by request.	13.75	t	Soup&Salad	t	Soup&Salad	Gluten-Free Option, Vegetarian Option
 13	Samusa Soup (Sm)	Burmese soup with samusas, falafel, potato, lentil, cabbage and jalapeño.  Spicy and tangy!	9.25	t	Soup&Salad	t	Soup&Salad	Popular, Vegetarian
@@ -188,6 +669,83 @@ COPY public.food (id, title, description, price, brunch, brunch_course, dinner, 
 6	Sticky Fingers Pork Riblettes	Tender ribs in a caramelized spicy garlic sauce.	12.5	t	Appetizers	t	Appetizers	None
 8	Salt & Pepper Fries	Thin cut fries seasoned with salt and black pepper, served with curry aioli.	6	t	Appetizers	t	Appetizers	None
 7	Tuna Ceviche	Seared tuna tataki, pepper crusted, topped with tobiko, jalapeño, avocado, green onion, lemon.	12	t	Appetizers	t	Appetizers	None
+15	Ginger Lemonade	Fresh squeezed ginger and lemon.	4	t	Drinks	t	Drinks	None
+16	Vietnamese Iced Coffee	Strong and creamy, made with sweetened condensed milk.	4.75	t	Drinks	t	Drinks	None
+17	Spicy Ginger Lime Margarita	Ginger, lime, agave soju, and a togarashi salt rim for an extra spicy kick.	10	t	Drinks	t	Drinks	None
+18	Thai Iced Tea		4	t	Drinks	t	Drinks	Dairy
+19	Jasmine Iced Tea	Unsweetened	4	t	Drinks	t	Drinks	None
+20	Mango Shandy	Tropical version of the classic shandy, with mango, lime, ginger and beer.	8	t	Drinks	t	Drinks	None
+21	Mango Lassi	Mango yogurt smoothie	5	t	Drinks	t	Drinks	Dairy
+22	Hot Tea - By the Cup	Black, Green or Herbal	4	t	Drinks	t	Drinks	None
+23	Mimosas	Mango, Lychee or Lemon Ginger	8.5	t	Drinks	t	Drinks	None
+24	Fresh Young Coconut		5.75	t	Drinks	t	Drinks	None
+10	Tea Leaf Salad (Reg)	Featured on the Food Network-- Our signature dish!  Lettuce, red cabbage, crispy garlic, peanut, sesame & sunflower seed, fried lentil, tomato, jalapeno, pickled ginger and fermented tea leaf dressing.  With shrimp powder and fish sauce, or vegetarian by request.	13.5	t	Soup&Salad	t	Soup&Salad	Popular, Gluten-Free, Vegetarian Option, Peanut-Free Option
+\.
+
+
+--
+-- Data for Name: menu; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+COPY public.menu (id, title, description) FROM stdin;
+1	B Sprouts	Fried Brussels sprouts with furikake (veg), popped rice and Parmesan.  Customer favorite!
+2	Firecracker Cauliflower	Crispy cauliflower in a sweet and tangy caramelized garlic chili sauce.
+3	Platha Dipper	Crispy, flaky Burmese layered flatbread with yellow curry dipping sauce.
+4	Fresh Spring Rolls	Tofu, basil, mint, cucumber, green papaya, carrot, avocado and mushroom, wrapped in rice paper.  Served with peanut sauce dip.
+5	Sticky Fingers Pork Riblettes	Tender ribs in a caramelized spicy garlic sauce.
+6	Vegetarian Samusas	Three hand-wrapped samusas filled with curry spiced potato, deep fried and served with our house special sweet chili sauce.
+7	Tuna Ceviche	Seared tuna tataki, pepper crusted, topped with tobiko, jalapeño, avocado, green onion, lemon.
+8	Salt & Pepper Fries	Thin cut fries seasoned with salt and black pepper, served with curry aioli.
+9	Fried Yellow Bean Tofu	Homemade tofu made from yellow beans, crispy outside, creamy in the middle, sweet soy & chili sauce.
+10	Tea Leaf Salad	Featured on the Food Network-- Our signature dish!  Lettuce, red cabbage, crispy garlic, peanut, sesame & sunflower seed, fried lentil, tomato, jalapeno, pickled ginger and fermented tea leaf dressing.  With shrimp powder and fish sauce, or vegetarian by request.
+11	Rainbow Salad	Made with 22 ingredients!  Four types of noodles, green papaya, tofu, tomato, potato, carrot, cabbage, garlic, onion, cilantro, chili, tamarind dressing.  With dried shrimp and fish sauce, or vegetarian by request.
+12	Burmese Chicken Salad	Cabbage, cucumber, cilantro, carrot, sesame, wonton chips and poached chicken with a sweet chili dressing
+13	Samusa Soup	Burmese soup with samusas, falafel, potato, lentil, cabbage and jalapeño.  Spicy and tangy!
+14	Butternut Squash Soup	Pureed squash with basil oil, pepitas (pumpkin seed) and coconut milk.  Vegan.
+15	Coconut Chicken Curry Noodles	(Kau Soi) Chicken curry, egg noodles, bean sprouts, pickled mustard greens, cilantro, onion, egg, wonton chips, chili.  Medium spicy, cannot be made mild.
+16	Lamb Curry	Burmese lamb curry with potato, pickled mango and mint.
+17	Salmon Ochazuke	Japanese-style comfort food, pan fried rice, salmon, green tea broth, poached egg, pickled mustard greens, hijiki, wasabi and pickled plum.
+18	Vegan Tempeh Curry Noodles	Coconut curry, tempeh (soy protein), rice noodles, mushroom, cucumber, cilantro, fried onion, chili oil.  Medium spicy, cannot be made mild.  Vegan.
+19	Pumpkin Pork Stew	Tender pork slow cooked with kabocha squash, ginger, cilantro.
+20	Laksa	Rice noodle soup with coconut chicken broth, kaffir lime, lemongrass, chili oil. Topped with grilled shrimp, fried tofu, egg, basil, mint and lime.
+21	Miso Cod	Miso glazed black cod over garlic ginger noodles, with oyster mushroom, snap peas, chili oil.
+22	Turmeric Fried Supergrain	Quinoa, cauliflower, whole yellow peas, Brussels sprouts, bell pepper, onion, avocado.  Vegan.
+23	Thai Curry Pot Pie	Spicy green curry, carrot, onion, potato, celery topped with a flaky puff pastry.  Served with side salad.
+24	Crispy Duck Skin Fried Rice with Egg	Duck meat, Chinese pork sausage, romaine, purple onion, dried chili, fried basil.  Topped with fried egg and crispy duck skin.  (Not available mild.)
+25	Roasted Vegetable Quinoa with Curry	Quinoa with squash, bell pepper, broccoli, mushroom, kale.  Topped with daikon sprouts, sesame and pumpkin seeds, yellow curry sauce.  Vegan.
+26	Pork Jook	Braised pork belly with preserved 1000-yr-old black duck egg and pork sung.
+27	Shrimp Jook	With poached egg
+28	Mushroom Jook	Mixed mushrooms with poached egg.  Available vegan with no egg.
+29	Chicken Jook	Poached chicken with 1000-yr-old black duck egg & pork sung
+30	Tamarind Chili Shrimp	Wok tossed garlic chili shrimp seasoned with tamarind, onion, garlic and cilantro.  Tangy and spicy!
+31	Mango Shrimp	Shrimp, fresh mango and basil, red and green onion and chili.
+32	Soba Noodles	Cold buckwheat noodles, scallions, pickled ginger, hijiki, daikon sprouts, arugula, pickled radish and spicy ponzu.
+33	Donburi	Japanese-style rice bowl with ginger rice, scallions, furikake, pickled ginger, hijiki, daikon sprouts, avocado, sunny-side up egg.
+34	Kung Pao Chicken	Wok fired chicken breast, Sichuan pepper, bell peppers, onion and peanut.
+35	Sesame Chicken	Lightly fried chicken breast tossed in a sweet caramelized sesame sauce.
+36	Mango Chicken	Chicken breast with fresh mango and basil, red and green onion and chili.
+37	Garlic Noodles with Chicken	Egg noodles, poached chicken, mushroom, broccoli, onion, cucumber, snap peas, chili sauce, garlic oil.
+38	Fiery Basil Chicken	Chicken breast, bell pepper, broccoli, string beans, chili in a sweet spicy sauce.
+40	Spicy Burmese Tofu Kebat	Stir fried tomato, bell pepper, onion, fried tofu, mint, chili, lemon in a spicy coconut sauce.  Vegan.
+41	Garlic Noodles - Veg	Egg noodles, mushroom, broccoli, cucumber, snap peas, onion, garlic, chili.
+42	Basil Chili Tofu	Two kinds of tofu, mango, eggplant, string beans, chili.  Vegan.
+43	Pumpkin Vegetable Tofu Stew	Fried tofu, kabocha squash, red bell pepper, string bean, sesame seed, cilantro, ginger. Vegan.
+44	Dry Fried String Beans	Flash fried string beans with garlic and chili.  Vegan.
+45	Mango Tofu	Fresh mango and basil, fried tofu, red and green onion, chili spice.  Vegan.
+47	Sesame Tofu	Lightly fried tofu tossed in a caramelized sweet sesame sauce.  Vegan.
+48	Coconut Rice	none
+49	Jasmine Rice	none
+50	Brown Rice	none
+51	Quinoa Cauliflower	none
+59	Pork Tocino	Filipino-style sweet cured pork with a sunny-side-up egg over garlic fried rice, tomato, green onion, cane vinegar.
+60	Longganisa	Filipino pork sausage with sunny-side-up egg over garlic fried rice, tomato, green onion, cane vinegar.
+61	Kimchi Fried Rice	Kale, cabbage kimchi, green onion and fried egg.  Available vegan by request.
+62	Hijiki Tofu Scramble	Tofu, tomato, shiitake, ginger, daikon sprouts and avocado.  Served with side salad.  Eggless.
+63	Black Rice Salad	Black rice and quinoa mixed with hijiki, carrots, avocado, cilantro, cabbage, cucumbers, pepitas.
+64	Chicken Croquette	Panko crusted lemon zest mash potato croquette topped with over-easy egg, spicy aioli, scallions.
+65	Sesame Glazed	Lightly fried and tossed in a caramelized sweet sesame sauce, served with rice and broccoli.
+66	Mango & Basil	Fresh mango and basil, red onion, scallion and chili.  Served with choice of rice.
+67	Mushroom Donburi	Ginger rice, scallions, furikake, pickled ginger, hijiki, daikon sprouts, avocado, sunny-side up egg.
 \.
 
 
@@ -232,10 +790,59 @@ COPY public.users (id, given_name, family_name, picture, email, sub) FROM stdin;
 
 
 --
+-- Name: brunch_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+--
+
+SELECT pg_catalog.setval('public.brunch_id_seq', 41, true);
+
+
+--
+-- Name: brunch_modifications_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+--
+
+SELECT pg_catalog.setval('public.brunch_modifications_id_seq', 32, true);
+
+
+--
+-- Name: dinner_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+--
+
+SELECT pg_catalog.setval('public.dinner_id_seq', 46, true);
+
+
+--
+-- Name: dinner_modifications_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+--
+
+SELECT pg_catalog.setval('public.dinner_modifications_id_seq', 40, true);
+
+
+--
+-- Name: drink_modifications_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+--
+
+SELECT pg_catalog.setval('public.drink_modifications_id_seq', 1, false);
+
+
+--
+-- Name: drinks_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+--
+
+SELECT pg_catalog.setval('public.drinks_id_seq', 1, false);
+
+
+--
 -- Name: food_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public.food_id_seq', 14, true);
+SELECT pg_catalog.setval('public.food_id_seq', 24, true);
+
+
+--
+-- Name: menu_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+--
+
+SELECT pg_catalog.setval('public.menu_id_seq', 67, true);
 
 
 --
@@ -260,11 +867,75 @@ SELECT pg_catalog.setval('public.users_id_seq', 168, true);
 
 
 --
+-- Name: brunch_modifications brunch_modifications_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.brunch_modifications
+    ADD CONSTRAINT brunch_modifications_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: brunch brunch_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.brunch
+    ADD CONSTRAINT brunch_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: dinner_modifications dinner_modifications_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.dinner_modifications
+    ADD CONSTRAINT dinner_modifications_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: dinner dinner_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.dinner
+    ADD CONSTRAINT dinner_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: drink_modifications drink_modifications_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.drink_modifications
+    ADD CONSTRAINT drink_modifications_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: drinks drinks_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.drinks
+    ADD CONSTRAINT drinks_pkey PRIMARY KEY (id);
+
+
+--
 -- Name: food food_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.food
     ADD CONSTRAINT food_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: menu menu_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.menu
+    ADD CONSTRAINT menu_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: menu menu_title_key; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.menu
+    ADD CONSTRAINT menu_title_key UNIQUE (title);
 
 
 --
@@ -297,6 +968,54 @@ ALTER TABLE ONLY public.users
 
 ALTER TABLE ONLY public.users
     ADD CONSTRAINT users_sub_key UNIQUE (sub);
+
+
+--
+-- Name: brunch brunch_menu_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.brunch
+    ADD CONSTRAINT brunch_menu_id_fkey FOREIGN KEY (menu_id) REFERENCES public.menu(id);
+
+
+--
+-- Name: brunch_modifications brunch_modifications_brunch_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.brunch_modifications
+    ADD CONSTRAINT brunch_modifications_brunch_id_fkey FOREIGN KEY (brunch_id) REFERENCES public.brunch(id);
+
+
+--
+-- Name: dinner dinner_menu_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.dinner
+    ADD CONSTRAINT dinner_menu_id_fkey FOREIGN KEY (menu_id) REFERENCES public.menu(id);
+
+
+--
+-- Name: dinner_modifications dinner_modifications_dinner_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.dinner_modifications
+    ADD CONSTRAINT dinner_modifications_dinner_id_fkey FOREIGN KEY (dinner_id) REFERENCES public.dinner(id);
+
+
+--
+-- Name: drink_modifications drink_modifications_drink_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.drink_modifications
+    ADD CONSTRAINT drink_modifications_drink_id_fkey FOREIGN KEY (drink_id) REFERENCES public.drinks(id);
+
+
+--
+-- Name: drinks drinks_menu_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.drinks
+    ADD CONSTRAINT drinks_menu_id_fkey FOREIGN KEY (menu_id) REFERENCES public.menu(id);
 
 
 --
