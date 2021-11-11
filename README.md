@@ -8,6 +8,21 @@ B Star Website is a :sparkles:revamped:sparkles: version of the [old B Star Webs
 
 This application is currently live on [Heroku](https://bstar-website-revamped.herokuapp.com/).
 
+![Homepage](https://user-images.githubusercontent.com/77710705/141378531-780527d0-8998-4cb9-8aca-1814a144bf39.gif)
+
+## Inspiration
+
+B Star is a well loved and family owned restaurant located in the Richmond District of San Francisco. Although their food tastes amazing, their website on the other hand, is a little lack luster. I know that sometimes great things don't have to come from original ideas, it could come from taking what's there and making it exponentially better. So I decided to challenge myself and recreate a B Star's website and give it more functionality.
+
+### Functionality
+
+- Menu is in database and not an image
+- Can filter through menu depending on dietary restrictions
+- Can check current weather and 5 day forecast before making outdoor seating reservations 
+- Can check when restaurant is located on map and links to google maps for directions 
+- Static pages/important tabs are not accessible and easy to find
+
+
 ## Tech Stack (PERN)
 
 ### Languages
@@ -47,12 +62,6 @@ You'll need to install Node v14 or above.
 npm install
 ```
 
-#### Install Font Locally
-
-```sh
-npm install @fontsource/source-serif-pro
-```
-
 #### Start the Development Environment
 
 ```sh
@@ -60,6 +69,18 @@ npm start
 ```
 
 Visit <http://localhost:3000>.
+
+#### API Keys
+This application utlizes Open Weather Map API and Google Maps API. Follow the steps to set up keys in the app.
+- Create API Keys ([Open Weather Map API](https://openweathermap.org/) and [Google Maps API](https://developers.google.com/maps))
+
+##### Open Weather Map API
+1. At root folder: create an .env file and copy contents of .env.example 
+2. Replace variables with appropriate values and create new var to assign your own Open Weather Map API key
+
+##### Google Maps API
+1. In Google Maps API application interface, restrict your API key to a specific IP address/website domain
+2. In app/src/Reservations/Reservations.js, replace the API key in the URL within the iframe tag
 
 #### Shut Down the Development Environment
 
@@ -79,7 +100,7 @@ Chekout my wireframe for this project on [Figma](https://www.figma.com/proto/6IL
 
 ### Data Model
 
-<img width="1035" alt="Screen Shot 2021-10-17 at 2 39 14 PM" src="https://user-images.githubusercontent.com/77710705/137645906-f11a5d1c-6803-4bdc-bc2e-8e28f4105d79.png">
+<img width="1035" alt="Screen Shot 2021-10-17 at 2 39 14 PM" src="https://user-images.githubusercontent.com/77710705/141376198-572e13de-e68c-4cb5-86ec-ce6eca7ddd2b.png">
 
 ## Difficulties/Unresolved Problem
 
