@@ -1,6 +1,5 @@
 import React from "react";
 
-import Add from "../images/icons/Add.svg";
 import Check from "../images/icons/check.svg";
 
 import styles from "./styles.module.scss";

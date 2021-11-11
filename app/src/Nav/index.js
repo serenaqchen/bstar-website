@@ -56,13 +56,10 @@ const Nav = () => {
             <NavLink className="subTab" to="group-dinning">
               Group Dinning
             </NavLink>
-            <NavLink className="subTab" to="reusable-containers">
-              Reusable Containers
-            </NavLink>
           </div>
         </div>
-        <NavLink className="tab" to="gift-cards">
-          GIFT CARDS
+        <NavLink className="Tab" to="reusable-containers">
+          REUSABLE CONTAINERS
         </NavLink>
       </nav>
     </div>

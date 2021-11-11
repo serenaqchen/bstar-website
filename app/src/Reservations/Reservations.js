@@ -36,8 +36,8 @@ function Reservations() {
   return (
     <div className={styles.reservations}>
       <div className="title">
-        <h1>RESERVATIONS & WAITLIST</h1>
-        <img className="blueBorder" src={Border} alt="Blue Border"></img>
+        <h1 className="title__h1">RESERVATIONS & WAITLIST</h1>
+        <img className="title__blueBorder" src={Border} alt="Blue Border"></img>
         <p>
           Due to the pandemic, we have expanded our restaurant and now have
           outdoor seating. Check the current weather and come enjoy some
@@ -52,8 +52,11 @@ function Reservations() {
           handleTempConversion={handleTempConversion}
         />
       </section>
-      <div className="buttonFunctions">
-        <button className="forecastButton" onClick={handleForecastButton}>
+      <div className="forecastButton">
+        <button
+          className="forecastButton--styling"
+          onClick={handleForecastButton}
+        >
           {fiveDayForecast ? "Close" : "Show 5-Day Forecast"}
         </button>
       </div>
@@ -75,10 +78,8 @@ function Reservations() {
           <button className="reservations">MAKE A RESERVATION</button>
         </a>
 
-        <p>Need Directions?</p>
+        <p className="description__margin">Need Directions?</p>
         <iframe
-          width="600"
-          height="450"
           loading="lazy"
           allowFullScreen
           src={`https://www.google.com/maps/embed/v1/place?key=${process.env.REACT_APP_MAPS_API_KEY}&q=place_id:ChIJe477gDmHhYARrtTtY3v18ZQ`}
