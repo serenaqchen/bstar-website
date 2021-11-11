@@ -9,11 +9,6 @@ function MobileFooter() {
     <div className={styles.mobileFooter}>
       <div className="footerCol3">
         <img src={WhiteLogo} alt="white bstar logo"></img>
-        <address>
-          127 Clement Street <br></br>
-          San Frnacisco CA 94118 <br></br>
-          (415) 933-9900
-        </address>
       </div>
     </div>
   );
