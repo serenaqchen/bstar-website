@@ -1,50 +1,108 @@
 .StaticPages {
-  margin-bottom: 15rem;
-  div[class="serviceTitle"] {
-    display: flex;
-    justify-content: center;
-    position: relative;
-    top: -8rem;
-  }
+  //-------------------------PHONE (S) ------------------------------
+  @media screen and (max-width: 320px) and (min-width: 10px),
+    (min-width: 320px) {
+    margin-bottom: 50px;
 
-  section[class="pageInfo"] {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-  }
+    div[class="serviceTitle"] {
+      display: flex;
+      justify-content: center;
+      position: relative;
+      top: -25px;
+    }
 
-  p[class="pageInfo--text"] {
-    padding: 1rem 10rem;
-    font-size: 1.8rem;
-    font-weight: 700;
-    margin: 5rem 2rem;
-  }
+    img[class="serviceTitle__Text"] {
+      width: 250px;
+    }
 
-  a[class="pageInfo--button"] {
-    text-decoration: none;
-    font-family: "Source Serif Pro", serif;
-    background-color: #4856a4;
-    color: white;
-    border: 2px solid transparent;
-    font-size: 1.2rem;
-    padding: 0.8rem;
-    border-radius: 0.5rem;
-    margin: 2rem;
-  }
-  a[class="pageInfo--button"]:hover {
-    background-color: #5f6dbd;
-    color: white;
-  }
+    section[class="pageInfo"] {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
 
-  img[class="titleImage"] {
-    height: auto;
-    width: 100%;
-  }
+    p[class="pageInfo--text"] {
+      font-size: 15px;
+      font-weight: 700;
+      padding: 20px 30px;
+    }
 
-  img[class="blueBorder"] {
-    height: auto;
-    width: 100%;
+    a[class="pageInfo--button"] {
+      text-decoration: none;
+      font-family: "Source Serif Pro", serif;
+      background-color: #4856a4;
+      color: white;
+      border: 2px solid transparent;
+      font-size: 15px;
+      padding: 10px;
+      border-radius: 5px;
+    }
+    a[class="pageInfo--button"]:hover {
+      background-color: #5f6dbd;
+      color: white;
+    }
+
+    img[class="blueBorder"] {
+      width: 250px;
+    }
+
+    img[class="blueBorder--margin"] {
+      margin-top: 50px;
+      width: 250px;
+    }
+  }
+  //-------------------------PHONE (L) ------------------------------
+  @media screen and (min-width: 425px) {
+    div[class="serviceTitle"] {
+      top: -40px;
+    }
+    img[class="serviceTitle__Text"] {
+      width: 350px;
+    }
+  }
+  //-------------------------TABLET-----------------------------------
+  @media screen and (min-width: 768px) {
+    div[class="serviceTitle"] {
+      top: -60px;
+    }
+    img[class="serviceTitle__Text"] {
+      width: 550px;
+    }
+  }
+  //-------------------------LAPTOP-----------------------------------
+  @media screen and (min-width: 1024px) {
+    div[class="serviceTitle"] {
+      top: -60px;
+    }
+    img[class="serviceTitle__Text"] {
+      width: 550px;
+    }
+
+    p[class="pageInfo--text"] {
+      font-size: 20px;
+      font-weight: 700;
+      padding: 20px 100px;
+    }
+
+    img[class="blueBorder"] {
+      width: 550px;
+    }
+    div[class="questions"] {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    }
+  }
+  //-------------------------LARGE LAPTOP------------------------------
+  @media screen and (min-width: 1440px) {
+    margin-bottom: 150px;
+    div[class="serviceTitle"] {
+      top: -80px;
+    }
+    img[class="serviceTitle__Text"] {
+      width: 750px;
+    }
   }
 }
