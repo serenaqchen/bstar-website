@@ -59,7 +59,7 @@ const Nav = () => {
           </div>
         </div>
         <NavLink className="Tab" to="reusable-containers">
-          REUSABLE CONTAINERS
+          RECYCLE
         </NavLink>
       </nav>
     </div>
