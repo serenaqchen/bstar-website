@@ -10,12 +10,5 @@ it("should render the right menu title", async () => {
   render(<Menu type="Dinner" />);
 
   const headingElement = screen.getByText(/dinner/i);
-  expect(headingElement).toBeInTheDocument();
-});
-
-it("should render the right menu title", async () => {
-  render(<Menu type="Dinner" />);
-
-  const headingElement = screen.getByText(/dinner/i);
-  expect(headingElement).toBeInTheDocument();
+  expect(headingElement).toBeVisible();
 });

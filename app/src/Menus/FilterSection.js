@@ -114,7 +114,7 @@ function FilterSection({ filterMenu }) {
           ) : (
             <span>+</span>
           )}{" "}
-          Vegeterian
+          Vegetarian
         </button>
 
         <button
