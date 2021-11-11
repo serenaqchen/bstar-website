@@ -2,6 +2,7 @@ import express from "express";
 import mime from "mime-types";
 
 import jwtCheck from "./jwtCheck.mjs";
+import taskRouter from "./taskRouter.mjs";
 import userRouter from "./userRouter.mjs";
 import weatherRouter from "./weatherRouter.mjs";
 import foodRouter from "./foodRouter.mjs";

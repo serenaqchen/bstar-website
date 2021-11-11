@@ -6,6 +6,20 @@ import { DOTENV_FILE } from "./constants.mjs";
 
 const db = initDb();
 
+export const getTasks = (sub) =>
+  db.any(
+    "SELECT tasks.* FROM tasks LEFT JOIN users on user_id=users.id WHERE sub=$<sub>",
+    { sub },
+  );
+
+export const addTask = (sub, name) =>
+  db.one(
+    `INSERT INTO tasks(user_id, name)
+      VALUES((SELECT id FROM users WHERE sub=$<sub>), $<name>)
+      RETURNING *`,
+    { sub, name },
+  );
+
 export const addOrUpdateUser = (user) =>
   db.one(
     `INSERT INTO users(given_name, family_name, picture, email, sub)
