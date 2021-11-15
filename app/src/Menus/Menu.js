@@ -8,6 +8,13 @@ import FilterSection from "./FilterSection";
 import styles from "./styles.module.scss";
 
 function Menu({ type }) {
+  const [info, setInfo] = React.useState([]);
+  const courses = info[`${type.toLowerCase()}_courses`];
+  const [filteredCourses, setFilteredCourses] = React.useState([]);
+  const [fullMenu, setFullMenu] = React.useState({});
+  const [foodItems, setFoodItems] = React.useState([]);
+  const [modifications, setModifications] = React.useState([]);
+
   const loadModifications = async () => {
     setModifications(await apiClient.getModifications(type));
   };
@@ -22,13 +29,6 @@ function Menu({ type }) {
     setFoodItems(foodItems);
     setFullMenu(foodItems);
   };
-
-  const [info, setInfo] = React.useState([]);
-  const [fullMenu, setFullMenu] = React.useState({});
-  const courses = info[`${type.toLowerCase()}_courses`];
-  //store food items
-  const [foodItems, setFoodItems] = React.useState([]);
-  const [modifications, setModifications] = React.useState([]);
 
   const filterMenu = (filters) => {
     let filterFoodItems = [...fullMenu];

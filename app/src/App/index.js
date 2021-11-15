@@ -11,7 +11,7 @@ import Nav from "../Nav";
 import Reservations from "../Reservations/Reservations";
 import ReuseableContainers from "../ReusableContainers/ReusableContainers";
 import Catering from "../Services/Catering";
-import GroupDinning from "../Services/GroupDinning";
+import GroupDining from "../Services/GroupDining";
 import useApi from "../auth/useApi";
 import useAuth0 from "../auth/useAuth0";
 
@@ -39,7 +39,7 @@ const App = () => {
           <Route path="/brunch" element={<Brunch />} />
           <Route path="/dinner" element={<Dinner />} />
           <Route path="/catering" element={<Catering />} />
-          <Route path="/group-dinning" element={<GroupDinning />} />
+          <Route path="/group-dining" element={<GroupDining />} />
           <Route
             path="/reusable-containers"
             element={<ReuseableContainers />}

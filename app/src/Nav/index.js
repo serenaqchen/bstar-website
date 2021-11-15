@@ -53,8 +53,8 @@ const Nav = () => {
             <NavLink className="subTab" to="catering">
               Catering
             </NavLink>
-            <NavLink className="subTab" to="group-dinning">
-              Group Dinning
+            <NavLink className="subTab" to="group-dining">
+              Group Dining
             </NavLink>
           </div>
         </div>

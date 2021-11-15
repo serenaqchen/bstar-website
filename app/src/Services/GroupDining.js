@@ -6,7 +6,7 @@ import catering from "../images/Group-Dinning.png";
 
 import styles from "./styles.module.scss";
 
-function GroupDinning() {
+function GroupDining() {
   return (
     <div className={styles.StaticPages}>
       <BstarTitle title="Group Dinning" showTitle="false" />
@@ -41,4 +41,4 @@ function GroupDinning() {
   );
 }
 
-export default GroupDinning;
+export default GroupDining;
