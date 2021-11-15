@@ -16,7 +16,7 @@ This application is currently live on [Heroku](https://bstar-website-revamped.he
 
 ## Inspiration
 
-B Star is a well loved and family owned restaurant located in the Richmond District of San Francisco. Although their food tastes amazing, their website on the other hand, is a little lack luster. I know that sometimes great things don't have to come from original ideas, it could come from taking what's there and making it exponentially better. So I decided to challenge myself and recreate a B Star's website and give it more functionality.
+B Star is a well loved and family owned restaurant located in the Richmond District of San Francisco. Although their food tastes amazing, their website on the other hand, needs improvement. I know that sometimes great things don't have to come from original ideas, it could come from taking what's there and making it exponentially better. So I decided to challenge myself and recreate B Star's website and give it more functionality.
 
 ### Functionality
 
