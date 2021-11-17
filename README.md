@@ -1,7 +1,6 @@
 
 <p align="center"><img src="https://user-images.githubusercontent.com/77710705/137644643-904b10e3-4bb7-45de-ae57-a38676e94d73.png" > </img> </p>
 
-<h1 align="center">B Star Website</h1>
 
 ## Overview
 
