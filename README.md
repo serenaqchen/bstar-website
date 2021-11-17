@@ -102,9 +102,13 @@ Chekout my wireframe for this project on [Figma](https://www.figma.com/proto/6IL
 
 ### User Flow
 
+** dotted lines are outside of MVP **
+
 <img width="1030" alt="Screen Shot 2021-10-17 at 2 40 21 PM" src="https://user-images.githubusercontent.com/77710705/137645943-fc2da92d-7580-43f9-80f5-25e5b46baf62.png">
 
 ### Data Model
+
+** dotted lines are outside of MVP **
 
 <img width="1035" alt="Screen Shot 2021-10-17 at 2 39 14 PM" src="https://user-images.githubusercontent.com/77710705/141376198-572e13de-e68c-4cb5-86ec-ce6eca7ddd2b.png">
 
