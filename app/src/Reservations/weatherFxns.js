@@ -74,7 +74,7 @@ export const currentWeatherIcon = (weatherCondition) => {
 };
 
 export const unitConversion = (unit, temp) => {
-  if (unit == "F") {
+  if (unit === "F") {
     return (temp - 32) * (5 / 9);
   } else {
     return temp * (9 / 5) + 32;

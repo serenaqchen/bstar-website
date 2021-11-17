@@ -6,7 +6,27 @@
 
 B Star Website is a :sparkles:revamped:sparkles: version of the [old B Star Website](https://www.bstarbar.com/) with improved UI and a new weather forecast feature. By improving the UI and adding new features, this will allow for easy to read menus and a smoother outdoor dining experience. This project will be using OpenWeather API to access weather forecasts and menu items will be stored in a database.
 
+
+## Desktop/Mobile Demo
+
 This application is currently live on [Heroku](https://bstar-website-revamped.herokuapp.com/).
+    
+![Homepage](https://user-images.githubusercontent.com/77710705/141378531-780527d0-8998-4cb9-8aca-1814a144bf39.gif) ![mobileHomepage](https://user-images.githubusercontent.com/77710705/141380499-c2d41566-12dd-41fe-ac3f-38ffc620126f.gif)
+
+
+## Inspiration
+
+B Star is a well loved and family owned restaurant located in the Richmond District of San Francisco. Although their food tastes amazing, their website on the other hand, needs improvement. I know that sometimes great things don't have to come from original ideas, it could come from taking what's there and making it exponentially better. So I decided to challenge myself and recreate B Star's website and give it more functionality.
+
+### Functionality
+
+- Menu is in database and not an image
+- Can filter through menu depending on dietary restrictions
+- Can check current weather and 5 day forecast before making outdoor seating reservations 
+- Can check when restaurant is located on map and links to google maps for directions 
+- Static pages/important tabs are not accessible and easy to find
+- Responsive on all screen sizes
+
 
 ## Tech Stack (PERN)
 
@@ -47,12 +67,6 @@ You'll need to install Node v14 or above.
 npm install
 ```
 
-#### Install Font Locally
-
-```sh
-npm install @fontsource/source-serif-pro
-```
-
 #### Start the Development Environment
 
 ```sh
@@ -60,6 +74,18 @@ npm start
 ```
 
 Visit <http://localhost:3000>.
+
+#### API Keys
+This application utlizes Open Weather Map API and Google Maps API. Follow the steps to set up keys in the app.
+- Create API Keys ([Open Weather Map API](https://openweathermap.org/) and [Google Maps API](https://developers.google.com/maps))
+
+##### Open Weather Map API
+1. At root folder: create an .env file and copy contents of .env.example 
+2. Replace variables with appropriate values and create new var to assign your own Open Weather Map API key
+
+##### Google Maps API
+1. In Google Maps API application interface, restrict your API key to a specific IP address/website domain
+2. In app/src/Reservations/Reservations.js, replace the API key in the URL within the iframe tag
 
 #### Shut Down the Development Environment
 
@@ -79,9 +105,13 @@ Chekout my wireframe for this project on [Figma](https://www.figma.com/proto/6IL
 
 ### Data Model
 
-<img width="1035" alt="Screen Shot 2021-10-17 at 2 39 14 PM" src="https://user-images.githubusercontent.com/77710705/137645906-f11a5d1c-6803-4bdc-bc2e-8e28f4105d79.png">
+<img width="1035" alt="Screen Shot 2021-10-17 at 2 39 14 PM" src="https://user-images.githubusercontent.com/77710705/141376198-572e13de-e68c-4cb5-86ec-ce6eca7ddd2b.png">
 
-## Difficulties/Unresolved Problem
+## Difficulties/Unresolved Problems
+
+- Creating a relational database that allows for quick and easy queries to get what I want (I originally started out with two tables, and mornalizing it to 5)
+- Coding the UI for the filter function was difficult for me. I started out making it over complicated and changed the set up of my database. I had to take a step back and rethink my approach and logic.
+- Currently, my google maps API is exposed in the frontend. I've restricted it to only give access to my heroku app, so I think is should be fine.
 
 ## Future Development
 

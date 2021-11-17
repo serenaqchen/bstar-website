@@ -7,8 +7,10 @@ function ItemCard({ foodItem, modifications }) {
   return (
     <div className={styles.itemCard}>
       <div className="itemCardTitle">
-        <h3>{foodItem.title}</h3>
-        <p>{foodItem.price != 0.0 && `$${foodItem.price}`}</p>
+        <h3 className="itemCardTitle__title">{foodItem.title}</h3>
+        <p className="itemCardTitle__price">
+          {foodItem.price !== 0.0 && `$${foodItem.price}`}
+        </p>
       </div>
       <div className="modifications">
         {modifications &&
@@ -22,11 +24,11 @@ function ItemCard({ foodItem, modifications }) {
             }
           })}
       </div>
-      <p>{foodItem.description}</p>
+      <p className="description">{foodItem.description}</p>
       <div className="icons">
         {foodItem.allergens
           .split(", ")
-          .map((allergen) => convertToIcon(allergen))}
+          .map((allergen, index) => convertToIcon(allergen, index))}
       </div>
     </div>
   );

@@ -6,12 +6,16 @@ import catering from "../images/Group-Dinning.png";
 
 import styles from "./styles.module.scss";
 
-function GroupDinning() {
+function GroupDining() {
   return (
     <div className={styles.StaticPages}>
       <BstarTitle title="Group Dinning" showTitle="false" />
       <div className="serviceTitle">
-        <img src={catering}></img>
+        <img
+          alt="Catering Title"
+          className="serviceTitle__Text"
+          src={catering}
+        ></img>
       </div>
       <section className="pageInfo">
         <p className="pageInfo--text">
@@ -27,7 +31,7 @@ function GroupDinning() {
         >
           SUBMIT &nbsp;INQUIRY
         </a>
-        <img src={Border} alt="Border"></img>
+        <img className="blueBorder--margin" src={Border} alt="Border"></img>
         <p className="pageInfo--text">
           You may also contact our Events Department at eventsatbstar@gmail.com,
           or ask for Emily at (415) 592-8907.
@@ -37,4 +41,4 @@ function GroupDinning() {
   );
 }
 
-export default GroupDinning;
+export default GroupDining;

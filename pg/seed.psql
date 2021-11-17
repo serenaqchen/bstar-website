@@ -216,43 +216,6 @@ ALTER SEQUENCE public.drinks_id_seq OWNED BY public.drinks.id;
 
 
 --
--- Name: food; Type: TABLE; Schema: public; Owner: -
---
-
-CREATE TABLE public.food (
-    id integer NOT NULL,
-    title character varying(255),
-    description text,
-    price double precision,
-    brunch boolean,
-    brunch_course text,
-    dinner boolean,
-    dinner_course text,
-    allergens text
-);
-
-
---
--- Name: food_id_seq; Type: SEQUENCE; Schema: public; Owner: -
---
-
-CREATE SEQUENCE public.food_id_seq
-    AS integer
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
---
--- Name: food_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
---
-
-ALTER SEQUENCE public.food_id_seq OWNED BY public.food.id;
-
-
---
 -- Name: menu; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -281,69 +244,6 @@ CREATE SEQUENCE public.menu_id_seq
 --
 
 ALTER SEQUENCE public.menu_id_seq OWNED BY public.menu.id;
-
-
---
--- Name: modifications; Type: TABLE; Schema: public; Owner: -
---
-
-CREATE TABLE public.modifications (
-    id integer NOT NULL,
-    food_id integer,
-    description text,
-    price double precision
-);
-
-
---
--- Name: modifications_id_seq; Type: SEQUENCE; Schema: public; Owner: -
---
-
-CREATE SEQUENCE public.modifications_id_seq
-    AS integer
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
---
--- Name: modifications_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
---
-
-ALTER SEQUENCE public.modifications_id_seq OWNED BY public.modifications.id;
-
-
---
--- Name: tasks; Type: TABLE; Schema: public; Owner: -
---
-
-CREATE TABLE public.tasks (
-    id integer NOT NULL,
-    name text NOT NULL,
-    user_id integer NOT NULL
-);
-
-
---
--- Name: tasks_id_seq; Type: SEQUENCE; Schema: public; Owner: -
---
-
-CREATE SEQUENCE public.tasks_id_seq
-    AS integer
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
---
--- Name: tasks_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
---
-
-ALTER SEQUENCE public.tasks_id_seq OWNED BY public.tasks.id;
 
 
 --
@@ -417,31 +317,10 @@ ALTER TABLE ONLY public.drinks ALTER COLUMN id SET DEFAULT nextval('public.drink
 
 
 --
--- Name: food id; Type: DEFAULT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.food ALTER COLUMN id SET DEFAULT nextval('public.food_id_seq'::regclass);
-
-
---
 -- Name: menu id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.menu ALTER COLUMN id SET DEFAULT nextval('public.menu_id_seq'::regclass);
-
-
---
--- Name: modifications id; Type: DEFAULT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.modifications ALTER COLUMN id SET DEFAULT nextval('public.modifications_id_seq'::regclass);
-
-
---
--- Name: tasks id; Type: DEFAULT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.tasks ALTER COLUMN id SET DEFAULT nextval('public.tasks_id_seq'::regclass);
 
 
 --
@@ -541,7 +420,6 @@ COPY public.dinner (id, menu_id, price, allergens, course) FROM stdin;
 1	2	9.50	Popular, Vegtarian	Appetizers
 2	1	9.75	Popular, Gluten-Free Option, Vegetarian	Appetizers
 3	3	9.75	Popular, Vegtarian	Appetizers
-4	4	9.50	Gluten-Free Vegtarian	Appetizers
 5	6	9.50	Vegetarian	Appetizers
 6	5	12.50	none	Appetizers
 7	7	12.00	none	Appetizers
@@ -584,6 +462,7 @@ COPY public.dinner (id, menu_id, price, allergens, course) FROM stdin;
 35	36	17.75	Popular	Chicken
 36	37	14.75	none	Chicken
 37	38	17.00	none	Chicken
+4	4	9.50	Gluten-Free, Vegtarian	Appetizers
 \.
 
 
@@ -648,38 +527,6 @@ COPY public.drink_modifications (id, drink_id, description, price) FROM stdin;
 --
 
 COPY public.drinks (id, menu_id, price, allergens, alcholic) FROM stdin;
-\.
-
-
---
--- Data for Name: food; Type: TABLE DATA; Schema: public; Owner: -
---
-
-COPY public.food (id, title, description, price, brunch, brunch_course, dinner, dinner_course, allergens) FROM stdin;
-1	Firecracker Cauliflower	Crispy cauliflower in a sweet and tangy caramelized garlic chili sauce.	9.5	t	Appetizers	t	Appetizers	Vegtarian, Popular
-2	B Sprouts	Fried Brussels sprouts with furikake (veg), popped rice and Parmesan.  Customer favorite!	9.75	t	Appetizers	t	Appetizers	Popular, Gluten-Free Option, Vegetarian
-3	Platha Dipper	Crispy, flaky Burmese layered flatbread with yellow curry dipping sauce.	9.75	t	Appetizers	t	Appetizers	Vegtarian, Popular
-4	Fresh Spring Rolls	Tofu, basil, mint, cucumber, green papaya, carrot, avocado, and mushroom, wrapped in rice paper.  Served with peanut sauce dip.	9.5	t	Appetizers	t	Appetizers	Gluten-Free, Vegetarian
-5	Vegetarian Samusas	Three hand-wrapped samusas filled with curry spiced potato, deep fried and served with our house special sweet chili sauce.	9.5	t	Appetizers	t	Appetizers	Vegetarian
-9	Fried Yellow Bean Tofu	Homemade tofu made from yellow beans, crispy outside, creamy in the middle, sweet soy & chili sauce.	9	t	Appetizers	t	Appetizers	Vegetarian
-11	Burmese Chicken Salad (Reg)	Cabbage, cucumber, cilantro, carrot, sesame, wonton chips and poached chicken with a sweet chili dressing.	13	t	Soup&Salad	t	Soup&Salad	Gluten-Free Option
-12	Rainbow Salad (Reg)	Made with 22 ingredients!  Four types of noodles, green papaya, tofu, tomato, potato, carrot, cabbage, garlic, onion, cilantro, chili, tamarind dressing.  With dried shrimp and fish sauce, or vegetarian by request.	13.75	t	Soup&Salad	t	Soup&Salad	Gluten-Free Option, Vegetarian Option
-13	Samusa Soup (Sm)	Burmese soup with samusas, falafel, potato, lentil, cabbage and jalapeño.  Spicy and tangy!	9.25	t	Soup&Salad	t	Soup&Salad	Popular, Vegetarian
-14	Butternut Squash Soup (Sm)	Pureed squash with basil oil, pepitas (pumpkin seed) and coconut milk.  Vegan.	8	t	Soup&Salad	t	Soup&Salad	Gluten-Free, Vegetarian
-6	Sticky Fingers Pork Riblettes	Tender ribs in a caramelized spicy garlic sauce.	12.5	t	Appetizers	t	Appetizers	None
-8	Salt & Pepper Fries	Thin cut fries seasoned with salt and black pepper, served with curry aioli.	6	t	Appetizers	t	Appetizers	None
-7	Tuna Ceviche	Seared tuna tataki, pepper crusted, topped with tobiko, jalapeño, avocado, green onion, lemon.	12	t	Appetizers	t	Appetizers	None
-15	Ginger Lemonade	Fresh squeezed ginger and lemon.	4	t	Drinks	t	Drinks	None
-16	Vietnamese Iced Coffee	Strong and creamy, made with sweetened condensed milk.	4.75	t	Drinks	t	Drinks	None
-17	Spicy Ginger Lime Margarita	Ginger, lime, agave soju, and a togarashi salt rim for an extra spicy kick.	10	t	Drinks	t	Drinks	None
-18	Thai Iced Tea		4	t	Drinks	t	Drinks	Dairy
-19	Jasmine Iced Tea	Unsweetened	4	t	Drinks	t	Drinks	None
-20	Mango Shandy	Tropical version of the classic shandy, with mango, lime, ginger and beer.	8	t	Drinks	t	Drinks	None
-21	Mango Lassi	Mango yogurt smoothie	5	t	Drinks	t	Drinks	Dairy
-22	Hot Tea - By the Cup	Black, Green or Herbal	4	t	Drinks	t	Drinks	None
-23	Mimosas	Mango, Lychee or Lemon Ginger	8.5	t	Drinks	t	Drinks	None
-24	Fresh Young Coconut		5.75	t	Drinks	t	Drinks	None
-10	Tea Leaf Salad (Reg)	Featured on the Food Network-- Our signature dish!  Lettuce, red cabbage, crispy garlic, peanut, sesame & sunflower seed, fried lentil, tomato, jalapeno, pickled ginger and fermented tea leaf dressing.  With shrimp powder and fish sauce, or vegetarian by request.	13.5	t	Soup&Salad	t	Soup&Salad	Popular, Gluten-Free, Vegetarian Option, Peanut-Free Option
 \.
 
 
@@ -750,36 +597,6 @@ COPY public.menu (id, title, description) FROM stdin;
 
 
 --
--- Data for Name: modifications; Type: TABLE DATA; Schema: public; Owner: -
---
-
-COPY public.modifications (id, food_id, description, price) FROM stdin;
-1	5	Add an extra samusa	12.5
-2	10	Lg	19.25
-3	11	Lg	18.5
-4	12	Lg	19.75
-5	13	Med	14
-6	13	Lg	21
-7	14	Med	21
-8	14	Lg	18
-\.
-
-
---
--- Data for Name: tasks; Type: TABLE DATA; Schema: public; Owner: -
---
-
-COPY public.tasks (id, name, user_id) FROM stdin;
-1	🙏 Be nice when you add test entries	1
-2	⏲ Added entries will be reset every Sunday	1
-3	End white supremacy	1
-4	Advocate for living wage	1
-5	Provide universal health care	1
-7	eat lunch	2
-\.
-
-
---
 -- Data for Name: users; Type: TABLE DATA; Schema: public; Owner: -
 --
 
@@ -832,13 +649,6 @@ SELECT pg_catalog.setval('public.drinks_id_seq', 1, false);
 
 
 --
--- Name: food_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
---
-
-SELECT pg_catalog.setval('public.food_id_seq', 24, true);
-
-
---
 -- Name: menu_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
@@ -846,24 +656,10 @@ SELECT pg_catalog.setval('public.menu_id_seq', 67, true);
 
 
 --
--- Name: modifications_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
---
-
-SELECT pg_catalog.setval('public.modifications_id_seq', 8, true);
-
-
---
--- Name: tasks_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
---
-
-SELECT pg_catalog.setval('public.tasks_id_seq', 7, true);
-
-
---
 -- Name: users_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public.users_id_seq', 168, true);
+SELECT pg_catalog.setval('public.users_id_seq', 321, true);
 
 
 --
@@ -915,14 +711,6 @@ ALTER TABLE ONLY public.drinks
 
 
 --
--- Name: food food_pkey; Type: CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.food
-    ADD CONSTRAINT food_pkey PRIMARY KEY (id);
-
-
---
 -- Name: menu menu_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -936,22 +724,6 @@ ALTER TABLE ONLY public.menu
 
 ALTER TABLE ONLY public.menu
     ADD CONSTRAINT menu_title_key UNIQUE (title);
-
-
---
--- Name: modifications modifications_pkey; Type: CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.modifications
-    ADD CONSTRAINT modifications_pkey PRIMARY KEY (id);
-
-
---
--- Name: tasks tasks_pkey; Type: CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.tasks
-    ADD CONSTRAINT tasks_pkey PRIMARY KEY (id);
 
 
 --
@@ -1016,22 +788,6 @@ ALTER TABLE ONLY public.drink_modifications
 
 ALTER TABLE ONLY public.drinks
     ADD CONSTRAINT drinks_menu_id_fkey FOREIGN KEY (menu_id) REFERENCES public.menu(id);
-
-
---
--- Name: tasks fk_user; Type: FK CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.tasks
-    ADD CONSTRAINT fk_user FOREIGN KEY (user_id) REFERENCES public.users(id) ON DELETE CASCADE;
-
-
---
--- Name: modifications modifications_food_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.modifications
-    ADD CONSTRAINT modifications_food_id_fkey FOREIGN KEY (food_id) REFERENCES public.food(id);
 
 
 --

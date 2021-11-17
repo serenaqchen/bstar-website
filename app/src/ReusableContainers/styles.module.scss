@@ -1,0 +1,72 @@
+.reusableContainers {
+  //-------------------------PHONE (S) ------------------------------
+  @media screen and (max-width: 320px) and (min-width: 10px),
+    (min-width: 320px) {
+    section[class="container"] {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding-bottom: 100px;
+    }
+    h1[class="container__Title"] {
+      font-size: 28px;
+      text-align: center;
+      padding: 20px;
+    }
+    h2[class="container__SubTitle"] {
+      font-size: 20px;
+      text-align: center;
+      border-top: 3px dotted #243065;
+      border-bottom: 3px dotted #243065;
+      background-color: #eff2f7;
+      padding: 20px;
+    }
+
+    img[class="container__image"] {
+      width: 320px;
+    }
+
+    p[class="container__Text"] {
+      font-size: 15px;
+      text-align: center;
+      padding: 20px;
+    }
+  }
+
+  //-------------------------TABLET-----------------------------------
+  @media screen and (min-width: 768px) {
+    h1[class="container__Title"] {
+      font-size: 40px;
+      padding: 20px;
+    }
+    h2[class="container__SubTitle"] {
+      font-size: 25px;
+    }
+    img[class="container__image"] {
+      width: 520px;
+    }
+
+    p[class="container__Text"] {
+      font-size: 18px;
+      text-align: center;
+      padding: 20px 80px;
+    }
+  }
+  //-------------------------LAPTOP-----------------------------------
+  @media screen and (min-width: 1024px) {
+    h1[class="container__Title"] {
+      font-size: 80px;
+      padding: 20px;
+    }
+    p[class="container__Text"] {
+      padding: 20px 180px;
+    }
+  }
+  //-------------------------LARGE LAPTOP------------------------------
+  @media screen and (min-width: 1440px) {
+    p[class="container__Text"] {
+      padding: 20px 380px;
+    }
+  }
+}

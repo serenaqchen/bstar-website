@@ -3,15 +3,15 @@ import * as React from "react";
 import { Routes, Route } from "react-router-dom";
 
 import Footer from "../Footer/Footer";
-import GiftCards from "../GiftCards/GiftCards";
+import MobileFooter from "../Footer/MobileFooter";
 import Home from "../Home/Home";
 import Brunch from "../Menus/Brunch";
 import Dinner from "../Menus/Dinner";
 import Nav from "../Nav";
 import Reservations from "../Reservations/Reservations";
+import ReuseableContainers from "../ReusableContainers/ReusableContainers";
 import Catering from "../Services/Catering";
-import GroupDinning from "../Services/GroupDinning";
-import ReuseableContainers from "../Services/ReuseableContainers";
+import GroupDining from "../Services/GroupDining";
 import useApi from "../auth/useApi";
 import useAuth0 from "../auth/useAuth0";
 
@@ -39,16 +39,16 @@ const App = () => {
           <Route path="/brunch" element={<Brunch />} />
           <Route path="/dinner" element={<Dinner />} />
           <Route path="/catering" element={<Catering />} />
-          <Route path="/group-dinning" element={<GroupDinning />} />
+          <Route path="/group-dining" element={<GroupDining />} />
           <Route
             path="/reusable-containers"
             element={<ReuseableContainers />}
           />
-          <Route path="/gift-cards" element={<GiftCards />} />
         </Routes>
       </main>
       <footer>
         <Footer />
+        <MobileFooter />
       </footer>
     </>
   );
